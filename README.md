@@ -1,4 +1,4 @@
-# managment_app
+# Managment_App
 
 A new Flutter project.
 
