@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:managment_app/Themes/themes.dart';
 
 import '../controllers/team_attendance_controller.dart';
@@ -14,17 +15,12 @@ class TeamAttendanceView extends GetView<TeamAttendanceController> {
     return Scaffold(
         appBar: AppBar(
           leading: IconButton(
-            icon: Icon(Icons.arrow_back_rounded),
+            icon: Container(child: Image.asset('assets/images/icon.png'),padding: EdgeInsets.all(5),),
             onPressed: () {},
           ),
-          backgroundColor: Color(0xFF002431),
+          backgroundColor: Get.theme.colorLevel1,
           title: Text('MY TEAM',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w600,
-                color: Colors.white,
-                height: 1,
-              )),
+              style: Get.theme.kTitleTextStyle),
           elevation: 0,
           centerTitle: true,
         ),
@@ -32,8 +28,8 @@ class TeamAttendanceView extends GetView<TeamAttendanceController> {
           decoration: BoxDecoration(
               gradient: LinearGradient(
                   colors: [
-                    Color(0xFF002431),
-                    Color(0xFF094454),
+                    Get.theme.colorLevel1,
+                    Get.theme.colorLevel2,
                   ],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
@@ -44,18 +40,18 @@ class TeamAttendanceView extends GetView<TeamAttendanceController> {
             children: [
               Container(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
                   child: TextField(
-                    style: TextStyle(color: Colors.black),
+                    style: GoogleFonts.raleway(textStyle: TextStyle(color: Get.theme.colorLevel0)),
                     decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.search, color: Colors.black),
+                      prefixIcon: Icon(Icons.search, color: Get.theme.colorLevel0),
                       hintText: 'Search...',
-                      hintStyle: TextStyle(color: Colors.black),
+                      hintStyle: GoogleFonts.raleway(textStyle: TextStyle(color: Get.theme.colorLevel0)),
                       filled: true,
-                      fillColor: Colors.white,
+                      fillColor: Get.theme.colorLevel4,
                       border: OutlineInputBorder(
                         borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.circular(16),
+                        borderRadius: BorderRadius.circular(10),
                       ),
                     ),
                   ),
@@ -69,24 +65,23 @@ class TeamAttendanceView extends GetView<TeamAttendanceController> {
                         padding: const EdgeInsets.all(8.0),
                         child: Card(
                           child:  Container(
-                            decoration: ShapeDecoration(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),color: Colors.white),
+                            decoration: ShapeDecoration(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),color: Get.theme.colorLevel4),
                             child: Padding(
                               padding: const EdgeInsets.all(1.0),
                               child: ExpansionTile(
                                 tilePadding: EdgeInsets.all(8.0),
                                 collapsedShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-                                title: Text('Name : ', style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,color: Colors.white,height: 1,)),
-                                backgroundColor: Colors.black87,
-                                collapsedBackgroundColor: Colors.black87,
-                                leading: CircleAvatar(backgroundColor: Colors.white,),
-                                iconColor: Colors.white,
+                                title: Text('Name : ', style: Get.theme.kSubTitleTextStyle),
+                                backgroundColor: Get.theme.colorLevel0,
+                                collapsedBackgroundColor: Get.theme.colorLevel0,
+                                leading: CircleAvatar(backgroundColor: Get.theme.colorLevel4,),
                                 children: [
-                                  ListTile(title: Text('ID No. :')),
-                                  ListTile(title: Text('Domain :')),
-                                  ListTile(title: Text('Total meets conducted :')),
-                                  ListTile(title: Text('No. of meets attended :')),
-                                  ListTile(title: Text('No. of absences :')),
+                                  ListTile(title: Text('ID No. :', style: Get.theme.kBodyTextStyle)),
+                                  ListTile(title: Text('Domain :', style: Get.theme.kBodyTextStyle)),
+                                  ListTile(title: Text('Total meets conducted :', style: Get.theme.kBodyTextStyle)),
+                                  ListTile(title: Text('No. of meets attended :', style: Get.theme.kBodyTextStyle)),
+                                  ListTile(title: Text('No. of absences :', style: Get.theme.kBodyTextStyle)),
                                 ],
                               ),
                             ),
