@@ -4,12 +4,11 @@ part of 'app_pages.dart';
 abstract class Routes {
   Routes._();
   static const HOME = _Paths.HOME;
-
-
+  static const MY_TEAM_PAGE = _Paths.MY_TEAM_PAGE;
 }
 
 abstract class _Paths {
   _Paths._();
   static const HOME = '/home';
-
+  static const MY_TEAM_PAGE = '/my-team-page';
 }
