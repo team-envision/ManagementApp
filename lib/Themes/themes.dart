@@ -27,19 +27,19 @@ extension ThemeExtension on ThemeData {
 
 // FONTS AND TEXT STYLES:
 
-  TextStyle get kTitleTextStyle => GoogleFonts.roboto(
+  TextStyle get kTitleTextStyle => GoogleFonts.raleway(
       fontWeight: FontWeight.w600, color: colorLevel4, fontSize: 20, height: 1);
 
-  TextStyle get kSubTitleTextStyle => GoogleFonts.roboto(
+  TextStyle get kSubTitleTextStyle => GoogleFonts.raleway(
       fontWeight: FontWeight.w600, color: colorLevel4, fontSize: 16, height: 1);
 
-  TextStyle get kBodyTextStyle => GoogleFonts.roboto(
+  TextStyle get kBodyTextStyle => GoogleFonts.raleway(
       fontWeight: FontWeight.w500, color: colorLevel4, fontSize: 14, height: 1.5);
 
-  TextStyle get kSmallTextStyle => GoogleFonts.roboto(
+  TextStyle get kSmallTextStyle => GoogleFonts.raleway(
       fontWeight: FontWeight.w500, color: colorLevel4, fontSize: 12, height: 1.5);
 
-  TextStyle get kVerySmallTextStyle => GoogleFonts.roboto(
+  TextStyle get kVerySmallTextStyle => GoogleFonts.raleway(
       fontWeight: FontWeight.w500, color: colorLevel4, fontSize: 10, height: 1);
 }
 
