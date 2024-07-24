@@ -8,10 +8,10 @@ environment:
 dependencies: 
   cupertino_icons: ^1.0.6
   get: ^4.6.6
-  flutter: 
+  flutter:
     sdk: flutter
-  google_fonts: ^6.2.1
   get_storage: ^2.1.1
+  font_awesome_flutter: ^10.0.0
 
 dev_dependencies: 
   flutter_lints: 4.0.0
@@ -20,4 +20,16 @@ dev_dependencies:
 
 flutter: 
   uses-material-design: true
+
+  assets:
+    - assets/fonts/
+
+  fonts:
+      - family: Raleway
+        fonts:
+          - asset: assets/fonts/Raleway-Regular.ttf
+          - asset: assets/fonts/Raleway-Bold.ttf
+            weight: 700
+          - asset: assets/fonts/Raleway-Italic.ttf
+            style: italic
 
