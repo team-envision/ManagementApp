@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../controllers/meetings_controller.dart';
 
+
 class MeetingsView extends GetView<MeetingsController> {
   @override
   Widget build(BuildContext context) {
@@ -22,6 +23,7 @@ class MeetingsView extends GetView<MeetingsController> {
     final List<String> modeOptions = ['Online', 'Offline'];
 
     return Scaffold(
+      backgroundColor:Color(0xFF094454) ,
       appBar: AppBar(
         title: Text(
           'MEETS',
@@ -41,8 +43,8 @@ class MeetingsView extends GetView<MeetingsController> {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [Color(0xFF002431), Color(0xFF094454)],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
           ),
         ),
         child: SingleChildScrollView(
@@ -52,8 +54,8 @@ class MeetingsView extends GetView<MeetingsController> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 120,
-                  height: 120,
+                  width: 100,
+                  height: 100,
                   padding: const EdgeInsets.all(15),
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
