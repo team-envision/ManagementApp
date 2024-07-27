@@ -12,6 +12,8 @@ class TeamAttendanceView extends GetView<TeamAttendanceController> {
   @override
 
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
         appBar: AppBar(
           leading: IconButton(
@@ -41,17 +43,21 @@ class TeamAttendanceView extends GetView<TeamAttendanceController> {
               Container(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
-                  child: TextField(
-                    style: GoogleFonts.raleway(textStyle: TextStyle(color: Get.theme.colorLevel0)),
-                    decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.search, color: Get.theme.colorLevel0),
-                      hintText: 'Search...',
-                      hintStyle: GoogleFonts.raleway(textStyle: TextStyle(color: Get.theme.colorLevel0)),
-                      filled: true,
-                      fillColor: Get.theme.colorLevel4,
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.circular(10),
+                  child: SizedBox(
+                    height: screenHeight * 0.05,
+                    width: screenWidth,
+                    child: TextField(
+                      style: GoogleFonts.raleway(textStyle: TextStyle(color: Get.theme.colorLevel0)),
+                      decoration: InputDecoration(contentPadding: EdgeInsets.all(2),
+                        prefixIcon: Icon(Icons.search, color: Get.theme.colorLevel0),
+                        hintText: 'Search...',
+                        hintStyle: GoogleFonts.raleway(textStyle: TextStyle(color: Get.theme.colorLevel0)),
+                        filled: true,
+                        fillColor: Get.theme.colorLevel4,
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
                       ),
                     ),
                   ),
