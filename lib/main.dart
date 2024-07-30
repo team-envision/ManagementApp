@@ -16,6 +16,7 @@ void main() {
       theme: Themes.light,
       darkTheme: Themes.dark,
       themeMode: ThemeService().theme,
+      debugShowCheckedModeBanner: false,
     ),
   );
 }
