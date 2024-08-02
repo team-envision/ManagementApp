@@ -1,72 +1,65 @@
+import 'dart:ui';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import '../components/DatePickerField.dart';
+import '../components/Dropdown.dart';
+import '../components/TimePickerField.dart';
 import '../controllers/meetings_controller.dart';
-
+import 'package:managment_app/Themes/themes.dart';
+import 'package:device_preview/device_preview.dart';
 
 class MeetingsView extends GetView<MeetingsController> {
   @override
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
-
-    // Define the options for the Domain dropdown
-    final List<String> domainOptions = [
-      'Robogyan', 'Yuddhame', 'Online', 'Magefficie and Start-Ups', 'Fundaz',
-      'Vimanaz', 'Konstruktion', 'Architecture', 'Bluebook', 'Praesentio',
-      'Machination', 'Electrizite', 'Digital Design', 'X-Zone'
-    ];
-
-    // Define the options for the FOR dropdown
-    final List<String> forOptions = ['Volunteer', 'Member', 'Head'];
-
-    // Define the options for the Mode dropdown
-    final List<String> modeOptions = ['Online', 'Offline'];
+    final theme = Theme.of(context);
 
     return Scaffold(
-      backgroundColor:Color(0xFF094454) ,
+      backgroundColor: Color(0xFF094454),
       appBar: AppBar(
         title: Text(
           'MEETS',
-          style: TextStyle(
-            fontFamily: 'Raleway',
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: Colors.blue[100],
-            letterSpacing: 1.2,
+          style: GoogleFonts.raleway(
+            color: theme.colorLevel4,
+            fontWeight: FontWeight.w600,
+            fontSize: 26,
+            letterSpacing: 2,
           ),
         ),
         centerTitle: true,
-        backgroundColor: Color(0xFF002431),
+        backgroundColor: theme.colorLevel1,
         elevation: 0,
       ),
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFF002431), Color(0xFF094454)],
+            colors: [theme.colorLevel1, theme.colorLevel2],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
         ),
         child: SingleChildScrollView(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(50.0),
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 100,
-                  height: 100,
+                  width: 150,
+                  height: 150,
                   padding: const EdgeInsets.all(15),
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [Color(0xFF002431), Color(0xFF094454)],
-                    ),
+
                     borderRadius: BorderRadius.circular(16),
                   ),
-                  child: Icon(
-                    FontAwesomeIcons.solidCalendar,
-                    size: 80,
-                    color: Colors.blue[100],
+                  child: SvgPicture.asset(
+                    'lib/app/modules/meetings/assets/calender.svg',
+                    width: 100,
+                    height: 100,
+                    color: theme.colorPrimary,
                   ),
                 ),
                 SizedBox(height: 20),
@@ -76,65 +69,94 @@ class MeetingsView extends GetView<MeetingsController> {
                   decoration: BoxDecoration(
                     color: Color(0xFF094454),
                     borderRadius: BorderRadius.circular(15),
+                    boxShadow: [BoxShadow(color: theme.colorLevel0, spreadRadius: 2, blurRadius: 4)],
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      _buildDropdown(
-                        'DOMAIN',
-                        domainOptions,
-                        controller.dropdown1SelectedValue,
-                            (value) => controller.dropdown1SelectedValue.value = value!,
+                      CustomDropdownButton(
+                        hintText: 'DOMAIN',
+                        options: domainOptions,
+                        selectedValue: controller.domainSelectedValue,
                       ),
-                      SizedBox(height: 8),
-                      _buildDropdown(
-                        'FOR',
-                        forOptions,
-                        controller.dropdown2SelectedValue,
-                            (value) => controller.dropdown2SelectedValue.value = value!,
+                      CustomDropdownButton(
+                        hintText: 'FOR',
+                        options: forOptions,
+                        selectedValue: controller.forSelectedValue,
                       ),
-                      SizedBox(height: 8),
-                      _buildDropdown(
-                        'MODE',
-                        modeOptions,
-                        controller.dropdown3SelectedValue,
-                            (value) => controller.dropdown3SelectedValue.value = value!,
+                      DatePickerField(
+                        hintText: 'DATE',
+                        selectedDate: controller.selectedDate,
+                        onDateChanged: (date) => controller.selectedDate.value = date,
                       ),
-                      SizedBox(height: 8),
-                      _buildDatePicker(context),
-                      SizedBox(height: 8),
-                      _buildTimePicker(context),
+                      TimePickerField(
+                        hintText: 'TIME',
+                        selectedTime: controller.selectedTime,
+                        onTimeChanged: (time) => controller.selectedTime.value = time,
+                      ),
+                      CustomDropdownButton(
+                        hintText: 'MODE',
+                        options: modeOptions,
+                        selectedValue: controller.modeSelectedValue,
+                      ),
                     ],
                   ),
                 ),
                 SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: Text('ADD MEETING DESCRIPTION', style: TextStyle(color: Colors.white, fontSize: 18)),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue[600],
-                    elevation: 10,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
+                Container(
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black26,
+                        offset: Offset(0, 4),
+                        blurRadius: 5.0,
+                      ),
+                    ],
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Text(
+                      'ADD MEETING DESCRIPTION',
+                      style: theme.kSmallTextStyle,
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: theme.colorPrimary,
+                      elevation: 0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
                     ),
                   ),
                 ),
-
-                ElevatedButton(
-                  onPressed: () {},
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text('Send Reminder', style: TextStyle(color: Colors.grey[700])),
-                      SizedBox(width: 8),
-                      Icon(Icons.notifications, color: Colors.grey[700]),
+                SizedBox(height: 20),
+                Container(
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black26,
+                        offset: Offset(0, 4),
+                        blurRadius: 5.0,
+                      ),
                     ],
+                    borderRadius: BorderRadius.circular(15),
                   ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue[300],
-                    elevation: 10,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text('Send Reminder', style: GoogleFonts.raleway(color: Colors.grey[700], fontSize: 12,fontWeight: FontWeight.w600)),
+                        SizedBox(width: 8),
+                        Icon(Icons.notifications_active, color: Colors.grey[700]),
+                      ],
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue[100],
+                      elevation: 0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
                     ),
                   ),
                 ),
@@ -143,157 +165,8 @@ class MeetingsView extends GetView<MeetingsController> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home, color: Colors.white,),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.add_box, color: Colors.white,),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person, color: Colors.white,),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings, color: Colors.white,),
-            label: '',
-          ),
-        ],
-        selectedItemColor: Colors.grey,
-        onTap: (index) {
-          // Handle navigation on tap
-        },
-      ),
-    );
-  }
-
-  Widget _buildDropdown(String title, List<String> options, RxString selectedValue, void Function(String?) onChanged) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          title,
-          style: TextStyle(
-            fontFamily: 'Raleway',
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
-            color: Colors.blue[100],
-          ),
-        ),
-        SizedBox(height: 8),
-        Obx(() => DropdownButtonFormField<String>(
-          value: selectedValue.value.isEmpty ? null : selectedValue.value,
-          items: options.map((String value) {
-            return DropdownMenuItem<String>(
-              value: value,
-              child: Text(value, style: TextStyle(color: Colors.grey[700])),
-            );
-          }).toList(),
-          onChanged: onChanged,
-          decoration: InputDecoration(
-            filled: true,
-            fillColor: Colors.white,
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8),
-            ),
-            contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-          ),
-          icon: Icon(Icons.arrow_drop_down, color: Colors.black),
-        )),
-      ],
-    );
-  }
-
-  Widget _buildDatePicker(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'DATE',
-          style: TextStyle(
-            fontFamily: 'Raleway',
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
-            color: Colors.white,
-          ),
-        ),
-        SizedBox(height: 8),
-        GestureDetector(
-          onTap: () async {
-            DateTime? pickedDate = await showDatePicker(
-              context: context,
-              initialDate: controller.selectedDate.value,
-              firstDate: DateTime(2000),
-              lastDate: DateTime(2101),
-            );
-            if (pickedDate != null && pickedDate != controller.selectedDate.value) {
-              controller.updateSelectedDate(pickedDate);
-            }
-          },
-          child: AbsorbPointer(
-            child: TextFormField(
-              controller: controller.dateController,
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: Colors.white,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-                suffixIcon: Icon(Icons.arrow_drop_down, color: Colors.black),
-              ),
-              style: TextStyle(color: Colors.grey[700]),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildTimePicker(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'TIME',
-          style: TextStyle(
-            fontFamily: 'Raleway',
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
-            color: Colors.white,
-          ),
-        ),
-        SizedBox(height: 8),
-        GestureDetector(
-          onTap: () async {
-            TimeOfDay? pickedTime = await showTimePicker(
-              context: context,
-              initialTime: controller.selectedTime.value,
-            );
-            if (pickedTime != null && pickedTime != controller.selectedTime.value) {
-              controller.updateSelectedTime(pickedTime);
-            }
-          },
-          child: AbsorbPointer(
-            child: TextFormField(
-              controller: controller.timeController,
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: Colors.white,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-                suffixIcon: Icon(Icons.arrow_drop_down, color: Colors.black),
-              ),
-              style: TextStyle(color: Colors.grey[700]),
-            ),
-          ),
-        ),
-      ],
     );
   }
 }
+
+
