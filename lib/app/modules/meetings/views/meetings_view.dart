@@ -9,7 +9,6 @@ import '../components/Dropdown.dart';
 import '../components/TimePickerField.dart';
 import '../controllers/meetings_controller.dart';
 import 'package:managment_app/Themes/themes.dart';
-import 'package:device_preview/device_preview.dart';
 
 class MeetingsView extends GetView<MeetingsController> {
   @override
