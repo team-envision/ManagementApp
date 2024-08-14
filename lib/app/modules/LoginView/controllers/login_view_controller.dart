@@ -7,20 +7,8 @@ class LoginViewController extends GetxController {
   var passwordVisible = false.obs;
   var selectedOption = ''.obs;
 
-  @override
-  void onReady() {
-    super.onReady();
-   }
 
-  @override
-  void onClose() {
-    super.onClose();
-  }
 
-  @override
-  void dispose() {
-    super.dispose();
-  }
 
   void increment() => count.value++;
 
@@ -34,5 +22,5 @@ class LoginViewController extends GetxController {
     }
   }
 
-  List<String> get options => ['Committee', 'Domain', 'Team'];
+  List<String> get options => ['Committe', 'Domain', 'Team'];
 }
