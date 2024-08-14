@@ -4,12 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../components/DatePickerField.dart';
-import '../components/Dropdown.dart';
-import '../components/TimePickerField.dart';
+import '../../../../components/DatePickerField.dart';
+import '../../../../components/Dropdown.dart';
+import '../../../../components/TimePickerField.dart';
 import '../controllers/meetings_controller.dart';
 import 'package:managment_app/Themes/themes.dart';
-
 
 class MeetingsView extends GetView<MeetingsController> {
   @override
@@ -18,7 +17,7 @@ class MeetingsView extends GetView<MeetingsController> {
     final theme = Theme.of(context);
 
     return Scaffold(
-      backgroundColor: Color(0xFF094454),
+      backgroundColor: theme.colorLevel2,
       appBar: AppBar(
         title: Text(
           'MEETS',
@@ -56,7 +55,7 @@ class MeetingsView extends GetView<MeetingsController> {
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: SvgPicture.asset(
-                    'lib/app/modules/meetings/assets/calender.svg',
+                    'assets/images/calender.svg',
                     width: 100,
                     height: 100,
                     color: theme.colorPrimary,
