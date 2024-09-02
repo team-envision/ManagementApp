@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
+
+import 'Themes/theme_service.dart';
+import 'Themes/themes.dart';
 import 'app/routes/app_pages.dart';
 
-void main() {
-  runApp(MyApp());
-}
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return GetMaterialApp(
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(
+    GetMaterialApp(
+      title: "Application",
       debugShowCheckedModeBanner: false,
-      title: 'Registration App',
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-    );
-  }
+      theme: Themes.light,
+      darkTheme: Themes.dark,
+      themeMode: ThemeService().theme,
+    ),
+  );
 }
