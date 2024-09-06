@@ -6,7 +6,7 @@ class TimePickerField extends StatelessWidget {
   final Rx<TimeOfDay> selectedTime;
   final ValueChanged<TimeOfDay> onTimeChanged;
 
-  TimePickerField({
+  const TimePickerField({super.key, 
     required this.hintText,
     required this.selectedTime,
     required this.onTimeChanged,
@@ -14,13 +14,13 @@ class TimePickerField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextEditingController _controller = TextEditingController();
+    final TextEditingController controller = TextEditingController();
 
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Obx(
             () {
-          _controller.text = '${selectedTime.value.hour}:${selectedTime.value.minute}';
+          controller.text = '${selectedTime.value.hour}:${selectedTime.value.minute}';
           return Container(
             padding: const EdgeInsets.symmetric(horizontal: 0.0),
             child: TextFormField(
@@ -32,9 +32,9 @@ class TimePickerField extends StatelessWidget {
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8),
                 ),
-                contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
                 suffixIcon: IconButton(
-                  icon: Icon(Icons.arrow_drop_down, color: Colors.black),
+                  icon: const Icon(Icons.arrow_drop_down, color: Colors.black),
                   onPressed: () async {
                     final TimeOfDay? picked = await showTimePicker(
                       context: context,
@@ -47,7 +47,7 @@ class TimePickerField extends StatelessWidget {
                   },
                 ),
               ),
-              controller: _controller,
+              controller: controller,
               readOnly: true,
               style: TextStyle(color: Colors.grey[700], fontWeight: FontWeight.w400),
             ),

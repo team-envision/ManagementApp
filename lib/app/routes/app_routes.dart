@@ -6,18 +6,17 @@ abstract class Routes {
   Routes._();
   static const HOME = _Paths.HOME;
   static const MEETINGS = _Paths.MEETINGS;
+  static const TEAM_ATTENDANCE = _Paths.TEAM_ATTENDANCE;
+  static const DASHBOARD = _Paths.DASHBOARD;
 }
 
 abstract class _Paths {
   _Paths._();
   static const HOME = '/home';
   static const MEETINGS = '/meetings';
-}
-
-
-abstract class _Paths {
-  _Paths._();
-  static const HOME = '/home';
   static const TEAM_ATTENDANCE = '/team-attendance';
+  static const DASHBOARD = '/dashboard';
 }
+
+
 

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,7 +8,7 @@ class CustomDropdownButton extends StatelessWidget {
   final List<String> options;
   final RxString selectedValue;
 
-  CustomDropdownButton({
+  const CustomDropdownButton({super.key, 
     required this.hintText,
     required this.options,
     required this.selectedValue,
@@ -31,7 +30,7 @@ class CustomDropdownButton extends StatelessWidget {
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
-              contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+              contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
             ),
             value: selectedValue.value.isEmpty ? null : selectedValue.value,
             items: options.map((String value) {
@@ -41,7 +40,7 @@ class CustomDropdownButton extends StatelessWidget {
               );
             }).toList(),
             onChanged: (value) => selectedValue.value = value!,
-            icon: Icon(Icons.arrow_drop_down, color: Colors.black, size: 24),
+            icon: const Icon(Icons.arrow_drop_down, color: Colors.black, size: 24),
           ),
         ),
       ),

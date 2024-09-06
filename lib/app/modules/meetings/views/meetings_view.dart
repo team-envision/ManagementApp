@@ -1,5 +1,3 @@
-import 'dart:ui';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -11,6 +9,8 @@ import '../controllers/meetings_controller.dart';
 import 'package:managment_app/Themes/themes.dart';
 
 class MeetingsView extends GetView<MeetingsController> {
+  const MeetingsView({super.key});
+
   @override
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
@@ -61,12 +61,12 @@ class MeetingsView extends GetView<MeetingsController> {
                     color: theme.colorPrimary,
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Container(
                   width: screenWidth * 0.8,
                   padding: const EdgeInsets.all(16.0),
                   decoration: BoxDecoration(
-                    color: Color(0xFF094454),
+                    color: const Color(0xFF094454),
                     borderRadius: BorderRadius.circular(15),
                     boxShadow: [BoxShadow(color: theme.colorLevel0, spreadRadius: 2, blurRadius: 4)],
                   ),
@@ -101,10 +101,10 @@ class MeetingsView extends GetView<MeetingsController> {
                     ],
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Container(
                   decoration: BoxDecoration(
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         color: Colors.black26,
                         offset: Offset(0, 4),
@@ -115,10 +115,6 @@ class MeetingsView extends GetView<MeetingsController> {
                   ),
                   child: ElevatedButton(
                     onPressed: () {},
-                    child: Text(
-                      'ADD MEETING DESCRIPTION',
-                      style: theme.kSmallTextStyle,
-                    ),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: theme.colorPrimary,
                       elevation: 0,
@@ -126,12 +122,16 @@ class MeetingsView extends GetView<MeetingsController> {
                         borderRadius: BorderRadius.circular(15),
                       ),
                     ),
+                    child: Text(
+                      'ADD MEETING DESCRIPTION',
+                      style: theme.kSmallTextStyle,
+                    ),
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Container(
                   decoration: BoxDecoration(
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         color: Colors.black26,
                         offset: Offset(0, 4),
@@ -142,20 +142,20 @@ class MeetingsView extends GetView<MeetingsController> {
                   ),
                   child: ElevatedButton(
                     onPressed: () {},
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text('Send Reminder', style: GoogleFonts.raleway(color: Colors.grey[700], fontSize: 12,fontWeight: FontWeight.w600)),
-                        SizedBox(width: 8),
-                        Icon(Icons.notifications_active, color: Colors.grey[700]),
-                      ],
-                    ),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blue[100],
                       elevation: 0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15),
                       ),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text('Send Reminder', style: GoogleFonts.raleway(color: Colors.grey[700], fontSize: 12,fontWeight: FontWeight.w600)),
+                        const SizedBox(width: 8),
+                        Icon(Icons.notifications_active, color: Colors.grey[700]),
+                      ],
                     ),
                   ),
                 ),
