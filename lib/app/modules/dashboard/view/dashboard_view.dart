@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:managment_app/app/modules/meetings/components/MeetsConductedTile.dart';
-import 'package:managment_app/app/modules/meetings/components/UpcomingMeetTile.dart';
-import '../../meetings/components/AnnouncementBox.dart';
+import '../../../../components/AnnouncementBox.dart';
+import '../../../../components/MeetsConductedTile.dart';
+import '../../../../components/UpcomingMeetTile.dart';
 import '../controller/dasboard_controller.dart';
 import 'package:managment_app/Themes/themes.dart';
 
