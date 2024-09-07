@@ -8,6 +8,7 @@ import '../../../../Themes/themes.dart';
 class LoginView extends GetView<LoginViewController> {
   const LoginView({super.key});
 
+
   @override
   Widget build(BuildContext context) {
     final theme = Get.theme;

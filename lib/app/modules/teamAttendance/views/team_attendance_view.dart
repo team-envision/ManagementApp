@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -8,6 +7,8 @@ import 'package:managment_app/Themes/themes.dart';
 import '../controllers/team_attendance_controller.dart';
 
 class TeamAttendanceView extends GetView<TeamAttendanceController> {
+  const TeamAttendanceView({super.key});
+
 
   @override
 
@@ -17,7 +18,7 @@ class TeamAttendanceView extends GetView<TeamAttendanceController> {
     return Scaffold(
         appBar: AppBar(
           leading: IconButton(
-            icon: Container(child: Image.asset('assets/images/icon.png'),padding: EdgeInsets.all(5),),
+            icon: Container(padding: const EdgeInsets.all(5),child: Image.asset('assets/images/icon.png'),),
             onPressed: () {},
           ),
           backgroundColor: Get.theme.colorLevel1,
@@ -35,7 +36,7 @@ class TeamAttendanceView extends GetView<TeamAttendanceController> {
                   ],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  stops: [0.2, 1.0]
+                  stops: const [0.2, 1.0]
               )
           ),
           child: Column(
@@ -48,7 +49,7 @@ class TeamAttendanceView extends GetView<TeamAttendanceController> {
                     width: screenWidth,
                     child: TextField(
                       style: GoogleFonts.raleway(textStyle: TextStyle(color: Get.theme.colorLevel0)),
-                      decoration: InputDecoration(contentPadding: EdgeInsets.all(2),
+                      decoration: InputDecoration(contentPadding: const EdgeInsets.all(2),
                         prefixIcon: Icon(Icons.search, color: Get.theme.colorLevel0),
                         hintText: 'Search...',
                         hintStyle: GoogleFonts.raleway(textStyle: TextStyle(color: Get.theme.colorLevel0)),
@@ -75,7 +76,7 @@ class TeamAttendanceView extends GetView<TeamAttendanceController> {
                             child: Padding(
                               padding: const EdgeInsets.all(1.0),
                               child: ExpansionTile(
-                                tilePadding: EdgeInsets.all(8.0),
+                                tilePadding: const EdgeInsets.all(8.0),
                                 collapsedShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                                 title: Text('Name : ', style: Get.theme.kSubTitleTextStyle),

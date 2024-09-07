@@ -7,7 +7,7 @@ class DatePickerField extends StatelessWidget {
   final Rx<DateTime> selectedDate;
   final Function(DateTime) onDateChanged;
 
-  DatePickerField({
+  const DatePickerField({super.key, 
     required this.hintText,
     required this.selectedDate,
     required this.onDateChanged,
@@ -19,14 +19,14 @@ class DatePickerField extends StatelessWidget {
           () => TextFormField(
         decoration: InputDecoration(
           hintText: hintText,
-          hintStyle: TextStyle(color: Colors.black12),
+          hintStyle: const TextStyle(color: Colors.black12),
           filled: true,
           fillColor: Colors.white,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
           ),
-          contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-          suffixIcon: Icon(Icons.arrow_drop_down, color: Colors.black,),
+          contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+          suffixIcon: const Icon(Icons.arrow_drop_down, color: Colors.black,),
         ),
         readOnly: true,
         onTap: () async {
