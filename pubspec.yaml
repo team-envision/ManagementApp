@@ -1,27 +1,29 @@
+
 name: managment_app
 version: 1.0.0+1
 publish_to: none
 description: A new Flutter project.
-environment: 
+environment:
   sdk: '>=3.4.3 <4.0.0'
 
-dependencies: 
+dependencies:
   cupertino_icons: ^1.0.6
   get: ^4.6.6
-  device_preview: ^1.2.0
-  flutter: 
+  flutter:
     sdk: flutter
-  google_fonts: ^6.2.1
+  flutter_svg: ^1.0.3
   get_storage: ^2.1.1
+  google_fonts: ^6.2.1
+  font_awesome_flutter: ^10.0.0
 
-dev_dependencies: 
+dev_dependencies:
   flutter_lints: 4.0.0
-  flutter_test: 
+  flutter_test:
     sdk: flutter
 
-flutter: 
+flutter:
   uses-material-design: true
-
   assets:
-    - assets/images/
+    - 'assets/images/'
+    - 'assets/icons/'
 
