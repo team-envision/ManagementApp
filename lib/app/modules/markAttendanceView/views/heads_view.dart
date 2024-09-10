@@ -3,13 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:managment_app/Themes/themes.dart';
 
-class HeadsView extends StatefulWidget {
-  @override
-  State<HeadsView> createState() => _HeadsViewState();
-}
+import '../controllers/mark_attendance_view_controller.dart';
 
-class _HeadsViewState extends State<HeadsView> {
-
+class HeadsView extends GetView<MarkAttendanceViewController> {
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +27,7 @@ class _HeadsViewState extends State<HeadsView> {
             SizedBox(height:30),
             Expanded(
                 child: ListView.builder(
-                  itemCount: 5,
+                  itemCount: controller.names.length,
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -46,8 +42,7 @@ class _HeadsViewState extends State<HeadsView> {
                                 color: Get.theme.colorLevel0,
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
-                              child:
-                              _CheckBox(),
+                              child: _CheckBox(name: controller.names[index],profile: 'xyz.com'),
                             ),
                           ),
                         ),
@@ -78,10 +73,10 @@ class _HeadsViewState extends State<HeadsView> {
                           Container(child: Image.asset('assets/images/Update.png')),
                         ],
                       )
-                    ),
                   ),
                 ),
               ),
+            ),
           ],
         ),
       ),
@@ -89,31 +84,39 @@ class _HeadsViewState extends State<HeadsView> {
   }
 }
 
-
-class _CheckBox extends StatelessWidget {
-   _CheckBox({super.key});
+class _CheckBox extends StatelessWidget{
   RxBool isChecked = false.obs;
+  final String name;
+  final String profile;
+
+  _CheckBox({required this.name,required this.profile,});
+
+
   @override
   Widget build(BuildContext context) {
+    final controller = Get.find<MarkAttendanceViewController>();
     return Obx((){
       return  CheckboxListTile(
         activeColor: Color.fromRGBO(62, 201, 207, 1),
         value: isChecked.value,
         onChanged: (val) {
-          print(isChecked.value);
-          print(val);
+          if(val == true){
+            controller.checkedTiles.add(name);
+          }
+          else{
+            controller.checkedTiles.remove(name);
+
+          }
           isChecked.value = val!;
-          print(isChecked.value);
-
-
         },
+
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8)),
         title: Row(
           children: [
             CircleAvatar(backgroundColor: Get.theme.colorLevel4,),
             SizedBox(width: 10),
-            Text('NAME : ', style: Get.theme.kBodyTextStyle),
+            Text(name+' : ', style: Get.theme.kBodyTextStyle),
           ],
         ),
       );
