@@ -47,7 +47,8 @@ class ProfileEditView extends StatelessWidget {
                         top: 5,
                         left: 10,
                         child: IconButton(
-                          icon: Icon(Icons.arrow_back_ios, color: theme.dayNight),
+                          icon:
+                              Icon(Icons.arrow_back_ios, color: theme.dayNight),
                           onPressed: () => controller.goBack(),
                         ),
                       ),
@@ -63,7 +64,8 @@ class ProfileEditView extends StatelessWidget {
                         top: 100,
                         child: CircleAvatar(
                           radius: 70,
-                          backgroundImage: AssetImage('assets/images/profile_icon.png'),
+                          backgroundImage:
+                              AssetImage('assets/images/profile_icon.png'),
                           backgroundColor: theme.colorLevel3,
                         ),
                       ),
@@ -121,13 +123,15 @@ class ProfileEditView extends StatelessWidget {
                           suffixIcon: Icon(Icons.arrow_forward_ios),
                           enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
-                              color: theme.colorPrimary, // Custom underline color when not focused
+                              color: theme
+                                  .colorPrimary, // Custom underline color when not focused
                               width: 1.0,
                             ),
                           ),
                           focusedBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
-                              color: theme.colorPrimary, // Custom underline color when focused
+                              color: theme
+                                  .colorPrimary, // Custom underline color when focused
                               width: 2.0,
                             ),
                           ),
@@ -143,42 +147,45 @@ class ProfileEditView extends StatelessWidget {
 
                       // Gender Field
                       Obx(() => DropdownButtonFormField<String>(
-                        value: controller.selectedGender.value,
-                        decoration: InputDecoration(
-                          labelText: 'Gender',
-                          border: UnderlineInputBorder(),
-                          enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                              color: theme.colorPrimary, // Custom underline color when not focused
-                              width: 1.0,
+                            value: controller.selectedGender.value,
+                            decoration: InputDecoration(
+                              labelText: 'Gender',
+                              border: UnderlineInputBorder(),
+                              enabledBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: theme
+                                      .colorPrimary, // Custom underline color when not focused
+                                  width: 1.0,
+                                ),
+                              ),
+                              focusedBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: theme
+                                      .colorPrimary, // Custom underline color when focused
+                                  width: 2.0,
+                                ),
+                              ),
                             ),
-                          ),
-                          focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                              color: theme.colorPrimary, // Custom underline color when focused
-                              width: 2.0,
-                            ),
-                          ),
-                        ),
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please select your gender';
-                          }
-                          return null;
-                        },
-                        icon: Icon(Icons.arrow_forward_ios),
-                        onChanged: (String? newValue) {
-                          if (newValue != null) {
-                            controller.setSelectedGender(newValue);
-                          }
-                        },
-                        items: controller.genders.map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value),
-                          );
-                        }).toList(),
-                      )),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please select your gender';
+                              }
+                              return null;
+                            },
+                            icon: Icon(Icons.arrow_forward_ios),
+                            onChanged: (String? newValue) {
+                              if (newValue != null) {
+                                controller.setSelectedGender(newValue);
+                              }
+                            },
+                            items: controller.genders
+                                .map<DropdownMenuItem<String>>((String value) {
+                              return DropdownMenuItem<String>(
+                                value: value,
+                                child: Text(value),
+                              );
+                            }).toList(),
+                          )),
                       SizedBox(height: 10),
 
                       // Email Field
@@ -189,19 +196,23 @@ class ProfileEditView extends StatelessWidget {
                           suffixIcon: Icon(Icons.arrow_forward_ios),
                           enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
-                              color: theme.colorPrimary, // Custom underline color when not focused
+                              color: theme
+                                  .colorPrimary, // Custom underline color when not focused
                               width: 1.0,
                             ),
                           ),
                           focusedBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
-                              color: theme.colorPrimary, // Custom underline color when focused
+                              color: theme
+                                  .colorPrimary, // Custom underline color when focused
                               width: 2.0,
                             ),
                           ),
                         ),
                         validator: (value) {
-                          if (value == null || value.isEmpty || !value.isEmail) {
+                          if (value == null ||
+                              value.isEmpty ||
+                              !value.isEmail) {
                             return 'Please enter a valid email';
                           }
                           return null;
@@ -215,13 +226,15 @@ class ProfileEditView extends StatelessWidget {
                           border: UnderlineInputBorder(),
                           enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
-                              color: theme.colorPrimary, // Custom underline color when not focused
+                              color: theme
+                                  .colorPrimary, // Custom underline color when not focused
                               width: 1.0,
                             ),
                           ),
                           focusedBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
-                              color: theme.colorPrimary, // Custom underline color when focused
+                              color: theme
+                                  .colorPrimary, // Custom underline color when focused
                               width: 2.0,
                             ),
                           ),
@@ -238,42 +251,45 @@ class ProfileEditView extends StatelessWidget {
 
                       // Year Field
                       Obx(() => DropdownButtonFormField<String>(
-                        value: controller.selectedYear.value,
-                        decoration: InputDecoration(
-                          labelText: 'Year',
-                          border: UnderlineInputBorder(),
-                          enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                              color: theme.colorPrimary, // Custom underline color when not focused
-                              width: 1.0,
+                            value: controller.selectedYear.value,
+                            decoration: InputDecoration(
+                              labelText: 'Year',
+                              border: UnderlineInputBorder(),
+                              enabledBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: theme
+                                      .colorPrimary, // Custom underline color when not focused
+                                  width: 1.0,
+                                ),
+                              ),
+                              focusedBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: theme
+                                      .colorPrimary, // Custom underline color when focused
+                                  width: 2.0,
+                                ),
+                              ),
                             ),
-                          ),
-                          focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                              color: theme.colorPrimary, // Custom underline color when focused
-                              width: 2.0,
-                            ),
-                          ),
-                        ),
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please select your year';
-                          }
-                          return null;
-                        },
-                        icon: Icon(Icons.arrow_forward_ios),
-                        onChanged: (String? newValue) {
-                          if (newValue != null) {
-                            controller.setSelectedYear(newValue);
-                          }
-                        },
-                        items: controller.years.map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value),
-                          );
-                        }).toList(),
-                      )),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please select your year';
+                              }
+                              return null;
+                            },
+                            icon: Icon(Icons.arrow_forward_ios),
+                            onChanged: (String? newValue) {
+                              if (newValue != null) {
+                                controller.setSelectedYear(newValue);
+                              }
+                            },
+                            items: controller.years
+                                .map<DropdownMenuItem<String>>((String value) {
+                              return DropdownMenuItem<String>(
+                                value: value,
+                                child: Text(value),
+                              );
+                            }).toList(),
+                          )),
                       SizedBox(height: 10),
 
                       // Submit Button
@@ -311,5 +327,3 @@ class ProfileEditView extends StatelessWidget {
     );
   }
 }
-
-
