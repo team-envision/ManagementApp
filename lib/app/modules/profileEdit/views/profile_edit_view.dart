@@ -5,7 +5,7 @@ import '../../../../Themes/themes.dart';
 
 class ProfileEditView extends StatelessWidget {
   final ProfileEditController controller = Get.put(ProfileEditController());
-  final _formKey = GlobalKey<FormState>(); // Create a form key
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -92,7 +92,6 @@ class ProfileEditView extends StatelessWidget {
                 ),
                 SizedBox(height: 30),
 
-                // Basic Information Banner
                 Container(
                   width: double.infinity,
                   padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
@@ -110,12 +109,12 @@ class ProfileEditView extends StatelessWidget {
                 ),
                 SizedBox(height: 20),
 
-                // Form for Input Fields
+               
                 Form(
-                  key: _formKey, // Assign the form key
+                  key: _formKey, 
                   child: Column(
                     children: [
-                      // Name Field
+                      
                       TextFormField(
                         decoration: InputDecoration(
                           labelText: 'Name',
@@ -124,14 +123,14 @@ class ProfileEditView extends StatelessWidget {
                           enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
                               color: theme
-                                  .colorPrimary, // Custom underline color when not focused
+                                  .colorPrimary, 
                               width: 1.0,
                             ),
                           ),
                           focusedBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
                               color: theme
-                                  .colorPrimary, // Custom underline color when focused
+                                  .colorPrimary, 
                               width: 2.0,
                             ),
                           ),
@@ -145,7 +144,7 @@ class ProfileEditView extends StatelessWidget {
                       ),
                       SizedBox(height: 10),
 
-                      // Gender Field
+                      
                       Obx(() => DropdownButtonFormField<String>(
                             value: controller.selectedGender.value,
                             decoration: InputDecoration(
@@ -154,14 +153,14 @@ class ProfileEditView extends StatelessWidget {
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: theme
-                                      .colorPrimary, // Custom underline color when not focused
+                                      .colorPrimary, 
                                   width: 1.0,
                                 ),
                               ),
                               focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: theme
-                                      .colorPrimary, // Custom underline color when focused
+                                      .colorPrimary, 
                                   width: 2.0,
                                 ),
                               ),
@@ -188,7 +187,7 @@ class ProfileEditView extends StatelessWidget {
                           )),
                       SizedBox(height: 10),
 
-                      // Email Field
+                      
                       TextFormField(
                         decoration: InputDecoration(
                           labelText: 'Email',
@@ -197,14 +196,14 @@ class ProfileEditView extends StatelessWidget {
                           enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
                               color: theme
-                                  .colorPrimary, // Custom underline color when not focused
+                                  .colorPrimary, 
                               width: 1.0,
                             ),
                           ),
                           focusedBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
                               color: theme
-                                  .colorPrimary, // Custom underline color when focused
+                                  .colorPrimary, 
                               width: 2.0,
                             ),
                           ),
@@ -227,14 +226,14 @@ class ProfileEditView extends StatelessWidget {
                           enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
                               color: theme
-                                  .colorPrimary, // Custom underline color when not focused
+                                  .colorPrimary,
                               width: 1.0,
                             ),
                           ),
                           focusedBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
                               color: theme
-                                  .colorPrimary, // Custom underline color when focused
+                                  .colorPrimary, 
                               width: 2.0,
                             ),
                           ),
@@ -249,7 +248,6 @@ class ProfileEditView extends StatelessWidget {
                       ),
                       SizedBox(height: 10),
 
-                      // Year Field
                       Obx(() => DropdownButtonFormField<String>(
                             value: controller.selectedYear.value,
                             decoration: InputDecoration(
@@ -258,14 +256,14 @@ class ProfileEditView extends StatelessWidget {
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: theme
-                                      .colorPrimary, // Custom underline color when not focused
+                                      .colorPrimary, 
                                   width: 1.0,
                                 ),
                               ),
                               focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: theme
-                                      .colorPrimary, // Custom underline color when focused
+                                      .colorPrimary, 
                                   width: 2.0,
                                 ),
                               ),
@@ -292,11 +290,11 @@ class ProfileEditView extends StatelessWidget {
                           )),
                       SizedBox(height: 10),
 
-                      // Submit Button
+                      
                       ElevatedButton(
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
-                            // Process the data
+                        
                           }
                         },
                         style: ElevatedButton.styleFrom(
@@ -318,7 +316,7 @@ class ProfileEditView extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(height: 20), // Added closing for Column inside Form
+                SizedBox(height: 20),
               ],
             ),
           ),
