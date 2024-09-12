@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import '../modules/profileEdit/bindings/profile_edit_binding.dart';
+import '../modules/profileEdit/views/profile_edit_view.dart';
 
 import 'package:managment_app/app/modules/dashboard/binding/dashboard_binding.dart';
 import 'package:managment_app/app/modules/dashboard/view/dashboard_view.dart';
@@ -13,16 +15,14 @@ import '../modules/markAttendanceView/bindings/mark_attendance_view_binding.dart
 import '../modules/markAttendanceView/views/mark_attendance_view_view.dart';
 import '../modules/teamAttendance/bindings/team_attendance_binding.dart';
 import '../modules/teamAttendance/views/team_attendance_view.dart';
-import '../modules/home/bindings/home_binding.dart';
-import '../modules/home/views/home_view.dart';
 
 
 part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
+  static const INITIAL = Routes.PROFILE_EDIT;
 
-  static const INITIAL = Routes.MARK_ATTENDANCE_VIEW;
 
   static final routes = [
     GetPage(
@@ -55,6 +55,11 @@ class AppPages {
       name: _Paths.LOGIN_VIEW,
       page: () => const LoginView(),
       binding: LoginBinding(),
+    ),
+    GetPage(
+      name: _Paths.PROFILE_EDIT,
+      page: () => ProfileEditView(),
+      binding: ProfileEditBinding(),
     ),
   ];
 }

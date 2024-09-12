@@ -74,7 +74,6 @@ class LoginView extends GetView<LoginViewController> {
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(50),
                                 borderSide: BorderSide.none,
-
                               ),
                               filled: true,
                               fillColor: Colors.transparent,
