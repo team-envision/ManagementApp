@@ -1,4 +1,3 @@
-
 part of 'app_pages.dart';
 // DO NOT EDIT. This is code generated via package:get_cli/get_cli.dart
 
@@ -9,6 +8,7 @@ abstract class Routes {
   static const TEAM_ATTENDANCE = _Paths.TEAM_ATTENDANCE;
   static const DASHBOARD = _Paths.DASHBOARD;
   static const LOGIN_VIEW = _Paths.LOGIN_VIEW;
+  static const SETTINGS = _Paths.SETTINGS;
 }
 
 abstract class _Paths {
@@ -18,9 +18,5 @@ abstract class _Paths {
   static const TEAM_ATTENDANCE = '/team-attendance';
   static const DASHBOARD = '/dashboard';
   static const LOGIN_VIEW = '/login-view';
+  static const SETTINGS = '/settings';
 }
-
-
-
-
-
