@@ -9,8 +9,8 @@ import 'package:managment_app/app/modules/markAttendanceView/views/volunteers_vi
 
 import '../controllers/mark_attendance_view_controller.dart';
 
-class MarkAttendanceViewView extends GetView<MarkAttendanceViewController> {
-  const MarkAttendanceViewView({Key? key}) : super(key: key);
+class MarkAttendanceView extends GetView<MarkAttendanceViewController> {
+  const MarkAttendanceView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
