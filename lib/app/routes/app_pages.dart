@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import '../modules/meetings/bindings/meetings_binding.dart';
+import '../modules/meetings/views/meetings_view.dart';
 import '../modules/profileEdit/bindings/profile_edit_binding.dart';
 import '../modules/profileEdit/views/profile_edit_view.dart';
 
@@ -12,7 +14,7 @@ import 'package:managment_app/app/modules/login/views/login_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/markAttendanceView/bindings/mark_attendance_view_binding.dart';
-import '../modules/markAttendanceView/views/mark_attendance_view_view.dart';
+import '../modules/markAttendanceView/views/mark_attendance_view.dart';
 import '../modules/teamAttendance/bindings/team_attendance_binding.dart';
 import '../modules/teamAttendance/views/team_attendance_view.dart';
 
@@ -42,8 +44,8 @@ class AppPages {
       binding: TeamAttendanceBinding(),
     ),
     GetPage(
-      name: _Paths.MARK_ATTENDANCE_VIEW,
-      page: () => const MarkAttendanceViewView(),
+      name: _Paths.MARKATTENDANCEVIEW,
+      page: () => const MarkAttendanceView(),
       binding: MarkAttendanceViewBinding(),
       ),
     GetPage(
