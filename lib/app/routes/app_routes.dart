@@ -10,6 +10,7 @@ abstract class Routes {
   static const PROFILE_EDIT = _Paths.PROFILE_EDIT;
   static const DASHBOARD = _Paths.DASHBOARD;
   static const MARKATTENDANCEVIEW = _Paths.MARKATTENDANCEVIEW;
+  static const SETTINGS = _Paths.SETTINGS;
 }
 
 abstract class _Paths {
@@ -21,4 +22,5 @@ abstract class _Paths {
   static const PROFILE_EDIT = '/profile-edit';
   static const DASHBOARD = '/dashBoard-view';
   static const MARKATTENDANCEVIEW = '/markAttendance-view';
+  static const SETTINGS = '/settings';
 }
