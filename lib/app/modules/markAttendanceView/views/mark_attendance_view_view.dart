@@ -25,9 +25,9 @@ class MarkAttendanceViewView extends GetView<MarkAttendanceViewController> {
         ),
         body: Column(
           children: [
-            Container(color: Color.fromRGBO(158, 161, 174, 1),height: 30,
+            Container(color: const Color.fromRGBO(158, 161, 174, 1),height: 30,
               child: TabBar(
-                labelPadding: EdgeInsets.all(0.8),
+                labelPadding: const EdgeInsets.all(0.8),
                 unselectedLabelColor: Get.theme.colorLevel0,
                 labelColor: Get.theme.colorLevel0,
                 indicator: BoxDecoration(
@@ -35,16 +35,16 @@ class MarkAttendanceViewView extends GetView<MarkAttendanceViewController> {
                   shape: BoxShape.rectangle,
                   borderRadius: BorderRadius.circular(90),
                 ),
-                indicatorPadding: EdgeInsets.symmetric(horizontal: 0,vertical: 3.0),
+                indicatorPadding: const EdgeInsets.symmetric(horizontal: 0,vertical: 3.0),
                 indicatorColor: Get.theme.colorLevel4,
                 dividerColor: Colors.transparent,
-                isScrollable: false,padding: EdgeInsets.symmetric(horizontal: 10),
+                isScrollable: false,padding: const EdgeInsets.symmetric(horizontal: 10),
                 tabs: [
 
-                  Tab(text: ' organizers '),
-                  Tab(text: ' heads '),
-                  Tab(text: ' members '),
-                  Tab(text: ' volunteers '),
+                  const Tab(text: ' organizers '),
+                  const Tab(text: ' heads '),
+                  const Tab(text: ' members '),
+                  const Tab(text: ' volunteers '),
                 ],
               ),
             ),

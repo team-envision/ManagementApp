@@ -24,7 +24,7 @@ Widget build(BuildContext context) {
       ),
       child: Column(
         children: [
-          SizedBox(height:30),
+          const SizedBox(height:30),
           Expanded(
               child: ListView.builder(
                 itemCount: controller.names.length,
@@ -69,7 +69,7 @@ Widget build(BuildContext context) {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text("UPDATE",style: Get.theme.kSubTitleTextStyle),
-                        SizedBox(width: 10),
+                        const SizedBox(width: 10),
                         Container(child: Image.asset('assets/images/Update.png')),
                       ],
                     )
@@ -97,7 +97,7 @@ class _CheckBox extends StatelessWidget{
     final controller = Get.find<MarkAttendanceViewController>();
     return Obx((){
       return  CheckboxListTile(
-        activeColor: Color.fromRGBO(62, 201, 207, 1),
+        activeColor: const Color.fromRGBO(62, 201, 207, 1),
         value: isChecked.value,
         onChanged: (val) {
           if(val == true){
@@ -115,7 +115,7 @@ class _CheckBox extends StatelessWidget{
         title: Row(
           children: [
             CircleAvatar(backgroundColor: Get.theme.colorLevel4,),
-            SizedBox(width: 10),
+            const SizedBox(width: 10),
             Text(name+' : ', style: Get.theme.kBodyTextStyle),
           ],
         ),

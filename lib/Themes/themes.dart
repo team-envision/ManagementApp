@@ -18,6 +18,7 @@ extension ThemeExtension on ThemeData {
   Color get colorLevel2 => const Color(0xFF094454); // deepBlue
   Color get colorLevel3 => const Color(0xFFD9D9D9); // lightGrey
   Color get colorLevel4 => const Color.fromARGB(236, 255, 255, 255);
+  Color get colorLevel5 => const Color(0xFFA1CAD9);
 
 // DIMENSIONS:
 
