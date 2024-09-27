@@ -1,23 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:managment_app/Themes/themes.dart';
+import '../../../../components/kDropDownButton.dart';
+import '../../../../components/kTextField.dart';
 import '../controllers/registration_controller.dart';
 
-class RegistrationView extends GetView<RegistrationController> {
+class RegistrationView extends StatefulWidget {
   const RegistrationView({Key? key}) : super(key: key);
 
+  @override
+  _RegistrationViewState createState() => _RegistrationViewState();
+}
+
+class _RegistrationViewState extends State<RegistrationView> {
+  // Create a GlobalKey for the Form
+  final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Get.theme.colorLevel1,
         centerTitle: true,
-        title: Text(
-            'REGISTRATION',
-            style: Get.theme.kTitleTextStyle ),
+        title: Text('REGISTRATION', style: Get.theme.kTitleTextStyle),
         elevation: 0,
       ),
-      body :SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Container(
           decoration: BoxDecoration(
               gradient: LinearGradient(
@@ -27,136 +35,154 @@ class RegistrationView extends GetView<RegistrationController> {
                   ],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  stops: [0.5, 1.0]
-              )
-          ),
-          child: Column(
-            children: [
-              SingleChildScrollView(
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  stops: [0.5, 1.0])),
+          child: Form(
+            key: formKey,
+            child: Column(
+              children: [
+                SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const SizedBox(height: 10),
+                        Center(
+                          child: Text(
+                            'STUDENT DETAILS',
+                            style: Get.theme.kSubTitleTextStyle,
+                          ),
+                        ),
+                        const SizedBox(height: 20),
+                        Container(
+                          padding: const EdgeInsets.all(16.0),
+                          decoration: BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                blurRadius: 8,
+                                color: Get.theme.colorLevel0,
+                                spreadRadius: 5,
+                              )
+                            ],
+                            color: Get.theme.colorLevel2,
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: Column(
+                            children: [
+                              buildTextField(
+                                labelText: 'NAME:',
+                                validator: (value) {
+                                  if (value == null ||
+                                      value.isEmpty ||
+                                      !value.isNAME) {
+                                    return 'Please enter name';
+                                  }
+                                  return null;
+                                },
+                              ),
+                              const SizedBox(height: 30),
+                              buildTextField(
+                                labelText: 'REGISTRATION NO:',
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please enter registration number';
+                                  }
+                                  return null;
+                                },
+                              ),
+                              const SizedBox(height: 30),
+                              buildDropdownButtonFormField(
+                                labelText: 'DESIGNATION:',
+                                items: [
+                                  'VOLUNTEER',
+                                  'COMMITTEE MEMBER',
+                                  'COMMITTEE HEAD',
+                                  'ORGANIZER'
+                                ],
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please select a designation';
+                                  } else
+                                    return null;
+                                },
+                              ),
+                              const SizedBox(height: 30),
+                              buildTextField(
+                                labelText: 'DEPARTMENT:',
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please enter your department';
+                                  }
+                                  return null;
+                                },
+                              ),
+                              const SizedBox(height: 30),
+                              buildDropdownButtonFormField(
+                                labelText: 'DIVISION:',
+                                items: ['A', 'B', 'C'],
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please select a division';
+                                  }
+                                  return null;
+                                },
+                              ),
+                              const SizedBox(height: 30),
+                              buildTextField(
+                                labelText: 'NET ID:',
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please enter your net ID';
+                                  }
+                                  return null;
+                                },
+                              ),
+                              const SizedBox(height: 30),
+                              buildTextField(
+                                labelText: 'Ph no:',
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please enter your phone number';
+                                  }
+                                  return null;
+                                },
+                              ),
+                              const SizedBox(height: 30),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                ElevatedButton.icon(
+                  onPressed: () {
+                    if (formKey.currentState!.validate()) {}
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Get.theme.colorLevel1,
+                    alignment: Alignment.center,
+                    fixedSize: const Size(137, 0),
+                  ),
+                  label: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      SizedBox(height: 10),
-                      Center(
-                        child: Text(
-                          'STUDENT DETAILS',
-                          style: Get.theme.kSubTitleTextStyle,
-                        ),
+                      Text(
+                        style: Get.theme.kSmallTextStyle,
+                        'ENROLL',
                       ),
-                      SizedBox(height: 20),
-                      Container(
-                        padding: const EdgeInsets.all(16.0),
-                        decoration: BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                              blurRadius: 8,
-                              color: Get.theme.colorLevel0,
-                              spreadRadius: 5,
-                            )
-                          ],
-                          color: Get.theme.colorLevel2, // Match the container background color
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: Column(
-                          children: [
-                            _buildTextField('NAME:'),
-                            SizedBox(height: 30),
-                            _buildTextField('REGISTRATION NO:'),
-                            SizedBox(height: 30),
-                            _buildDropdownButtonFormField('DESIGNATION:', ['VOLUNTEER', 'COMMITTEE MEMBER ', 'COMMITTEE HEAD','ORGANIZER']),
-                            SizedBox(height: 30),
-                            _buildTextField('DEPARTMENT:'),
-                            SizedBox(height: 30),
-                            _buildDropdownButtonFormField('DIVISION:', ['A', 'B', 'C']),//IDK what to put in designation
-                            SizedBox(height: 30),
-                            _buildTextField('NET ID:'),
-                            SizedBox(height: 30),
-                            _buildTextField('Ph no:'),
-                            SizedBox(height: 30),
-
-                          ],
-                        ),
+                      const SizedBox(
+                        width: 10,
                       ),
+                      Image.asset('assets/images/Login.png'),
                     ],
                   ),
                 ),
-              ),
-              ElevatedButton.icon(
-                  onPressed: () {},
-                  label: Text('ENROLL', style: Get.theme.kSmallTextStyle,),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Get.theme.colorLevel1,
-                  ),
-                  icon: Icon(Icons.arrow_circle_right_rounded,
-                    color: Get.theme.colorLevel4,
-                  )
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-  Widget _buildTextField(String labelText) {
-    return Container(
-      decoration: BoxDecoration(
-        boxShadow: [
-          BoxShadow(
-            blurRadius: 8,
-            color: Get.theme.colorLevel0,
-            spreadRadius: 2,
-          )
-        ],
-      ),
-      child: TextField(style: TextStyle(
-          color: Get.theme.colorLevel0),
-        decoration: InputDecoration(
-          fillColor: Get.theme.colorLevel4,
-          labelText: labelText,
-          labelStyle: TextStyle(color: Get.theme.colorLevel0),
-          filled: true,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildDropdownButtonFormField(String labelText, List<String> items) {
-    return Container(
-      decoration: BoxDecoration(
-        boxShadow: [
-          BoxShadow(
-            blurRadius: 8,
-            color: Get.theme.colorLevel0,
-            spreadRadius: 2,
-          )
-        ],
-      ),
-      child: DropdownButtonFormField<String>(
-        iconEnabledColor: Get.theme.colorLevel0,
-        iconDisabledColor: Get.theme.colorLevel0,
-        dropdownColor: Get.theme.colorLevel4,
-          decoration: InputDecoration(
-            fillColor: Get.theme.colorLevel4,
-            labelText: labelText,
-            labelStyle: TextStyle(color: Get.theme.colorLevel0),
-            filled: true,
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
+              ],
             ),
           ),
-          items: items
-              .map((item) => DropdownMenuItem(
-            value: item,
-            child: Text(item,style: TextStyle(color: Get.theme.colorLevel0),),
-          ))
-              .toList(),
-          onChanged: (value) {},
-          ),
+        ),
+      ),
     );
-    }
+  }
 }
