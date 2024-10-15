@@ -10,6 +10,13 @@ import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/markAttendanceView/bindings/mark_attendance_view_binding.dart';
+
+import '../modules/meetings/bindings/meetings_binding.dart';
+import '../modules/meetings/views/meetings_view.dart';
+import '../modules/profileEdit/bindings/profile_edit_binding.dart';
+import '../modules/profileEdit/views/profile_edit_view.dart';
+import '../modules/registration/bindings/registration_binding.dart';
+import '../modules/registration/views/registration_view.dart';
 import '../modules/markAttendanceView/views/mark_attendance_view.dart';
 import '../modules/meetings/bindings/meetings_binding.dart';
 import '../modules/meetings/views/meetings_view.dart';
@@ -23,6 +30,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
   static const INITIAL = Routes.SETTINGS;
+
 
   static final routes = [
     GetPage(
@@ -64,6 +72,12 @@ class AppPages {
       name: _Paths.SETTINGS,
       page: () => const SettingsView(),
       binding: SettingsBinding(),
+      ),
+       GetPage(
+      name: _Paths.REGISTRATION,
+      page: () => const RegistrationView(),
+      binding: RegistrationBinding(),
     ),
   ];
 }
+
