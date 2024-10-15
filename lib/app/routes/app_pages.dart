@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 
-
+import '../modules/Settings/bindings/settings_binding.dart';
+import '../modules/Settings/views/settings_view.dart';
 import '../modules/dashboard/binding/dashboard_binding.dart';
 import '../modules/dashboard/view/dashboard_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -17,7 +18,10 @@ import '../modules/profileEdit/views/profile_edit_view.dart';
 import '../modules/registration/bindings/registration_binding.dart';
 import '../modules/registration/views/registration_view.dart';
 import '../modules/markAttendanceView/views/mark_attendance_view.dart';
-
+import '../modules/meetings/bindings/meetings_binding.dart';
+import '../modules/meetings/views/meetings_view.dart';
+import '../modules/profileEdit/bindings/profile_edit_binding.dart';
+import '../modules/profileEdit/views/profile_edit_view.dart';
 import '../modules/teamAttendance/bindings/team_attendance_binding.dart';
 import '../modules/teamAttendance/views/team_attendance_view.dart';
 
@@ -25,7 +29,8 @@ part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
-  static const INITIAL = Routes.REGISTRATION;
+  static const INITIAL = Routes.SETTINGS;
+
 
   static final routes = [
     GetPage(
@@ -64,6 +69,11 @@ class AppPages {
       binding: ProfileEditBinding(),
     ),
     GetPage(
+      name: _Paths.SETTINGS,
+      page: () => const SettingsView(),
+      binding: SettingsBinding(),
+      ),
+       GetPage(
       name: _Paths.REGISTRATION,
       page: () => const RegistrationView(),
       binding: RegistrationBinding(),
