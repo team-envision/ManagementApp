@@ -8,10 +8,10 @@ abstract class Routes {
   static const TEAM_ATTENDANCE = _Paths.MEETINGS;
   static const LOGIN_VIEW = _Paths.LOGIN_VIEW;
   static const PROFILE_EDIT = _Paths.PROFILE_EDIT;
-  static const REGISTRATION = _Paths.REGISTRATION; 
+  static const REGISTRATION = _Paths.REGISTRATION;
   static const DASHBOARD = _Paths.DASHBOARD;
   static const MARKATTENDANCEVIEW = _Paths.MARKATTENDANCEVIEW;
-
+  static const TEAM_PAGE = _Paths.TEAM_PAGE;
 }
 
 abstract class _Paths {
@@ -26,5 +26,5 @@ abstract class _Paths {
   static const REGISTRATION = '/registration';
   static const DASHBOARD = '/dashBoard-view';
   static const MARKATTENDANCEVIEW = '/markAttendance-view';
-
+  static const TEAM_PAGE = '/team-page';
 }
