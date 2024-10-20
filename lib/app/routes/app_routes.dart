@@ -11,7 +11,9 @@ abstract class Routes {
   static const REGISTRATION = _Paths.REGISTRATION;
   static const DASHBOARD = _Paths.DASHBOARD;
   static const MARKATTENDANCEVIEW = _Paths.MARKATTENDANCEVIEW;
-  static const TEAM_PAGE = _Paths.TEAM_PAGE;
+
+  static const SETTINGS = _Paths.SETTINGS;
+
 }
 
 abstract class _Paths {
@@ -27,4 +29,6 @@ abstract class _Paths {
   static const DASHBOARD = '/dashBoard-view';
   static const MARKATTENDANCEVIEW = '/markAttendance-view';
   static const TEAM_PAGE = '/team-page';
+  static const SETTINGS = '/settings';
 }
+
