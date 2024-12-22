@@ -3,13 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:managment_app/Themes/themes.dart';
+import 'package:managment_app/app/modules/markAttendanceView/views/mark_attendance_view.dart';
 
+import '../../home/views/home_view.dart';
 import '../controllers/team_attendance_controller.dart';
 
 class TeamAttendanceView extends GetView<TeamAttendanceController> {
   const TeamAttendanceView({super.key});
 
-
+//MY TEAM PAGE PE ICON PE CLICK KARNE SE IT WILL USE THE SAME PAGE BUT DIFFERENT LOGIC JISME ORGANISERS PE CLICK KARNE PE SIRF ORGANISER KA AAYEGA
   @override
 
   Widget build(BuildContext context) {
@@ -19,7 +21,9 @@ class TeamAttendanceView extends GetView<TeamAttendanceController> {
         appBar: AppBar(
           leading: IconButton(
             icon: Container(padding: const EdgeInsets.all(5),child: Image.asset('assets/images/icon.png'),),
-            onPressed: () {},
+            onPressed: () {
+              Get.back();
+            },
           ),
           backgroundColor: Get.theme.colorLevel1,
           title: Text('MY TEAM',

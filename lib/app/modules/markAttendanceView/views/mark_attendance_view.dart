@@ -10,24 +10,31 @@ import 'package:managment_app/app/modules/markAttendanceView/views/volunteers_vi
 import '../controllers/mark_attendance_view_controller.dart';
 
 class MarkAttendanceView extends GetView<MarkAttendanceViewController> {
-  const MarkAttendanceView({Key? key}) : super(key: key);
+  const MarkAttendanceView({super.key});
   @override
   Widget build(BuildContext context) {
+    Get.put(MarkAttendanceViewController());
     return DefaultTabController(
       length: 4,
       child: Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            icon: Container(padding: const EdgeInsets.all(5),child: Image.asset('assets/images/icon.png'),),
+            onPressed: () {
+              Get.back();
+            },
+          ),
           backgroundColor: Get.theme.colorLevel1,
-          title: Text('ATTENDANCE',
+          title: Text('ATTENDANCE',                  //CHANGE TO UPDATE AND USE SAME PAGE DIFFERENT LOGIC
               style: Get.theme.kTitleTextStyle),foregroundColor: Get.theme.colorLevel0,
           elevation: 0,
           centerTitle: true,
         ),
         body: Column(
           children: [
-            Container(color: Color.fromRGBO(158, 161, 174, 1),height: 30,
+            Container(color: const Color.fromRGBO(158, 161, 174, 1),height: 30,
               child: TabBar(
-                labelPadding: EdgeInsets.all(0.8),
+                labelPadding: const EdgeInsets.all(0.8),
                 unselectedLabelColor: Get.theme.colorLevel0,
                 labelColor: Get.theme.colorLevel0,
                 indicator: BoxDecoration(
@@ -35,11 +42,11 @@ class MarkAttendanceView extends GetView<MarkAttendanceViewController> {
                   shape: BoxShape.rectangle,
                   borderRadius: BorderRadius.circular(90),
                 ),
-                indicatorPadding: EdgeInsets.symmetric(horizontal: 0,vertical: 3.0),
+                indicatorPadding: const EdgeInsets.symmetric(horizontal: 0,vertical: 3.0),
                 indicatorColor: Get.theme.colorLevel4,
                 dividerColor: Colors.transparent,
-                isScrollable: false,padding: EdgeInsets.symmetric(horizontal: 10),
-                tabs: [
+                isScrollable: false,padding: const EdgeInsets.symmetric(horizontal: 10),
+                tabs: const [
 
                   Tab(text: ' organizers '),
                   Tab(text: ' heads '),
@@ -50,7 +57,7 @@ class MarkAttendanceView extends GetView<MarkAttendanceViewController> {
             ),
             Expanded(
               child: TabBarView(
-                children: [OrganizersView(),HeadsView(),MembersView(),VolunteersView()],
+                children: [OrganizersView(), HeadsView(),MembersView(), VolunteersView()],
               ),
             ),
           ],

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class SettingsController extends GetxController {
@@ -7,7 +8,6 @@ class SettingsController extends GetxController {
   void toggleProfileExpansion() {
   isProfileExpanded.value = !isProfileExpanded.value;
   }
-
 
 
   final count = 0.obs;

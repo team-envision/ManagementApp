@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:managment_app/app/modules/home/views/home_view.dart';
 import 'package:managment_app/app/modules/login/controllers/login_controller.dart';
 
 import '../../../../Themes/themes.dart';
@@ -232,7 +232,7 @@ class LoginView extends GetView<LoginViewController> {
                       ElevatedButton(
                         onPressed: () {
                           if (formKey.currentState!.validate()) {
-                            // Perform login action
+                            Get.to(() => HomeView());
                           }
                         },
                         style: ElevatedButton.styleFrom(

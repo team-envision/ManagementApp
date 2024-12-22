@@ -7,10 +7,9 @@ final List<String> domainOptions = [
   'Machination', 'Electrizite', 'Digital Design', 'X-Zone'
 ];
 
+RxInt currentIndex = 0.obs;
 
 final List<String> forOptions = ['Volunteer', 'Member', 'Head'];
-
-
 final List<String> modeOptions = ['Online', 'Offline'];
 
 class MeetingsController extends GetxController {
@@ -26,6 +25,9 @@ class MeetingsController extends GetxController {
   var selectedDate = Rx<DateTime>(DateTime.now());
   var selectedTime = Rx<TimeOfDay>(TimeOfDay.now());
 
+  // Observable for meeting description
+  var description = ''.obs;
+
   void updateSelectedDate(DateTime date) {
     selectedDate.value = date;
     dateController.text = '${date.year}-${date.month}-${date.day}';
@@ -34,5 +36,63 @@ class MeetingsController extends GetxController {
   void updateSelectedTime(TimeOfDay time) {
     selectedTime.value = time;
     timeController.text = '${time.hour}:${time.minute}';
+  }
+
+  // Function to show the dialog and update the description
+  void showDescriptionDialog(BuildContext context) {
+    final TextEditingController descriptionController = TextEditingController();
+
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return Theme(
+            data: Theme.of(context).copyWith(
+          dialogBackgroundColor: const Color (0xFF002431),
+        ),
+        child: AlertDialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+          title: const Text(
+            'Add Meeting Description',
+            style: TextStyle( color: Colors.white, fontWeight: FontWeight.bold),
+          ),
+          content: TextField(
+            controller: descriptionController,
+            decoration: InputDecoration(
+              hintText: 'Enter meeting description',
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
+            maxLines: 3,
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text(
+                'Cancel',
+                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                if (descriptionController.text.trim().isNotEmpty) {
+                  description.value = descriptionController.text.trim();
+                }
+                Navigator.pop(context);
+              },
+              child: const Text(
+                'Done',
+                style: TextStyle( color:Colors.cyan, fontWeight: FontWeight.bold),
+              ),
+            ),
+          ],
+        ),
+        );
+      },
+    );
   }
 }

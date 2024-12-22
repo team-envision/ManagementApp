@@ -43,7 +43,7 @@ class MeetsConductedTile extends StatelessWidget {
                 backgroundColor: Colors.blue[100],
               ),
               child: Center(
-              child: Text('Update\nAttendance', textAlign: TextAlign.center, style: TextStyle(color: Colors.black, fontSize: 10))),))
+              child: Text('Update\nAttendance', textAlign: TextAlign.center, style: TextStyle(color: Colors.black, fontSize: 9))),))
         ],
       )
 
