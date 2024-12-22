@@ -1,9 +1,14 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:managment_app/Themes/themes.dart';
+import 'package:managment_app/app/modules/login/views/login_view.dart';
+import 'package:managment_app/app/modules/markAttendanceView/views/mark_attendance_view.dart';
+import 'package:managment_app/app/modules/teamAttendance/views/team_attendance_view.dart';
 import 'package:managment_app/components/SettingButton.dart';
 import '../../../../components/Logoutbutton.dart';
+import '../../login/controllers/login_controller.dart';
+import '../../profileEdit/views/profile_edit_view.dart';
+import '../../registration/views/registration_view.dart';
 import '../controllers/settings_controller.dart';
 
 class SettingsView extends GetView<SettingsController> {
@@ -42,7 +47,7 @@ class SettingsView extends GetView<SettingsController> {
                     ),
                   ),
                   Positioned(
-                    top: -10,
+                    top: 10,
                     child: Container(
                       padding: EdgeInsets.symmetric(
                         vertical: screenHeight * 0.03,
@@ -56,7 +61,7 @@ class SettingsView extends GetView<SettingsController> {
                             color: Colors.black.withOpacity(0.1),
                             spreadRadius: 5,
                             blurRadius: 10,
-                            offset: Offset(0, 5),
+                            offset: const Offset(0, 5),
                           ),
                         ],
                       ),
@@ -65,6 +70,7 @@ class SettingsView extends GetView<SettingsController> {
                         style: theme.kTitleTextStyle.copyWith(
                           letterSpacing: 5,
                           fontSize: screenWidth * 0.05,
+                          fontWeight: FontWeight.bold,
                         ),
                         textAlign: TextAlign.center,
                       ),
@@ -85,25 +91,46 @@ class SettingsView extends GetView<SettingsController> {
                       Flexible(
                         child: Settingbutton(
                           title: 'MY PROFILE',
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.to(() => ProfileEditView());
+                          },
                         ),
                       ),
                       SizedBox(height: screenHeight * 0.03),
                       Flexible(
                         child: Settingbutton(
                           title: 'REGISTRATION',
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.to(() => const RegistrationView());
+                          },
+                        ),
+                      ),
+                      SizedBox(height: screenHeight * 0.03),
+                      Flexible(
+                        child: Settingbutton(
+                          title: 'UPDATE TEAM', //only for heads org
+                          onPressed: () {
+                            Get.to(() => const MarkAttendanceView());
+                          },
                         ),
                       ),
                       SizedBox(height: screenHeight * 0.03),
                       Flexible(
                         child: Settingbutton(
                           title: 'MY TEAM',
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.to(() => const TeamAttendanceView());
+                          },
                         ),
                       ),
-                      Spacer(),
-                      Logoutbutton(onPressed: () {}),
+                      //add a button for past meetings conducted
+                      const Spacer(),
+                      Logoutbutton(
+                        onPressed: () {
+                          Get.lazyPut(() => LoginViewController());
+                          Get.to(() => const LoginView());
+                        },
+                      ),
                     ],
                   ),
                 ),

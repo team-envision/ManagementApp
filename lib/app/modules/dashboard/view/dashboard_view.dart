@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:managment_app/app/modules/markAttendanceView/views/mark_attendance_view.dart';
+import 'package:managment_app/app/modules/teamAttendance/views/team_attendance_view.dart';
 import '../../../../components/AnnouncementBox.dart';
 import '../../../../components/MeetsConductedTile.dart';
 import '../../../../components/UpcomingMeetTile.dart';
@@ -111,7 +113,9 @@ class DashboardView extends GetView<DashboardController> {
                   SizedBox(height: 8),
                   MeetsConductedTile(
                     title: 'Design - 4/06/24',
-                    OnUpdateAttendance: () {},
+                    OnUpdateAttendance: () {
+                        Get.to(() => MarkAttendanceView());
+                        },
                   ),
                 ],
               ),

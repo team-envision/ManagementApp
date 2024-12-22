@@ -1,10 +1,12 @@
   import 'package:flutter/material.dart';
   import 'package:get/get.dart';
   import 'package:managment_app/Themes/themes.dart';
-
+  import 'package:managment_app/app/modules/home/views/home_view.dart';
   import '../controllers/mark_attendance_view_controller.dart';
 
   class VolunteersView extends GetView<MarkAttendanceViewController> {
+  const VolunteersView({super.key});
+
 
     @override
     Widget build(BuildContext context) {
@@ -18,12 +20,12 @@
                   ],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  stops: [0.2, 1.0]
+                  stops: const [0.2, 1.0]
               )
           ),
           child: Column(
             children: [
-              SizedBox(height:30),
+              const SizedBox(height:30),
               Expanded(
                   child: ListView.builder(
                     itemCount: controller.names.length,
@@ -63,13 +65,28 @@
                     ),
                     height: Get.height*0.05,
                     width: Get.width*0.35,
-                    child: TextButton(onPressed: () {},
+                    child: TextButton(onPressed: () {
+
+                      Get.snackbar(
+                        'Attendance Updated',
+                        'Attendance has been Updated successfully',
+                        snackPosition: SnackPosition.TOP,
+                        backgroundColor: Colors.grey[300],
+                        colorText: Colors.black,
+                        icon: const Icon(Icons.check_circle, color: Colors.green),
+                        margin: const EdgeInsets.all(10),
+                        duration: const Duration(seconds: 1),
+                      );
+                      Future.delayed(const Duration(seconds: 1), () {
+                        Get.to(() => const HomeView());
+                      });
+                    },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text("UPDATE",style: Get.theme.kSubTitleTextStyle),
-                            SizedBox(width: 10),
-                            Container(child: Image.asset('assets/images/Update.png')),
+                            const SizedBox(width: 10),
+                            Image.asset('assets/images/Update.png'),
                           ],
                         )
                     ),
@@ -83,27 +100,32 @@
     }
   }
 
-  class _CheckBox extends StatelessWidget{
-    RxBool isChecked = false.obs;
+  class _CheckBox extends StatefulWidget{
     final String name;
     final String profile;
 
-    _CheckBox({required this.name,required this.profile,});
+    const _CheckBox({required this.name,required this.profile,});
 
+  @override
+  State<_CheckBox> createState() => _CheckBoxState();
+}
+
+class _CheckBoxState extends State<_CheckBox> {
+    RxBool isChecked = false.obs;
 
     @override
     Widget build(BuildContext context) {
       final controller = Get.find<MarkAttendanceViewController>();
       return Obx((){
         return  CheckboxListTile(
-          activeColor: Color.fromRGBO(62, 201, 207, 1),
+          activeColor: const Color.fromRGBO(62, 201, 207, 1),
           value: isChecked.value,
           onChanged: (val) {
             if(val == true){
-              controller.checkedTiles.add(name);
+              controller.checkedTiles.add(widget.name);
             }
             else{
-              controller.checkedTiles.remove(name);
+              controller.checkedTiles.remove(widget.name);
 
             }
             isChecked.value = val!;
@@ -114,11 +136,11 @@
           title: Row(
             children: [
               CircleAvatar(backgroundColor: Get.theme.colorLevel4,),
-              SizedBox(width: 10),
-              Text(name+' : ', style: Get.theme.kBodyTextStyle),
+              const SizedBox(width: 10),
+              Text('${widget.name} : ', style: Get.theme.kBodyTextStyle),
             ],
           ),
         );
       });
     }
-  }
+}

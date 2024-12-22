@@ -22,7 +22,7 @@ class Settingbutton extends StatelessWidget {
         ),
       ),
 
-      onPressed: () {},
+      onPressed: onPressed,
       child: Text(
        title,
        style: theme.kSubTitleTextStyle,
