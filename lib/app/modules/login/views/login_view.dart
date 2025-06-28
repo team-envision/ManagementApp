@@ -231,7 +231,7 @@ class LoginView extends GetView<LoginViewController> {
                       // Login Button
                       ElevatedButton(
                         onPressed: () {
-                          if (formKey.currentState!.validate()) {
+                          if (true) {
                             Get.to(() => HomeView());
                           }
                         },
