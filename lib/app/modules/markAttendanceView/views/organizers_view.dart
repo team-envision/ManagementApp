@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:managment_app/Themes/themes.dart';
+import 'package:managment_app/app/modules/teamAttendance/views/team_attendance_view.dart';
 
+import '../../home/views/home_view.dart';
 import '../controllers/mark_attendance_view_controller.dart';
 
 class OrganizersView extends GetView<MarkAttendanceViewController> {
@@ -65,7 +67,21 @@ Widget build(BuildContext context) {
                 ),
                 height: Get.height*0.05,
                 width: Get.width*0.35,
-                child: TextButton(onPressed: () {},
+                child: TextButton(onPressed: () {
+                  Get.snackbar(
+                    'Attendance Updated',
+                    'Attendance has been Updated successfully',
+                    snackPosition: SnackPosition.TOP,
+                    backgroundColor: Colors.grey[300],
+                    colorText: Colors.black,
+                    icon: Icon(Icons.check_circle, color: Colors.green),
+                    margin: const EdgeInsets.all(10),
+                    duration: const Duration(seconds: 1),
+                  );
+                  Future.delayed(const Duration(seconds: 1), () {
+                    Get.to(() => HomeView());
+                  });
+                },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

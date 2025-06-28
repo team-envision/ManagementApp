@@ -39,7 +39,7 @@ class TeamPageView extends GetView<TeamPageController> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(height: 35.0),
+                const SizedBox(height: 30.0),
                 Center(
                   child: Text(
                     'MY TEAM',
@@ -51,36 +51,36 @@ class TeamPageView extends GetView<TeamPageController> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 35),
+                const SizedBox(height: 20),
                 TeamTile(
                   title: 'ORGANIZERS',
                   subtitle: '5 members',
                   onTap: () {
-                    Get.toNamed('/teamDetails', arguments: 'Organizers');
+                    Get.toNamed('/team-attendance', arguments: 'Organizers');
                   },
                 ),
-                const SizedBox(height: 35),
+                const SizedBox(height: 20),
                 TeamTile(
                   title: 'HEADS',
                   subtitle: '8 members',
                   onTap: () {
-                    Get.toNamed('/teamDetails', arguments: 'Heads');
+                    Get.toNamed('/team-attendance', arguments: 'Heads');
                   },
                 ),
-                const SizedBox(height: 35),
+                const SizedBox(height: 20),
                 TeamTile(
                   title: 'MEMBERS',
                   subtitle: '11 members',
                   onTap: () {
-                    Get.toNamed('/teamDetails', arguments: 'Members');
+                    Get.toNamed('/team-attendance', arguments: 'Members');
                   },
                 ),
-                const SizedBox(height: 35),
+                const SizedBox(height: 20),
                 TeamTile(
                   title: 'VOLUNTEERS',
                   subtitle: '20 members',
                   onTap: () {
-                    Get.toNamed('/teamDetails', arguments: 'Volunteers');
+                    Get.toNamed('/team-attendance', arguments: 'Volunteers');
                   },
                 ),
                 const SizedBox(height: 20),

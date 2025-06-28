@@ -1,44 +1,36 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class ProfileEditController extends GetxController {
-  //TODO: Implement ProfileEditController
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
-  final count = 0.obs;
+  final isEditing = true.obs;
 
-  @override
-  void onInit() {
-    super.onInit();
+  // TextEditingControllers for editable fields
+  final nameController = TextEditingController();
+  final emailController = TextEditingController();
+  final regNoController = TextEditingController();
+  final phoneController = TextEditingController();
+
+  var selectedGender = Rxn<String>();
+  List<String> get genders => ["Male", "Female", "Others"];
+
+  var selectedYear = Rxn<String>();
+  List<String> get years => ["1st", "2nd", "3rd", "4th", "5th"];
+
+  void toggleEditMode() {
+    isEditing.value = !isEditing.value;
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  void saveProfile() {
+    // Logic to save profile data
+    toggleEditMode();
   }
 
   @override
   void onClose() {
+    nameController.dispose();
+    emailController.dispose();
     super.onClose();
-  }
-
-  void increment() => count.value++;
-
-  var selectedGender = Rxn<String>();
-  void setSelectedGender(String gender) {
-    if (gender != null) {
-      selectedGender.value = gender;
-    }
-  }
-  List<String> get genders => ["Male", "Female","Others"];
-
-  var selectedYear = Rxn<String>();
-  void setSelectedYear(String year) {
-    if (year != null) {
-      selectedYear.value = year;
-    }
-  }
-  List<String> get years => ["1st", "2nd","3rd","4th","5th"];
-
-  void goBack() {
-    Get.back();
   }
 }
