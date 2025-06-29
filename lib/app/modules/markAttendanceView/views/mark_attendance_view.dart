@@ -6,11 +6,14 @@ import 'package:managment_app/app/modules/markAttendanceView/views/heads_view.da
 import 'package:managment_app/app/modules/markAttendanceView/views/members_view.dart';
 import 'package:managment_app/app/modules/markAttendanceView/views/organizers_view.dart';
 import 'package:managment_app/app/modules/markAttendanceView/views/volunteers_view.dart';
+import 'package:managment_app/utilities/constants/images_const.dart';
+import 'package:managment_app/utilities/constants/strings.dart';
 
 import '../controllers/mark_attendance_view_controller.dart';
 
 class MarkAttendanceView extends GetView<MarkAttendanceViewController> {
   const MarkAttendanceView({super.key});
+
   @override
   Widget build(BuildContext context) {
     Get.put(MarkAttendanceViewController());
@@ -19,20 +22,27 @@ class MarkAttendanceView extends GetView<MarkAttendanceViewController> {
       child: Scaffold(
         appBar: AppBar(
           leading: IconButton(
-            icon: Container(padding: const EdgeInsets.all(5),child: Image.asset('assets/images/icon.png'),),
+            icon: Container(
+              padding: const EdgeInsets.all(5),
+              child: Image.asset(KImages.backIcon),
+            ),
             onPressed: () {
               Get.back();
             },
           ),
           backgroundColor: Get.theme.colorLevel1,
-          title: Text('ATTENDANCE',                  //CHANGE TO UPDATE AND USE SAME PAGE DIFFERENT LOGIC
-              style: Get.theme.kTitleTextStyle),foregroundColor: Get.theme.colorLevel0,
+          title: Text(
+              KStrings.attendance, //CHANGE TO UPDATE AND USE SAME PAGE DIFFERENT LOGIC
+              style: Get.theme.kTitleTextStyle),
+          foregroundColor: Get.theme.colorLevel0,
           elevation: 0,
           centerTitle: true,
         ),
         body: Column(
           children: [
-            Container(color: const Color.fromRGBO(158, 161, 174, 1),height: 30,
+            Container(
+              color: const Color.fromRGBO(158, 161, 174, 1),
+              height: 30,
               child: TabBar(
                 labelPadding: const EdgeInsets.all(0.8),
                 unselectedLabelColor: Get.theme.colorLevel0,
@@ -42,22 +52,28 @@ class MarkAttendanceView extends GetView<MarkAttendanceViewController> {
                   shape: BoxShape.rectangle,
                   borderRadius: BorderRadius.circular(90),
                 ),
-                indicatorPadding: const EdgeInsets.symmetric(horizontal: 0,vertical: 3.0),
+                indicatorPadding:
+                    const EdgeInsets.symmetric(horizontal: 0, vertical: 3.0),
                 indicatorColor: Get.theme.colorLevel4,
                 dividerColor: Colors.transparent,
-                isScrollable: false,padding: const EdgeInsets.symmetric(horizontal: 10),
+                isScrollable: false,
+                padding: const EdgeInsets.symmetric(horizontal: 10),
                 tabs: const [
-
-                  Tab(text: ' organizers '),
-                  Tab(text: ' heads '),
-                  Tab(text: ' members '),
-                  Tab(text: ' volunteers '),
+                  Tab(text: KStrings.organizersTab),
+                  Tab(text: KStrings.headsTab),
+                  Tab(text: KStrings.membersTab),
+                  Tab(text: KStrings.volunteersTab),
                 ],
               ),
             ),
             Expanded(
               child: TabBarView(
-                children: [OrganizersView(), HeadsView(),MembersView(), VolunteersView()],
+                children: [
+                  OrganizersView(),
+                  HeadsView(),
+                  MembersView(),
+                  VolunteersView()
+                ],
               ),
             ),
           ],

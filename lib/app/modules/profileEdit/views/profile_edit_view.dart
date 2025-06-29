@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:managment_app/Themes/themes.dart';
+import 'package:managment_app/utilities/constants/images_const.dart';
 
 import '../controllers/profile_edit_controller.dart';
 
@@ -59,8 +60,7 @@ class ProfileEditView extends GetView<ProfileEditController> {
                           top: 100,
                           child: CircleAvatar(
                             radius: 70,
-                            backgroundImage:
-                                AssetImage('assets/images/profile_icon.png'),
+                            backgroundImage: AssetImage(KImages.profileIcon),
                             backgroundColor: theme.colorLevel3,
                           ),
                         ),
@@ -113,31 +113,36 @@ class ProfileEditView extends GetView<ProfileEditController> {
         ),
         const SizedBox(height: 20),
         Text(
-          'Gender: ${controller.selectedGender.value ?? " "}', // Displaying updated gender
+          'Gender: ${controller.selectedGender.value ?? " "}',
+          // Displaying updated gender
           style: theme.kTitleTextStyle
               .copyWith(fontSize: 20, color: theme.colorPrimary),
         ),
         const SizedBox(height: 20),
         Text(
-          'Email: ${controller.emailController.text}', // Displaying updated email
+          'Email: ${controller.emailController.text}',
+          // Displaying updated email
           style: theme.kTitleTextStyle
               .copyWith(fontSize: 20, color: theme.colorPrimary),
         ),
         const SizedBox(height: 20),
         Text(
-          'Year: ${controller.selectedYear.value ?? " "}', // Displaying updated year
+          'Year: ${controller.selectedYear.value ?? " "}',
+          // Displaying updated year
           style: theme.kTitleTextStyle
               .copyWith(fontSize: 20, color: theme.colorPrimary),
         ),
         const SizedBox(height: 20),
         Text(
-          'Registeration No. : ${controller.regNoController.text}', // Displaying updated registration number
+          'Registeration No. : ${controller.regNoController.text}',
+          // Displaying updated registration number
           style: theme.kTitleTextStyle
               .copyWith(fontSize: 20, color: theme.colorPrimary),
         ),
         const SizedBox(height: 20),
         Text(
-          'Phone No. : ${controller.phoneController.text}', // Displaying updated phone number
+          'Phone No. : ${controller.phoneController.text}',
+          // Displaying updated phone number
           style: theme.kTitleTextStyle
               .copyWith(fontSize: 20, color: theme.colorPrimary),
         ),

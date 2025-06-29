@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:managment_app/Themes/themes.dart';
 import 'package:managment_app/app/modules/home/views/home_view.dart';
+import 'package:managment_app/utilities/constants/images_const.dart';
 import '../../../../components/kDropDownButton.dart';
 import '../../../../components/kTextField.dart';
 
@@ -198,7 +199,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                       const SizedBox(
                         width: 10,
                       ),
-                      Image.asset('assets/images/Login.png'),
+                      Image.asset(KImages.loginIcon),
                     ],
                   ),
                   icon: const SizedBox.shrink(),

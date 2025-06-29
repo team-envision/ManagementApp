@@ -3,14 +3,17 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:managment_app/app/modules/home/views/home_view.dart';
+import 'package:managment_app/utilities/constants/images_const.dart';
 import '../../../../components/DatePickerField.dart';
 import '../../../../components/Dropdown.dart';
 import '../../../../components/TimePickerField.dart';
 import 'package:managment_app/Themes/themes.dart';
+import '../../../../utilities/constants/strings.dart';
 import '../controllers/meetings_controller.dart';
 
 class MeetingsView extends GetView<MeetingsController> {
   MeetingsView({super.key});
+
   @override
   final MeetingsController controller = Get.put(MeetingsController());
 
@@ -22,7 +25,7 @@ class MeetingsView extends GetView<MeetingsController> {
       backgroundColor: theme.colorLevel2,
       appBar: AppBar(
         title: Text(
-          'MEETS',
+          KStrings.meetsTitle,
           style: GoogleFonts.raleway(
             color: theme.colorLevel4,
             fontWeight: FontWeight.w600,
@@ -63,7 +66,7 @@ class MeetingsView extends GetView<MeetingsController> {
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: SvgPicture.asset(
-                    'assets/images/calender.svg',
+                    KImages.calendar,
                     width: 100,
                     height: 100,
                     color: theme.colorPrimary,
@@ -89,29 +92,29 @@ class MeetingsView extends GetView<MeetingsController> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       CustomDropdownButton(
-                        hintText: 'DOMAIN',
+                        hintText: KStrings.domainHint,
                         options: domainOptions,
                         selectedValue: controller.domainSelectedValue,
                       ),
                       CustomDropdownButton(
-                        hintText: 'FOR',
+                        hintText: KStrings.forHint,
                         options: forOptions,
                         selectedValue: controller.forSelectedValue,
                       ),
                       DatePickerField(
-                        hintText: 'DATE',
+                        hintText: KStrings.dateHint,
                         selectedDate: controller.selectedDate,
                         onDateChanged: (date) =>
                             controller.selectedDate.value = date,
                       ),
                       TimePickerField(
-                        hintText: 'TIME',
+                        hintText: KStrings.timeHint,
                         selectedTime: controller.selectedTime,
                         onTimeChanged: (time) =>
                             controller.selectedTime.value = time,
                       ),
                       CustomDropdownButton(
-                        hintText: 'MODE',
+                        hintText: KStrings.modeHint,
                         options: modeOptions,
                         selectedValue: controller.modeSelectedValue,
                       ),
@@ -132,7 +135,7 @@ class MeetingsView extends GetView<MeetingsController> {
                     ),
                   ),
                   child: Text(
-                    'ADD MEETING DESCRIPTION',
+                    KStrings.addMeetingDescriptionButton,
                     style: theme.kSmallTextStyle,
                   ),
                 ),
@@ -174,7 +177,7 @@ class MeetingsView extends GetView<MeetingsController> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        'Send Reminder',
+                        KStrings.sendReminderButton,
                         style: GoogleFonts.raleway(
                           color: Colors.grey[700],
                           fontSize: 12,

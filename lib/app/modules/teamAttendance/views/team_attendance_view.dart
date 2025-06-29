@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:managment_app/Themes/themes.dart';
 import 'package:managment_app/app/modules/markAttendanceView/views/mark_attendance_view.dart';
+import 'package:managment_app/utilities/constants/images_const.dart';
 
 import '../../home/views/home_view.dart';
 import '../controllers/team_attendance_controller.dart';
@@ -20,7 +21,7 @@ class TeamAttendanceView extends GetView<TeamAttendanceController> {
     return Scaffold(
         appBar: AppBar(
           leading: IconButton(
-            icon: Container(padding: const EdgeInsets.all(5),child: Image.asset('assets/images/icon.png'),),
+            icon: Container(padding: const EdgeInsets.all(5),child: Image.asset(KImages.backIcon),),
             onPressed: () {
               Get.back();
             },

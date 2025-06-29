@@ -7,7 +7,6 @@ import '../../Settings/views/settings_view.dart';
 import '../../meetings/views/meetings_view.dart';
 
 class HomeView extends StatefulWidget {
-
   const HomeView({super.key});
 
   @override
@@ -28,7 +27,7 @@ class _HomeViewState extends State<HomeView> {
         onPageChanged: (index) => currentIndex.value = index,
         children: [
           const DashboardView(), // Content for the Home tab
-           MeetingsView(),
+          MeetingsView(),
           const TeamPageView(), // Profile content
           const SettingsView(),
         ],

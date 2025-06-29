@@ -2,6 +2,8 @@
   import 'package:get/get.dart';
   import 'package:managment_app/Themes/themes.dart';
   import 'package:managment_app/app/modules/home/views/home_view.dart';
+import 'package:managment_app/utilities/constants/images_const.dart';
+import 'package:managment_app/utilities/constants/strings.dart';
   import '../controllers/mark_attendance_view_controller.dart';
 
   class VolunteersView extends GetView<MarkAttendanceViewController> {
@@ -43,7 +45,7 @@
                                   color: Get.theme.colorLevel0,
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
-                                child: _CheckBox(name: controller.names[index],profile: 'xyz.com'),
+                                child: _CheckBox(name: controller.names[index],profile: KStrings.sampleProfile),
                               ),
                             ),
                           ),
@@ -84,9 +86,9 @@
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text("UPDATE",style: Get.theme.kSubTitleTextStyle),
+                            Text(KStrings.updateButton,style: Get.theme.kSubTitleTextStyle),
                             const SizedBox(width: 10),
-                            Image.asset('assets/images/Update.png'),
+                            Image.asset(KImages.update),
                           ],
                         )
                     ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:managment_app/Themes/themes.dart';
+import 'package:managment_app/utilities/constants/images_const.dart';
 import '../../../../components/team_tile.dart';
 import '../controllers/team_page_controller.dart';
 
@@ -28,7 +29,7 @@ class TeamPageView extends GetView<TeamPageController> {
             bottom: 0,
             right: 0,
             child: SvgPicture.asset(
-              'assets/images/Ellipse 3.svg',
+              KImages.ellipse3,
               width: 300,
               height: 500,
               color: Get.theme.colorLevel2,

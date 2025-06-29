@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:managment_app/Themes/themes.dart';
 import 'package:managment_app/app/modules/teamAttendance/views/team_attendance_view.dart';
+import 'package:managment_app/utilities/constants/images_const.dart';
+import 'package:managment_app/utilities/constants/strings.dart';
 
 import '../../home/views/home_view.dart';
 import '../controllers/mark_attendance_view_controller.dart';
@@ -45,7 +47,7 @@ Widget build(BuildContext context) {
                               color: Get.theme.colorLevel0,
                               borderRadius: BorderRadius.circular(8.0),
                             ),
-                            child: _CheckBox(name: controller.names[index],profile: 'xyz.com'),
+                            child: _CheckBox(name: controller.names[index],profile: KStrings.sampleProfile),
                           ),
                         ),
                       ),
@@ -85,9 +87,9 @@ Widget build(BuildContext context) {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("UPDATE",style: Get.theme.kSubTitleTextStyle),
+                        Text(KStrings.updateButton,style: Get.theme.kSubTitleTextStyle),
                         SizedBox(width: 10),
-                        Container(child: Image.asset('assets/images/Update.png')),
+                        Container(child: Image.asset(KImages.update)),
                       ],
                     )
                 ),
