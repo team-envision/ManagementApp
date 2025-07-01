@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:managment_app/Themes/themes.dart';
+import 'package:managment_app/utilities/constants/images_const.dart';
+import 'package:managment_app/utilities/constants/strings.dart';
 
 class Logoutbutton extends StatelessWidget {
   final VoidCallback onPressed;
@@ -34,14 +36,14 @@ class Logoutbutton extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              'Logout',
+              KStrings.logoutButton,
               style: theme.kBodyTextStyle.copyWith(
                 color: Colors.red
               )
             ),
             const SizedBox(width: 30),
             Image.asset(
-              'assets/images/icon.png',
+              KImages.backIcon,
               height: 20,
               width: 20,
             ),

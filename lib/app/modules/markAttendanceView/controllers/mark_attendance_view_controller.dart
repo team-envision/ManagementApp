@@ -5,7 +5,8 @@ class MarkAttendanceViewController extends GetxController {
 
   RxList checkedTiles = [].obs;
   RxBool isChecked = false.obs;
-  RxList names = ['Anushka','Anvita','Samarth','Sayak','Sheerin'].obs;
+  RxList names = ['Anushka', 'Anvita', 'Samarth', 'Sayak', 'Sheerin'].obs;
+
   @override
   void onInit() {
     super.onInit();
@@ -20,6 +21,4 @@ class MarkAttendanceViewController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-
 }

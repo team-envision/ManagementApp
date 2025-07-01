@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:managment_app/Themes/themes.dart';
 import 'package:managment_app/app/modules/home/views/home_view.dart';
+import 'package:managment_app/app/routes/app_pages.dart';
 import 'package:managment_app/utilities/constants/images_const.dart';
 
 import '../../../../utilities/constants/strings.dart';
@@ -80,7 +81,7 @@ Widget build(BuildContext context) {
                     duration: const Duration(seconds: 1),
                   );
                   Future.delayed(const Duration(seconds: 1), () {
-                    Get.to(() => HomeView());
+                    Get.toNamed(Routes.HOME);
                   });
                 },
                     child: Row(

@@ -7,6 +7,7 @@ import 'package:managment_app/utilities/constants/images_const.dart';
 import 'package:managment_app/utilities/constants/strings.dart';
 
 import '../../../../Themes/themes.dart';
+import '../../../routes/app_pages.dart';
 
 class LoginView extends GetView<LoginViewController> {
   const LoginView({super.key});
@@ -242,7 +243,7 @@ class LoginView extends GetView<LoginViewController> {
                   ElevatedButton(
                     onPressed: () {
                       if (true) {
-                        Get.to(() => HomeView());
+                        Get.toNamed(Routes.HOME);
                       }
                     },
                     style: ElevatedButton.styleFrom(

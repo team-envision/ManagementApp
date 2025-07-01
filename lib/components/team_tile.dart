@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart' show Border, BorderRadius, BoxDecoration, BoxShadow, BuildContext, Center, Clip, Column, Container, CrossAxisAlignment, EdgeInsets, FontWeight, Image, InkWell, MainAxisAlignment, Offset, Padding, Positioned, Stack, StatelessWidget, Text, VoidCallback, Widget;
 import 'package:get/get.dart';
 import 'package:managment_app/Themes/themes.dart';
+import 'package:managment_app/utilities/constants/images_const.dart';
+
+import '../utilities/constants/icons_const.dart';
 
 
 class TeamTile extends StatelessWidget {
@@ -76,7 +79,7 @@ class TeamTile extends StatelessWidget {
             left: -40,
             top: 20,
             child: Image.asset(
-              'assets/icons/person_Icon.png',
+              KIcons.personIcon,
               width: 85,
               height: 85,
             ),
@@ -86,7 +89,7 @@ class TeamTile extends StatelessWidget {
             right: -20,
             top: 35,
             child: Image.asset(
-              'assets/icons/arrowIcon.png',
+              KIcons.forwardArrow,
               width: 60,
               height: 60,
             ),

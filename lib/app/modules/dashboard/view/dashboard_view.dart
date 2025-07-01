@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:managment_app/app/modules/markAttendanceView/views/mark_attendance_view.dart';
-import 'package:managment_app/app/modules/teamAttendance/views/team_attendance_view.dart';
+import 'package:managment_app/Themes/themes.dart';
 import 'package:managment_app/utilities/constants/images_const.dart';
+
 import '../../../../components/AnnouncementBox.dart';
 import '../../../../components/MeetsConductedTile.dart';
 import '../../../../components/UpcomingMeetTile.dart';
 import '../../../../utilities/constants/strings.dart';
+import '../../../routes/app_pages.dart';
 import '../controller/dashboard_controller.dart';
-import 'package:managment_app/Themes/themes.dart';
 
 class DashboardView extends GetView<DashboardController> {
   const DashboardView({super.key});
@@ -116,7 +116,7 @@ class DashboardView extends GetView<DashboardController> {
                   MeetsConductedTile(
                     title: KStrings.sampleMeetTitle,
                     OnUpdateAttendance: () {
-                      Get.to(() => MarkAttendanceView());
+                      Get.toNamed(Routes.MARKATTENDANCEVIEW);
                     },
                   ),
                 ],

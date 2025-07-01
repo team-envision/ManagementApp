@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:managment_app/utilities/constants/strings.dart';
 
 class LoginViewController extends GetxController {
   //TODO: Implement LoginController
@@ -24,7 +25,7 @@ class LoginViewController extends GetxController {
   }
   }
 
-  List<String> get options => ['Committe', 'Domain', 'Team'];
+  List<String> get options => KStrings.optionsCDT;
   }
 
 

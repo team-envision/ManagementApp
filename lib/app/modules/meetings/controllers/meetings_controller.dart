@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-final List<String> domainOptions = [
-  'Robogyan', 'Yuddhame', 'Online', 'Magefficie and Start-Ups', 'Fundaz',
-  'Vimanaz', 'Konstruktion', 'Architecture', 'Bluebook', 'Praesentio',
-  'Machination', 'Electrizite', 'Digital Design', 'X-Zone'
-];
+import '../../../../utilities/constants/strings.dart';
+
+final List<String> domainOptions = KStrings.domainOptions;
 
 RxInt currentIndex = 0.obs;
 
-final List<String> forOptions = ['Volunteer', 'Member', 'Head'];
-final List<String> modeOptions = ['Online', 'Offline'];
+final List<String> forOptions = KStrings.forOptions;
+final List<String> modeOptions = KStrings.modeOptions;
 
 class MeetingsController extends GetxController {
   var domainSelectedValue = ''.obs;
@@ -54,13 +52,13 @@ class MeetingsController extends GetxController {
             borderRadius: BorderRadius.circular(20),
           ),
           title: const Text(
-            'Add Meeting Description',
+            KStrings.addMeetingDescriptionTitle,
             style: TextStyle( color: Colors.white, fontWeight: FontWeight.bold),
           ),
           content: TextField(
             controller: descriptionController,
             decoration: InputDecoration(
-              hintText: 'Enter meeting description',
+              hintText: KStrings.enterMeetingDescriptionHint,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
@@ -70,10 +68,10 @@ class MeetingsController extends GetxController {
           actions: [
             TextButton(
               onPressed: () {
-                Navigator.pop(context);
+                Get.back();
               },
               child: const Text(
-                'Cancel',
+                KStrings.cancel,
                 style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
               ),
             ),
@@ -82,10 +80,10 @@ class MeetingsController extends GetxController {
                 if (descriptionController.text.trim().isNotEmpty) {
                   description.value = descriptionController.text.trim();
                 }
-                Navigator.pop(context);
+                Get.back();
               },
               child: const Text(
-                'Done',
+                KStrings.done,
                 style: TextStyle( color:Colors.cyan, fontWeight: FontWeight.bold),
               ),
             ),

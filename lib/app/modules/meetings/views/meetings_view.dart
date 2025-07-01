@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:managment_app/app/modules/home/views/home_view.dart';
+import 'package:managment_app/app/routes/app_pages.dart';
 import 'package:managment_app/utilities/constants/images_const.dart';
 import '../../../../components/DatePickerField.dart';
 import '../../../../components/Dropdown.dart';
@@ -39,7 +40,7 @@ class MeetingsView extends GetView<MeetingsController> {
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios, color: theme.colorLevel4),
           onPressed: () {
-            Get.offAll(() => const HomeView());
+            Get.offAllNamed(Routes.HOME);
           },
         ),
       ),

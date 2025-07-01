@@ -6,4 +6,8 @@ class KIcons
 
   //Dashboard View
   //static const
+
+  //Team Tile Component
+  static const String personIcon = "assets/icons/person_Icon.png";
+  static const String forwardArrow = "assets/icons/arrowIcon.png";
 }

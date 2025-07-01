@@ -4,7 +4,10 @@ import 'package:managment_app/Themes/themes.dart';
 import 'package:managment_app/app/modules/login/views/login_view.dart';
 import 'package:managment_app/app/modules/markAttendanceView/views/mark_attendance_view.dart';
 import 'package:managment_app/app/modules/teamAttendance/views/team_attendance_view.dart';
+import 'package:managment_app/app/routes/app_pages.dart';
 import 'package:managment_app/components/SettingButton.dart';
+import 'package:managment_app/utilities/constants/strings.dart';
+
 import '../../../../components/Logoutbutton.dart';
 import '../../login/controllers/login_controller.dart';
 import '../../profileEdit/views/profile_edit_view.dart';
@@ -66,7 +69,7 @@ class SettingsView extends GetView<SettingsController> {
                         ],
                       ),
                       child: Text(
-                        "Settings",
+                        KStrings.settingsTitle,
                         style: theme.kTitleTextStyle.copyWith(
                           letterSpacing: 5,
                           fontSize: screenWidth * 0.05,
@@ -90,36 +93,36 @@ class SettingsView extends GetView<SettingsController> {
                     children: [
                       Flexible(
                         child: Settingbutton(
-                          title: 'MY PROFILE',
+                          title: KStrings.myProfileButton,
                           onPressed: () {
-                            Get.to(() => ProfileEditView());
+                            Get.toNamed(Routes.PROFILE_EDIT);
                           },
                         ),
                       ),
                       SizedBox(height: screenHeight * 0.03),
                       Flexible(
                         child: Settingbutton(
-                          title: 'REGISTRATION',
+                          title: KStrings.registrationButton,
                           onPressed: () {
-                            Get.to(() => const RegistrationView());
+                            Get.toNamed(Routes.REGISTRATION);
                           },
                         ),
                       ),
                       SizedBox(height: screenHeight * 0.03),
                       Flexible(
                         child: Settingbutton(
-                          title: 'UPDATE TEAM', //only for heads org
+                          title: KStrings.updateTeamButton, //only for heads org
                           onPressed: () {
-                            Get.to(() => const MarkAttendanceView());
+                            Get.toNamed(Routes.MARKATTENDANCEVIEW);
                           },
                         ),
                       ),
                       SizedBox(height: screenHeight * 0.03),
                       Flexible(
                         child: Settingbutton(
-                          title: 'MY TEAM',
+                          title: KStrings.myTeamButton,
                           onPressed: () {
-                            Get.to(() => const TeamAttendanceView());
+                            Get.toNamed(Routes.TEAM_ATTENDANCE);
                           },
                         ),
                       ),
@@ -127,8 +130,7 @@ class SettingsView extends GetView<SettingsController> {
                       const Spacer(),
                       Logoutbutton(
                         onPressed: () {
-                          Get.lazyPut(() => LoginViewController());
-                          Get.to(() => const LoginView());
+                          Get.toNamed(Routes.LOGIN_VIEW);
                         },
                       ),
                     ],

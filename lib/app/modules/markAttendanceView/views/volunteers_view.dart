@@ -2,6 +2,7 @@
   import 'package:get/get.dart';
   import 'package:managment_app/Themes/themes.dart';
   import 'package:managment_app/app/modules/home/views/home_view.dart';
+import 'package:managment_app/app/routes/app_pages.dart';
 import 'package:managment_app/utilities/constants/images_const.dart';
 import 'package:managment_app/utilities/constants/strings.dart';
   import '../controllers/mark_attendance_view_controller.dart';
@@ -80,7 +81,7 @@ import 'package:managment_app/utilities/constants/strings.dart';
                         duration: const Duration(seconds: 1),
                       );
                       Future.delayed(const Duration(seconds: 1), () {
-                        Get.to(() => const HomeView());
+                        Get.toNamed(Routes.HOME);
                       });
                     },
                         child: Row(

@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:managment_app/Themes/themes.dart';
+import 'package:managment_app/app/routes/app_pages.dart';
 import 'package:managment_app/utilities/constants/images_const.dart';
+import 'package:managment_app/utilities/constants/strings.dart';
 import '../../../../components/team_tile.dart';
 import '../controllers/team_page_controller.dart';
 
@@ -43,7 +45,7 @@ class TeamPageView extends GetView<TeamPageController> {
                 const SizedBox(height: 30.0),
                 Center(
                   child: Text(
-                    'MY TEAM',
+                    KStrings.myTeamButton,
                     style: theme.textTheme.headlineMedium?.copyWith(
                       color: Get.theme.colorLevel4,
                       fontSize: 25,
@@ -54,34 +56,34 @@ class TeamPageView extends GetView<TeamPageController> {
                 ),
                 const SizedBox(height: 20),
                 TeamTile(
-                  title: 'ORGANIZERS',
-                  subtitle: '5 members',
+                  title: KStrings.organizerTeamTile,
+                  subtitle: KStrings.sampleOrganizers,
                   onTap: () {
-                    Get.toNamed('/team-attendance', arguments: 'Organizers');
+                    Get.toNamed(Routes.TEAM_ATTENDANCE, arguments: 'Organizers');
                   },
                 ),
                 const SizedBox(height: 20),
                 TeamTile(
-                  title: 'HEADS',
-                  subtitle: '8 members',
+                  title: KStrings.headsTeamTile,
+                  subtitle: KStrings.sampleHeads,
                   onTap: () {
-                    Get.toNamed('/team-attendance', arguments: 'Heads');
+                    Get.toNamed(Routes.TEAM_ATTENDANCE, arguments: 'Heads');
                   },
                 ),
                 const SizedBox(height: 20),
                 TeamTile(
-                  title: 'MEMBERS',
-                  subtitle: '11 members',
+                  title: KStrings.membersTeamTile,
+                  subtitle: KStrings.sampleMembers,
                   onTap: () {
-                    Get.toNamed('/team-attendance', arguments: 'Members');
+                    Get.toNamed(Routes.TEAM_ATTENDANCE, arguments: 'Members');
                   },
                 ),
                 const SizedBox(height: 20),
                 TeamTile(
-                  title: 'VOLUNTEERS',
-                  subtitle: '20 members',
+                  title: KStrings.volunteersTeamTile,
+                  subtitle: KStrings.sampleVolunteers,
                   onTap: () {
-                    Get.toNamed('/team-attendance', arguments: 'Volunteers');
+                    Get.toNamed(Routes.TEAM_ATTENDANCE, arguments: 'Volunteers');
                   },
                 ),
                 const SizedBox(height: 20),

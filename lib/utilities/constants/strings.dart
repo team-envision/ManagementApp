@@ -1,5 +1,4 @@
-class KStrings{
-
+class KStrings {
   KStrings._();
 
   static const teamEnvision = "TEAM ENVISION";
@@ -25,12 +24,13 @@ class KStrings{
   static const forgotPassword = "Forgot Password?";
   static const selectCDT = "Select Committee, Domain, or Team";
   static const pleaseSelectOption = "Please select an option";
+  static const optionsCDT = ['Committe', 'Domain', 'Team'];
 
   //Mark Attendance Screen
-  static const String organizersTab = " organizers ";
-  static const String headsTab = " heads ";
-  static const String membersTab = " members ";
-  static const String volunteersTab = " volunteers ";
+  static const organizersTab = " organizers ";
+  static const headsTab = " heads ";
+  static const membersTab = " members ";
+  static const volunteersTab = " volunteers ";
 
   //Meetings Screen
   static const meetsTitle = "MEETS";
@@ -39,11 +39,78 @@ class KStrings{
   static const dateHint = "DATE";
   static const timeHint = "TIME";
   static const modeHint = "MODE";
+  static const domainOptions = [
+    'Robogyan',
+    'Yuddhame',
+    'Online',
+    'Magefficie and Start-Ups',
+    'Fundaz',
+    'Vimanaz',
+    'Konstruktion',
+    'Architecture',
+    'Bluebook',
+    'Praesentio',
+    'Machination',
+    'Electrizite',
+    'Digital Design',
+    'X-Zone'
+  ];
+  static const forOptions = ['Volunteer', 'Member', 'Head'];
+  static const modeOptions = ['Online', 'Offline'];
+  static const cancel = "Cancel";
+  static const done = "Done";
+  static const addMeetingDescriptionTitle = "Add Meeting Description";
+  static const enterMeetingDescriptionHint = "Enter meeting description";
+
+  //Profile Edit Screen
+  static const nameDisplay = 'Name: ';
+  static const emailDisplay = 'Email: ';
+  static const registrationNoDisplay = 'Registration No. : ';
+  static const phoneNoDisplay = 'Phone No. : ';
+  static const genderDisplay = 'Gender: ';
+  static const yearDisplay = 'Year: ';
+  static const genders = ["Male", "Female", "Others"];
+  static const years = ["1st", "2nd", "3rd", "4th", "5th"];
+
+  static const nameLabel = 'Name';
+  static const emailLabel = 'Email';
+  static const registrationNoLabel = 'Registration No.';
+  static const phoneNoLabel = 'Phone No.';
+  static const genderLabel = 'Gender';
+  static const yearLabel = 'Year';
+
+  //Settings
+  static const settingsTitle = "Settings";
+
+  //Team Attendance Screen
+  static const searchHint = "Search...";
+  static const idNoTile = "ID No. :";
+  static const domainTile = "Domain :";
+  static const totalMeetsConductedTile = "Total meets conducted :";
+  static const noOfMeetsConductedTile = "No. of meets attended :";
+  static const noOfAbsencesTile = "No. of absences :";
+
+  //Team Page
+  static const organizerTeamTile = "ORGANIZERS";
+  static const headsTeamTile = "HEADS";
+  static const membersTeamTile = "MEMBERS";
+  static const volunteersTeamTile = "VOLUNTEERS";
+  static const sampleOrganizers = "5 members";
+  static const sampleHeads = "8 members";
+  static const sampleMembers = "11 members";
+  static const sampleVolunteers = "20 members";
 
   //Buttons
   static const loginButton = "LOGIN";
   static const updateButton = "UPDATE";
-  static const String addMeetingDescriptionButton = 'ADD MEETING DESCRIPTION';
-  static const String sendReminderButton = 'Send Reminder';
-
+  static const addMeetingDescriptionButton = 'ADD MEETING DESCRIPTION';
+  static const sendReminderButton = 'Send Reminder';
+  static const editProfileButton = "Edit Profile";
+  static const updateButtonSmall = "Update";
+  static const myProfileButton = "MY PROFILE";
+  static const updateTeamButton = "UPDATE TEAM";
+  static const registrationButton = "REGISTRATION";
+  static const myTeamButton = "MY TEAM";
+  static const logoutButton = "Logout";
+  static const updateAttendanceButton = "Update\nAttendance";
 }
