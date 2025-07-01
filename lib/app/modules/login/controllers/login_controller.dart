@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:managment_app/utilities/constants/strings.dart';
+import 'package:managment_app/utilities/constants/text_strings.dart';
 
 class LoginViewController extends GetxController {
   //TODO: Implement LoginController
@@ -25,7 +25,7 @@ class LoginViewController extends GetxController {
   }
   }
 
-  List<String> get options => KStrings.optionsCDT;
+  List<String> get options => Text_string.optionsCDT;
   }
 
 

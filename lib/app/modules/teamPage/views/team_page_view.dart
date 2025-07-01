@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:managment_app/Themes/themes.dart';
 import 'package:managment_app/app/routes/app_pages.dart';
 import 'package:managment_app/utilities/constants/images_const.dart';
-import 'package:managment_app/utilities/constants/strings.dart';
+import 'package:managment_app/utilities/constants/text_strings.dart';
 import '../../../../components/team_tile.dart';
 import '../controllers/team_page_controller.dart';
 
@@ -45,7 +45,7 @@ class TeamPageView extends GetView<TeamPageController> {
                 const SizedBox(height: 30.0),
                 Center(
                   child: Text(
-                    KStrings.myTeamButton,
+                    Text_string.myTeamButton,
                     style: theme.textTheme.headlineMedium?.copyWith(
                       color: Get.theme.colorLevel4,
                       fontSize: 25,
@@ -56,32 +56,32 @@ class TeamPageView extends GetView<TeamPageController> {
                 ),
                 const SizedBox(height: 20),
                 TeamTile(
-                  title: KStrings.organizerTeamTile,
-                  subtitle: KStrings.sampleOrganizers,
+                  title: Text_string.organizerTeamTile,
+                  subtitle: Text_string.sampleOrganizers,
                   onTap: () {
                     Get.toNamed(Routes.TEAM_ATTENDANCE, arguments: 'Organizers');
                   },
                 ),
                 const SizedBox(height: 20),
                 TeamTile(
-                  title: KStrings.headsTeamTile,
-                  subtitle: KStrings.sampleHeads,
+                  title: Text_string.headsTeamTile,
+                  subtitle: Text_string.sampleHeads,
                   onTap: () {
                     Get.toNamed(Routes.TEAM_ATTENDANCE, arguments: 'Heads');
                   },
                 ),
                 const SizedBox(height: 20),
                 TeamTile(
-                  title: KStrings.membersTeamTile,
-                  subtitle: KStrings.sampleMembers,
+                  title: Text_string.membersTeamTile,
+                  subtitle: Text_string.sampleMembers,
                   onTap: () {
                     Get.toNamed(Routes.TEAM_ATTENDANCE, arguments: 'Members');
                   },
                 ),
                 const SizedBox(height: 20),
                 TeamTile(
-                  title: KStrings.volunteersTeamTile,
-                  subtitle: KStrings.sampleVolunteers,
+                  title: Text_string.volunteersTeamTile,
+                  subtitle: Text_string.sampleVolunteers,
                   onTap: () {
                     Get.toNamed(Routes.TEAM_ATTENDANCE, arguments: 'Volunteers');
                   },

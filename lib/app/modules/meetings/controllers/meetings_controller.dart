@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../utilities/constants/strings.dart';
+import '../../../../utilities/constants/text_strings.dart';
 
-final List<String> domainOptions = KStrings.domainOptions;
+final List<String> domainOptions = Text_string.domainOptions;
 
 RxInt currentIndex = 0.obs;
 
-final List<String> forOptions = KStrings.forOptions;
-final List<String> modeOptions = KStrings.modeOptions;
+final List<String> forOptions = Text_string.forOptions;
+final List<String> modeOptions = Text_string.modeOptions;
 
 class MeetingsController extends GetxController {
   var domainSelectedValue = ''.obs;
@@ -52,13 +52,13 @@ class MeetingsController extends GetxController {
             borderRadius: BorderRadius.circular(20),
           ),
           title: const Text(
-            KStrings.addMeetingDescriptionTitle,
+            Text_string.addMeetingDescriptionTitle,
             style: TextStyle( color: Colors.white, fontWeight: FontWeight.bold),
           ),
           content: TextField(
             controller: descriptionController,
             decoration: InputDecoration(
-              hintText: KStrings.enterMeetingDescriptionHint,
+              hintText: Text_string.enterMeetingDescriptionHint,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
@@ -71,7 +71,7 @@ class MeetingsController extends GetxController {
                 Get.back();
               },
               child: const Text(
-                KStrings.cancel,
+                Text_string.cancel,
                 style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
               ),
             ),
@@ -83,7 +83,7 @@ class MeetingsController extends GetxController {
                 Get.back();
               },
               child: const Text(
-                KStrings.done,
+                Text_string.done,
                 style: TextStyle( color:Colors.cyan, fontWeight: FontWeight.bold),
               ),
             ),

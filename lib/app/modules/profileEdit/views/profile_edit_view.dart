@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:managment_app/Themes/themes.dart';
 import 'package:managment_app/utilities/constants/images_const.dart';
-import 'package:managment_app/utilities/constants/strings.dart';
+import 'package:managment_app/utilities/constants/text_strings.dart';
 
 import '../controllers/profile_edit_controller.dart';
 
@@ -108,41 +108,41 @@ class ProfileEditView extends GetView<ProfileEditController> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          '${KStrings.nameDisplay}${controller.nameController.text}', // Displaying updated name
+          '${Text_string.nameDisplay}${controller.nameController.text}', // Displaying updated name
           style: theme.kTitleTextStyle
               .copyWith(fontSize: 20, color: theme.colorPrimary),
         ),
         const SizedBox(height: 20),
         Text(
-          '${KStrings.genderDisplay}${controller.selectedGender.value ?? " "}',
+          '${Text_string.genderDisplay}${controller.selectedGender.value ?? " "}',
           // Displaying updated gender
           style: theme.kTitleTextStyle
               .copyWith(fontSize: 20, color: theme.colorPrimary),
         ),
         const SizedBox(height: 20),
         Text(
-          '${KStrings.emailDisplay}${controller.emailController.text}',
+          '${Text_string.emailDisplay}${controller.emailController.text}',
           // Displaying updated email
           style: theme.kTitleTextStyle
               .copyWith(fontSize: 20, color: theme.colorPrimary),
         ),
         const SizedBox(height: 20),
         Text(
-          '${KStrings.yearDisplay}${controller.selectedYear.value ?? " "}',
+          '${Text_string.yearDisplay}${controller.selectedYear.value ?? " "}',
           // Displaying updated year
           style: theme.kTitleTextStyle
               .copyWith(fontSize: 20, color: theme.colorPrimary),
         ),
         const SizedBox(height: 20),
         Text(
-          '${KStrings.registrationNoDisplay}${controller.regNoController.text}',
+          '${Text_string.registrationNoDisplay}${controller.regNoController.text}',
           // Displaying updated registration number
           style: theme.kTitleTextStyle
               .copyWith(fontSize: 20, color: theme.colorPrimary),
         ),
         const SizedBox(height: 20),
         Text(
-          '${KStrings.phoneNoDisplay}${controller.phoneController.text}',
+          '${Text_string.phoneNoDisplay}${controller.phoneController.text}',
           // Displaying updated phone number
           style: theme.kTitleTextStyle
               .copyWith(fontSize: 20, color: theme.colorPrimary),
@@ -159,7 +159,7 @@ class ProfileEditView extends GetView<ProfileEditController> {
               ),
             ),
             child: Text(
-              KStrings.editProfileButton,
+              Text_string.editProfileButton,
               style: theme.kTitleTextStyle.copyWith(
                 color: theme.colorLevel3,
                 fontSize: 20,
@@ -179,7 +179,7 @@ class ProfileEditView extends GetView<ProfileEditController> {
           TextFormField(
             controller: controller.nameController,
             decoration: InputDecoration(
-              labelText: KStrings.nameLabel,
+              labelText: Text_string.nameLabel,
               border: const UnderlineInputBorder(),
               enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
@@ -199,7 +199,7 @@ class ProfileEditView extends GetView<ProfileEditController> {
           TextFormField(
             controller: controller.emailController,
             decoration: InputDecoration(
-              labelText: KStrings.emailLabel,
+              labelText: Text_string.emailLabel,
               border: const UnderlineInputBorder(),
               enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
@@ -219,7 +219,7 @@ class ProfileEditView extends GetView<ProfileEditController> {
           TextFormField(
             controller: controller.regNoController,
             decoration: InputDecoration(
-              labelText: KStrings.registrationNoLabel,
+              labelText: Text_string.registrationNoLabel,
               border: const UnderlineInputBorder(),
               enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
@@ -239,7 +239,7 @@ class ProfileEditView extends GetView<ProfileEditController> {
           TextFormField(
             controller: controller.phoneController,
             decoration: InputDecoration(
-              labelText: KStrings.phoneNoLabel,
+              labelText: Text_string.phoneNoLabel,
               border: const UnderlineInputBorder(),
               enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
@@ -264,7 +264,7 @@ class ProfileEditView extends GetView<ProfileEditController> {
                 .toList(),
             onChanged: controller.selectedGender,
             decoration: InputDecoration(
-              labelText: KStrings.genderLabel,
+              labelText: Text_string.genderLabel,
               border: const UnderlineInputBorder(),
               enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
@@ -288,7 +288,7 @@ class ProfileEditView extends GetView<ProfileEditController> {
                 .toList(),
             onChanged: controller.selectedYear,
             decoration: InputDecoration(
-              labelText: KStrings.yearLabel,
+              labelText: Text_string.yearLabel,
               border: const UnderlineInputBorder(),
               enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
@@ -321,7 +321,7 @@ class ProfileEditView extends GetView<ProfileEditController> {
                 ),
               ),
               child: Text(
-                KStrings.updateButtonSmall,
+                Text_string.updateButtonSmall,
                 style: theme.kTitleTextStyle.copyWith(
                   color: theme.colorLevel3,
                   fontSize: 20,

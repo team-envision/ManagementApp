@@ -8,7 +8,7 @@ import 'package:managment_app/utilities/constants/images_const.dart';
 import '../../../../components/AnnouncementBox.dart';
 import '../../../../components/MeetsConductedTile.dart';
 import '../../../../components/UpcomingMeetTile.dart';
-import '../../../../utilities/constants/strings.dart';
+import '../../../../utilities/constants/text_strings.dart';
 import '../../../routes/app_pages.dart';
 import '../controller/dashboard_controller.dart';
 
@@ -74,7 +74,7 @@ class DashboardView extends GetView<DashboardController> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Text(
-                    KStrings.teamEnvision,
+                    Text_string.teamEnvision,
                     style: GoogleFonts.raleway(
                       color: Colors.white,
                       fontWeight: FontWeight.w600,
@@ -84,37 +84,37 @@ class DashboardView extends GetView<DashboardController> {
                   ),
                   SizedBox(height: 40),
                   Text(
-                    KStrings.sampleUser,
+                    Text_string.sampleUser,
                     style: theme.kTitleTextStyle,
                     textAlign: TextAlign.left,
                   ),
                   SizedBox(height: 40),
                   Text(
-                    KStrings.announcementTitle,
+                    Text_string.announcementTitle,
                     style: theme.kTitleTextStyle,
                     textAlign: TextAlign.left,
                   ),
                   SizedBox(height: 8),
-                  AnnouncementBox(announcement: KStrings.sampleAnnouncement),
+                  AnnouncementBox(announcement: Text_string.sampleAnnouncement),
                   SizedBox(height: 40),
                   Text(
-                    KStrings.upcomingMeetsTitle,
+                    Text_string.upcomingMeetsTitle,
                     style: theme.kTitleTextStyle,
                     textAlign: TextAlign.left,
                   ),
                   SizedBox(height: 8),
                   UpcomingMeetTile(
-                    title: KStrings.sampleMeetTitle,
-                    details: KStrings.sampleMeetDetails,
+                    title: Text_string.sampleMeetTitle,
+                    details: Text_string.sampleMeetDetails,
                   ),
                   SizedBox(height: 40),
                   Text(
-                    KStrings.meetsConductedTitle,
+                    Text_string.meetsConductedTitle,
                     style: theme.kTitleTextStyle,
                   ),
                   SizedBox(height: 8),
                   MeetsConductedTile(
-                    title: KStrings.sampleMeetTitle,
+                    title: Text_string.sampleMeetTitle,
                     OnUpdateAttendance: () {
                       Get.toNamed(Routes.MARKATTENDANCEVIEW);
                     },

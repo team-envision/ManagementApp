@@ -7,7 +7,7 @@ import 'package:managment_app/app/modules/markAttendanceView/views/members_view.
 import 'package:managment_app/app/modules/markAttendanceView/views/organizers_view.dart';
 import 'package:managment_app/app/modules/markAttendanceView/views/volunteers_view.dart';
 import 'package:managment_app/utilities/constants/images_const.dart';
-import 'package:managment_app/utilities/constants/strings.dart';
+import 'package:managment_app/utilities/constants/text_strings.dart';
 
 import '../controllers/mark_attendance_view_controller.dart';
 
@@ -32,7 +32,7 @@ class MarkAttendanceView extends GetView<MarkAttendanceViewController> {
           ),
           backgroundColor: Get.theme.colorLevel1,
           title: Text(
-              KStrings.attendance, //CHANGE TO UPDATE AND USE SAME PAGE DIFFERENT LOGIC
+              Text_string.attendance, //CHANGE TO UPDATE AND USE SAME PAGE DIFFERENT LOGIC
               style: Get.theme.kTitleTextStyle),
           foregroundColor: Get.theme.colorLevel0,
           elevation: 0,
@@ -59,10 +59,10 @@ class MarkAttendanceView extends GetView<MarkAttendanceViewController> {
                 isScrollable: false,
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 tabs: const [
-                  Tab(text: KStrings.organizersTab),
-                  Tab(text: KStrings.headsTab),
-                  Tab(text: KStrings.membersTab),
-                  Tab(text: KStrings.volunteersTab),
+                  Tab(text: Text_string.organizersTab),
+                  Tab(text: Text_string.headsTab),
+                  Tab(text: Text_string.membersTab),
+                  Tab(text: Text_string.volunteersTab),
                 ],
               ),
             ),

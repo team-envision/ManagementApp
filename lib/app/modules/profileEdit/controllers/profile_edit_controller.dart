@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:managment_app/utilities/constants/strings.dart';
+import 'package:managment_app/utilities/constants/text_strings.dart';
 
 class ProfileEditController extends GetxController {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
@@ -14,10 +14,10 @@ class ProfileEditController extends GetxController {
   final phoneController = TextEditingController();
 
   var selectedGender = Rxn<String>();
-  List<String> get genders => KStrings.genders;
+  List<String> get genders => Text_string.genders;
 
   var selectedYear = Rxn<String>();
-  List<String> get years => KStrings.years;
+  List<String> get years => Text_string.years;
 
   void toggleEditMode() {
     isEditing.value = !isEditing.value;

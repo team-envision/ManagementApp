@@ -1,5 +1,5 @@
-class KStrings {
-  KStrings._();
+class Text_string {
+  Text_string._();
 
   static const teamEnvision = "TEAM ENVISION";
   static const attendance = "ATTENDANCE";

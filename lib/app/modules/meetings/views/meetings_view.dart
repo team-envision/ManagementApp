@@ -9,7 +9,7 @@ import '../../../../components/DatePickerField.dart';
 import '../../../../components/Dropdown.dart';
 import '../../../../components/TimePickerField.dart';
 import 'package:managment_app/Themes/themes.dart';
-import '../../../../utilities/constants/strings.dart';
+import '../../../../utilities/constants/text_strings.dart';
 import '../controllers/meetings_controller.dart';
 
 class MeetingsView extends GetView<MeetingsController> {
@@ -26,7 +26,7 @@ class MeetingsView extends GetView<MeetingsController> {
       backgroundColor: theme.colorLevel2,
       appBar: AppBar(
         title: Text(
-          KStrings.meetsTitle,
+          Text_string.meetsTitle,
           style: GoogleFonts.raleway(
             color: theme.colorLevel4,
             fontWeight: FontWeight.w600,
@@ -93,29 +93,29 @@ class MeetingsView extends GetView<MeetingsController> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       CustomDropdownButton(
-                        hintText: KStrings.domainHint,
+                        hintText: Text_string.domainHint,
                         options: domainOptions,
                         selectedValue: controller.domainSelectedValue,
                       ),
                       CustomDropdownButton(
-                        hintText: KStrings.forHint,
+                        hintText: Text_string.forHint,
                         options: forOptions,
                         selectedValue: controller.forSelectedValue,
                       ),
                       DatePickerField(
-                        hintText: KStrings.dateHint,
+                        hintText: Text_string.dateHint,
                         selectedDate: controller.selectedDate,
                         onDateChanged: (date) =>
                             controller.selectedDate.value = date,
                       ),
                       TimePickerField(
-                        hintText: KStrings.timeHint,
+                        hintText: Text_string.timeHint,
                         selectedTime: controller.selectedTime,
                         onTimeChanged: (time) =>
                             controller.selectedTime.value = time,
                       ),
                       CustomDropdownButton(
-                        hintText: KStrings.modeHint,
+                        hintText: Text_string.modeHint,
                         options: modeOptions,
                         selectedValue: controller.modeSelectedValue,
                       ),
@@ -136,7 +136,7 @@ class MeetingsView extends GetView<MeetingsController> {
                     ),
                   ),
                   child: Text(
-                    KStrings.addMeetingDescriptionButton,
+                    Text_string.addMeetingDescriptionButton,
                     style: theme.kSmallTextStyle,
                   ),
                 ),
@@ -178,7 +178,7 @@ class MeetingsView extends GetView<MeetingsController> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        KStrings.sendReminderButton,
+                        Text_string.sendReminderButton,
                         style: GoogleFonts.raleway(
                           color: Colors.grey[700],
                           fontSize: 12,

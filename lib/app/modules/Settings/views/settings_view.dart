@@ -6,7 +6,7 @@ import 'package:managment_app/app/modules/markAttendanceView/views/mark_attendan
 import 'package:managment_app/app/modules/teamAttendance/views/team_attendance_view.dart';
 import 'package:managment_app/app/routes/app_pages.dart';
 import 'package:managment_app/components/SettingButton.dart';
-import 'package:managment_app/utilities/constants/strings.dart';
+import 'package:managment_app/utilities/constants/text_strings.dart';
 
 import '../../../../components/Logoutbutton.dart';
 import '../../login/controllers/login_controller.dart';
@@ -69,7 +69,7 @@ class SettingsView extends GetView<SettingsController> {
                         ],
                       ),
                       child: Text(
-                        KStrings.settingsTitle,
+                        Text_string.settingsTitle,
                         style: theme.kTitleTextStyle.copyWith(
                           letterSpacing: 5,
                           fontSize: screenWidth * 0.05,
@@ -93,7 +93,7 @@ class SettingsView extends GetView<SettingsController> {
                     children: [
                       Flexible(
                         child: Settingbutton(
-                          title: KStrings.myProfileButton,
+                          title: Text_string.myProfileButton,
                           onPressed: () {
                             Get.toNamed(Routes.PROFILE_EDIT);
                           },
@@ -102,7 +102,7 @@ class SettingsView extends GetView<SettingsController> {
                       SizedBox(height: screenHeight * 0.03),
                       Flexible(
                         child: Settingbutton(
-                          title: KStrings.registrationButton,
+                          title: Text_string.registrationButton,
                           onPressed: () {
                             Get.toNamed(Routes.REGISTRATION);
                           },
@@ -111,7 +111,7 @@ class SettingsView extends GetView<SettingsController> {
                       SizedBox(height: screenHeight * 0.03),
                       Flexible(
                         child: Settingbutton(
-                          title: KStrings.updateTeamButton, //only for heads org
+                          title: Text_string.updateTeamButton, //only for heads org
                           onPressed: () {
                             Get.toNamed(Routes.MARKATTENDANCEVIEW);
                           },
@@ -120,7 +120,7 @@ class SettingsView extends GetView<SettingsController> {
                       SizedBox(height: screenHeight * 0.03),
                       Flexible(
                         child: Settingbutton(
-                          title: KStrings.myTeamButton,
+                          title: Text_string.myTeamButton,
                           onPressed: () {
                             Get.toNamed(Routes.TEAM_ATTENDANCE);
                           },

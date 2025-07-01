@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:managment_app/Themes/themes.dart';
 import 'package:managment_app/utilities/constants/images_const.dart';
-import 'package:managment_app/utilities/constants/strings.dart';
+import 'package:managment_app/utilities/constants/text_strings.dart';
 
 import '../controllers/team_attendance_controller.dart';
 
@@ -27,7 +27,7 @@ class TeamAttendanceView extends GetView<TeamAttendanceController> {
           },
         ),
         backgroundColor: Get.theme.colorLevel1,
-        title: Text(KStrings.myTeamButton, style: Get.theme.kTitleTextStyle),
+        title: Text(Text_string.myTeamButton, style: Get.theme.kTitleTextStyle),
         elevation: 0,
         centerTitle: true,
       ),
@@ -57,7 +57,7 @@ class TeamAttendanceView extends GetView<TeamAttendanceController> {
                       contentPadding: const EdgeInsets.all(2),
                       prefixIcon:
                           Icon(Icons.search, color: Get.theme.colorLevel0),
-                      hintText: KStrings.searchHint,
+                      hintText: Text_string.searchHint,
                       hintStyle: GoogleFonts.raleway(
                           textStyle: TextStyle(color: Get.theme.colorLevel0)),
                       filled: true,
@@ -91,7 +91,7 @@ class TeamAttendanceView extends GetView<TeamAttendanceController> {
                               borderRadius: BorderRadius.circular(8)),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8)),
-                          title: Text(KStrings.nameDisplay,
+                          title: Text(Text_string.nameDisplay,
                               style: Get.theme.kSubTitleTextStyle),
                           backgroundColor: Get.theme.colorLevel0,
                           collapsedBackgroundColor: Get.theme.colorLevel0,
@@ -100,19 +100,19 @@ class TeamAttendanceView extends GetView<TeamAttendanceController> {
                           ),
                           children: [
                             ListTile(
-                                title: Text(KStrings.idNoTile,
+                                title: Text(Text_string.idNoTile,
                                     style: Get.theme.kBodyTextStyle)),
                             ListTile(
-                                title: Text(KStrings.domainTile,
+                                title: Text(Text_string.domainTile,
                                     style: Get.theme.kBodyTextStyle)),
                             ListTile(
-                                title: Text(KStrings.totalMeetsConductedTile,
+                                title: Text(Text_string.totalMeetsConductedTile,
                                     style: Get.theme.kBodyTextStyle)),
                             ListTile(
-                                title: Text(KStrings.noOfMeetsConductedTile,
+                                title: Text(Text_string.noOfMeetsConductedTile,
                                     style: Get.theme.kBodyTextStyle)),
                             ListTile(
-                                title: Text(KStrings.noOfAbsencesTile,
+                                title: Text(Text_string.noOfAbsencesTile,
                                     style: Get.theme.kBodyTextStyle)),
                           ],
                         ),

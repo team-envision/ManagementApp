@@ -5,7 +5,7 @@ import 'package:managment_app/Themes/themes.dart';
 import 'package:managment_app/app/modules/home/views/home_view.dart';
 import 'package:managment_app/app/routes/app_pages.dart';
 import 'package:managment_app/utilities/constants/images_const.dart';
-import 'package:managment_app/utilities/constants/strings.dart';
+import 'package:managment_app/utilities/constants/text_strings.dart';
 import '../controllers/mark_attendance_view_controller.dart';
 
 class HeadsView extends GetView<MarkAttendanceViewController> {
@@ -47,7 +47,7 @@ class HeadsView extends GetView<MarkAttendanceViewController> {
                                 color: Get.theme.colorLevel0,
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
-                              child: _CheckBox(name: controller.names[index],profile: KStrings.sampleProfile),
+                              child: _CheckBox(name: controller.names[index],profile: Text_string.sampleProfile),
                             ),
                           ),
                         ),
@@ -87,7 +87,7 @@ class HeadsView extends GetView<MarkAttendanceViewController> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(KStrings.updateButton,style: Get.theme.kSubTitleTextStyle),
+                          Text(Text_string.updateButton,style: Get.theme.kSubTitleTextStyle),
                           const SizedBox(width: 10),
                           Image.asset(KImages.update),
                         ],

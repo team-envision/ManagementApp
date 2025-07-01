@@ -4,7 +4,7 @@ import 'package:managment_app/app/modules/home/views/home_view.dart';
 import 'package:managment_app/app/modules/login/controllers/login_controller.dart';
 import 'package:managment_app/utilities/constants/icons_const.dart';
 import 'package:managment_app/utilities/constants/images_const.dart';
-import 'package:managment_app/utilities/constants/strings.dart';
+import 'package:managment_app/utilities/constants/text_strings.dart';
 
 import '../../../../Themes/themes.dart';
 import '../../../routes/app_pages.dart';
@@ -73,7 +73,7 @@ class LoginView extends GetView<LoginViewController> {
                               height: 28,
                             ),
                           ),
-                          hintText: KStrings.emailHint,
+                          hintText: Text_string.emailHint,
                           hintStyle: const TextStyle(
                             color: Colors.grey,
                             fontSize: 19,
@@ -92,7 +92,7 @@ class LoginView extends GetView<LoginViewController> {
                           if (value == null ||
                               value.isEmpty ||
                               !value.isEmail) {
-                            return KStrings.emailRequired;
+                            return Text_string.emailRequired;
                           }
                           return null;
                         },
@@ -131,7 +131,7 @@ class LoginView extends GetView<LoginViewController> {
                                 ),
                               ),
                               contentPadding: const EdgeInsets.only(top: 50),
-                              hintText: KStrings.passwordHint,
+                              hintText: Text_string.passwordHint,
                               hintStyle: const TextStyle(color: Colors.grey),
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(50),
@@ -160,7 +160,7 @@ class LoginView extends GetView<LoginViewController> {
                             style: const TextStyle(color: Colors.white),
                             validator: (value) {
                               if (value == null || value.isEmpty) {
-                                return KStrings.passwordRequired;
+                                return Text_string.passwordRequired;
                               }
                               return null;
                             },
@@ -174,7 +174,7 @@ class LoginView extends GetView<LoginViewController> {
                     child: TextButton(
                       onPressed: () {},
                       child: const Text(
-                        KStrings.forgotPassword,
+                        Text_string.forgotPassword,
                         style: TextStyle(color: Colors.grey),
                       ),
                     ),
@@ -203,7 +203,7 @@ class LoginView extends GetView<LoginViewController> {
                               : controller.selectedOption.value,
                           dropdownColor: theme.colorLevel1,
                           hint: const Text(
-                            KStrings.selectCDT,
+                            Text_string.selectCDT,
                             style: TextStyle(
                               color: Colors.grey,
                               fontSize: 14,
@@ -233,7 +233,7 @@ class LoginView extends GetView<LoginViewController> {
                           },
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return KStrings.pleaseSelectOption;
+                              return Text_string.pleaseSelectOption;
                             }
                           },
                         ),
@@ -256,7 +256,7 @@ class LoginView extends GetView<LoginViewController> {
                       ),
                     ),
                     child: Text(
-                      KStrings.loginButton,
+                      Text_string.loginButton,
                       style: theme.kTitleTextStyle.copyWith(
                         color: theme.colorPrimary,
                         fontSize: 40,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:managment_app/utilities/constants/strings.dart';
+import 'package:managment_app/utilities/constants/text_strings.dart';
 
 class MeetsConductedTile extends StatelessWidget {
   final String title;
@@ -44,7 +44,7 @@ class MeetsConductedTile extends StatelessWidget {
                 backgroundColor: Colors.blue[100],
               ),
               child: Center(
-              child: Text(KStrings.updateAttendanceButton, textAlign: TextAlign.center, style: TextStyle(color: Colors.black, fontSize: 9))),))
+              child: Text(Text_string.updateAttendanceButton, textAlign: TextAlign.center, style: TextStyle(color: Colors.black, fontSize: 9))),))
         ],
       )
 
