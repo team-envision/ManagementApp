@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:managment_app/Themes/themes.dart';
+import 'package:managment_app/utilities/constants/icons_const.dart';
 
 class UpcomingMeetTile extends StatefulWidget {
   final String title;
@@ -48,7 +49,7 @@ class _UpcomingMeetTileState extends State<UpcomingMeetTile> {
                   ),
                 ),
                 Icon(
-                  isExpanded ? Icons.expand_less : Icons.expand_circle_down,
+                  isExpanded ? KIcons.expandLess : KIcons.expandCircleDown,
                   color: theme.colorLevel1,
                   size: 40,
                 ),

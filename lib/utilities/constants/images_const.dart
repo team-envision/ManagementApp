@@ -2,6 +2,8 @@ class KImages
 {
   //Login View
   static const String aaruushLogo = "assets/images/aaruush.png";
+  static const mailIcon = "assets/icons/mail.png";
+  static const lockIcon = "assets/icons/lock.png";
 
   //Dashboard View
   static const String ellipse53 = "assets/images/Ellipse 53.svg";
@@ -37,7 +39,9 @@ class KImages
   //Team_Attendance View
   static const String backIcon = "assets/images/icon.png";
 
-
+  //Team Tile Component
+  static const String personIcon = "assets/icons/person_Icon.png";
+  static const String forwardArrow = "assets/icons/arrowIcon.png";
 
 
 

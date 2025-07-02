@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../utilities/constants/icons_const.dart';
+
 class TimePickerField extends StatelessWidget {
   final String hintText;
   final Rx<TimeOfDay> selectedTime;
@@ -34,7 +36,7 @@ class TimePickerField extends StatelessWidget {
                 ),
                 contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
                 suffixIcon: IconButton(
-                  icon: const Icon(Icons.arrow_drop_down, color: Colors.black),
+                  icon: const Icon(KIcons.dropDowArrow, color: Colors.black),
                   onPressed: () async {
                     final TimeOfDay? picked = await showTimePicker(
                       context: context,

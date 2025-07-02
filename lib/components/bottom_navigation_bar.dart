@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:managment_app/Themes/themes.dart';
+import 'package:managment_app/utilities/constants/icons_const.dart';
 
 class BottomNavBar extends StatelessWidget {
   final int selectedIndex;
@@ -17,25 +18,25 @@ class BottomNavBar extends StatelessWidget {
       onTap: onTap,
       items: [
         BottomNavigationBarItem(
-          icon: Icon(Icons.home,
+          icon: Icon(KIcons.home,
               color:
               selectedIndex == 0 ? theme.colorPrimary : theme.colorLevel3),
           label: '',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.add_box,
+          icon: Icon(KIcons.addBox,
               color:
               selectedIndex == 1 ? theme.colorPrimary : theme.colorLevel3),
           label: '',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.person,
+          icon: Icon(KIcons.person,
               color:
               selectedIndex == 2 ? theme.colorPrimary : theme.colorLevel3),
           label: '',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.settings,
+          icon: Icon(KIcons.settings,
               color:
               selectedIndex == 3 ? theme.colorPrimary : theme.colorLevel3),
           label: '',

@@ -68,7 +68,7 @@ class LoginView extends GetView<LoginViewController> {
                               vertical: 10,
                             ),
                             child: Image.asset(
-                              KIcons.mailIcon,
+                              KImages.mailIcon,
                               width: 28,
                               height: 28,
                             ),
@@ -124,7 +124,7 @@ class LoginView extends GetView<LoginViewController> {
                                 padding:
                                     const EdgeInsets.symmetric(vertical: 9),
                                 child: Image.asset(
-                                  KIcons.lockIcon,
+                                  KImages.lockIcon,
                                   // Assuming you have a lock icon here
                                   width: 24,
                                   height: 24,

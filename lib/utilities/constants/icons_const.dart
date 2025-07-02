@@ -1,13 +1,16 @@
+import 'package:flutter/material.dart';
+
 class KIcons
 {
-  //Login View
-  static const mailIcon = "assets/icons/mail.png";
-  static const lockIcon = "assets/icons/lock.png";
+  KIcons._();
 
-  //Dashboard View
-  //static const
+  static const dropDowArrow = Icons.arrow_drop_down;
+  static const expandLess = Icons.expand_less;
+  static const expandCircleDown = Icons.expand_circle_down;
+  static const home = Icons.home;
+  static const addBox = Icons.add_box;
+  static const person = Icons.person;
+  static const settings = Icons.settings;
 
-  //Team Tile Component
-  static const String personIcon = "assets/icons/person_Icon.png";
-  static const String forwardArrow = "assets/icons/arrowIcon.png";
+
 }

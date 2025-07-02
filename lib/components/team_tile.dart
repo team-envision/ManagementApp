@@ -79,7 +79,7 @@ class TeamTile extends StatelessWidget {
             left: -40,
             top: 20,
             child: Image.asset(
-              KIcons.personIcon,
+              KImages.personIcon,
               width: 85,
               height: 85,
             ),
@@ -89,7 +89,7 @@ class TeamTile extends StatelessWidget {
             right: -20,
             top: 35,
             child: Image.asset(
-              KIcons.forwardArrow,
+              KImages.forwardArrow,
               width: 60,
               height: 60,
             ),
