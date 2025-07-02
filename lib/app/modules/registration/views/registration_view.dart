@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:managment_app/Themes/themes.dart';
 import 'package:managment_app/app/modules/home/views/home_view.dart';
 import 'package:managment_app/utilities/constants/images_const.dart';
+import 'package:managment_app/utilities/constants/text_strings.dart';
 import '../../../../components/kDropDownButton.dart';
 import '../../../../components/kTextField.dart';
 
@@ -23,7 +24,7 @@ class _RegistrationViewState extends State<RegistrationView> {
       appBar: AppBar(
         backgroundColor: Get.theme.colorLevel1,
         centerTitle: true,
-        title: Text('REGISTRATION', style: Get.theme.kTitleTextStyle),
+        title: Text(Text_string.registrationTitle, style: Get.theme.kTitleTextStyle),
         elevation: 0,
       ),
       body: SingleChildScrollView(
@@ -49,7 +50,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                       const SizedBox(height: 10),
                       Center(
                         child: Text(
-                          'STUDENT DETAILS',
+                          Text_string.studentDetailsTitle,
                           style: Get.theme.kSubTitleTextStyle,
                         ),
                       ),
@@ -70,77 +71,72 @@ class _RegistrationViewState extends State<RegistrationView> {
                         child: Column(
                           children: [
                             buildTextField(
-                              labelText: 'NAME:',
+                              labelText: Text_string.nameLabelCaps,
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  return 'Please enter name';
+                                  return Text_string.enterName;
                                 }
                                 return null;
                               },
                             ),
                             const SizedBox(height: 30),
                             buildTextField(
-                              labelText: 'REGISTRATION NO:',
+                              labelText: Text_string.registrationNoLabelCaps,
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  return 'Please enter registration number';
+                                  return Text_string.enterRegistrationNo;
                                 }
                                 return null;
                               },
                             ),
                             const SizedBox(height: 30),
                             buildDropdownButtonFormField(
-                              labelText: 'DESIGNATION:',
-                              items: [
-                                'VOLUNTEER',
-                                'COMMITTEE MEMBER',
-                                'COMMITTEE HEAD',
-                                'ORGANIZER'
-                              ],
+                              labelText: Text_string.designationLabelCaps,
+                              items: Text_string.designationList,
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  return 'Please select a designation';
+                                  return Text_string.selectDesignation;
                                 }
                                 return null;
                               },
                             ),
                             const SizedBox(height: 30),
                             buildTextField(
-                              labelText: 'DEPARTMENT:',
+                              labelText: Text_string.departmentLabelCaps,
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  return 'Please enter your department';
+                                  return Text_string.enterDepartment;
                                 }
                                 return null;
                               },
                             ),
                             const SizedBox(height: 30),
                             buildDropdownButtonFormField(
-                              labelText: 'DIVISION:',
-                              items: ['A', 'B', 'C'],
+                              labelText: Text_string.divisionLabelCaps,
+                              items: Text_string.divisionList,
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  return 'Please select a division';
+                                  return Text_string.selectDivision;
                                 }
                                 return null;
                               },
                             ),
                             const SizedBox(height: 30),
                             buildTextField(
-                              labelText: 'NET ID:',
+                              labelText: Text_string.netIdLabelCaps,
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  return 'Please enter your net ID';
+                                  return Text_string.enterNetId;
                                 }
                                 return null;
                               },
                             ),
                             const SizedBox(height: 30),
                             buildTextField(
-                              labelText: 'Ph no:',
+                              labelText: Text_string.phNoLabel,
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  return 'Please enter your phone number';
+                                  return Text_string.enterPhNo;
                                 }
                                 return null;
                               },
@@ -193,7 +189,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'ENROLL',
+                        Text_string.enrollButton,
                         style: Get.theme.kSmallTextStyle,
                       ),
                       const SizedBox(

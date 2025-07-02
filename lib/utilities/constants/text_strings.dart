@@ -79,6 +79,31 @@ class Text_string {
   static const genderLabel = 'Gender';
   static const yearLabel = 'Year';
 
+  //Registration
+  static const registrationTitle = "REGISTRATION";
+  static const studentDetailsTitle = "STUDENT DETAILS";
+  static const nameLabelCaps = "NAME:";
+  static const enterName = "Please enter name";
+  static const registrationNoLabelCaps = "REGISTRATION NO:";
+  static const enterRegistrationNo = "Please enter registration number";
+  static const designationLabelCaps = "DESIGNATION:";
+  static const selectDesignation = "Please select a designation";
+  static const departmentLabelCaps = "DEPARTMENT:";
+  static const enterDepartment = "Please enter your department";
+  static const divisionLabelCaps = "DIVISION:";
+  static const selectDivision = "Please select a division";
+  static const netIdLabelCaps = "NET ID:";
+  static const enterNetId = "Please enter your net ID";
+  static const phNoLabel = "Ph no:";
+  static const enterPhNo = "Please enter your phone number";
+  static const divisionList = ['A', 'B', 'C'];
+  static const designationList = [
+    'VOLUNTEER',
+    'COMMITTEE MEMBER',
+    'COMMITTEE HEAD',
+    'ORGANIZER'
+  ];
+
   //Settings
   static const settingsTitle = "Settings";
 
@@ -113,4 +138,5 @@ class Text_string {
   static const myTeamButton = "MY TEAM";
   static const logoutButton = "Logout";
   static const updateAttendanceButton = "Update\nAttendance";
+  static const enrollButton = "ENROLL";
 }
