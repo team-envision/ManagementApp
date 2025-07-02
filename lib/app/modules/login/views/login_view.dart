@@ -147,8 +147,8 @@ class LoginView extends GetView<LoginViewController> {
                                   // Increase the size of the icon
                                   child: Icon(
                                     controller.passwordVisible.value
-                                        ? Icons.visibility
-                                        : Icons.visibility_off,
+                                        ? KIcons.visibility
+                                        : KIcons.visibilityOff,
                                     size: 28, // Set the size of the icon
                                   ),
                                 ),

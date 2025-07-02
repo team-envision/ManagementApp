@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:managment_app/Themes/themes.dart';
 import 'package:managment_app/app/modules/teamAttendance/views/team_attendance_view.dart';
+import 'package:managment_app/utilities/constants/icons_const.dart';
 import 'package:managment_app/utilities/constants/images_const.dart';
 import 'package:managment_app/utilities/constants/text_strings.dart';
 
@@ -77,7 +78,7 @@ Widget build(BuildContext context) {
                     snackPosition: SnackPosition.TOP,
                     backgroundColor: Colors.grey[300],
                     colorText: Colors.black,
-                    icon: Icon(Icons.check_circle, color: Colors.green),
+                    icon: Icon(KIcons.checkCircle, color: Colors.green),
                     margin: const EdgeInsets.all(10),
                     duration: const Duration(seconds: 1),
                   );

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:managment_app/Themes/themes.dart';
 import 'package:managment_app/app/modules/home/views/home_view.dart';
+import 'package:managment_app/utilities/constants/icons_const.dart';
 import 'package:managment_app/utilities/constants/images_const.dart';
 import 'package:managment_app/utilities/constants/text_strings.dart';
 import '../../../../components/kDropDownButton.dart';
@@ -159,7 +160,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                         snackPosition: SnackPosition.TOP,
                         backgroundColor: Colors.grey[300],
                         colorText: Colors.black,
-                        icon: Icon(Icons.check_circle, color: Colors.green),
+                        icon: Icon(KIcons.checkCircle, color: Colors.green),
                         margin: const EdgeInsets.all(10),
                         duration: const Duration(seconds: 2),
                       );
@@ -174,7 +175,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                         snackPosition: SnackPosition.TOP,
                         backgroundColor: Colors.red[300],
                         colorText: Colors.white,
-                        icon: Icon(Icons.error, color: Colors.white),
+                        icon: const Icon(KIcons.error, color: Colors.white),
                         margin: const EdgeInsets.all(10),
                         duration: const Duration(seconds: 4),
                       );

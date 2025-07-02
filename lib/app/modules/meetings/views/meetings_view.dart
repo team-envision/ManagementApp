@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:managment_app/app/modules/home/views/home_view.dart';
 import 'package:managment_app/app/routes/app_pages.dart';
+import 'package:managment_app/utilities/constants/icons_const.dart';
 import 'package:managment_app/utilities/constants/images_const.dart';
 import '../../../../components/DatePickerField.dart';
 import '../../../../components/Dropdown.dart';
@@ -38,7 +39,7 @@ class MeetingsView extends GetView<MeetingsController> {
         backgroundColor: theme.colorLevel1,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios, color: theme.colorLevel4),
+          icon: Icon(KIcons.iosBackArrow, color: theme.colorLevel4),
           onPressed: () {
             Get.offAllNamed(Routes.HOME);
           },
@@ -162,7 +163,7 @@ class MeetingsView extends GetView<MeetingsController> {
                       snackPosition: SnackPosition.TOP,
                       backgroundColor: Colors.grey[300],
                       colorText: Colors.black,
-                      icon: const Icon(Icons.check_circle, color: Colors.green),
+                      icon: const Icon(KIcons.checkCircle, color: Colors.green),
                       margin: const EdgeInsets.all(10),
                       duration: const Duration(seconds: 2),
                     );
@@ -186,7 +187,7 @@ class MeetingsView extends GetView<MeetingsController> {
                         ),
                       ),
                       const SizedBox(width: 8),
-                      Icon(Icons.notifications_active, color: Colors.grey[700]),
+                      Icon(KIcons.activeNotification, color: Colors.grey[700]),
                     ],
                   ),
                 ),

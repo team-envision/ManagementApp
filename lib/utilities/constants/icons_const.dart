@@ -11,6 +11,15 @@ class KIcons
   static const addBox = Icons.add_box;
   static const person = Icons.person;
   static const settings = Icons.settings;
+  static const visibility = Icons.visibility;
+  static const visibilityOff = Icons.visibility_off;
+  static const checkCircle = Icons.check_circle;
+  static const iosBackArrow = Icons.arrow_back_ios;
+  static const activeNotification = Icons.notifications_active;
+  static const edit = Icons.edit;
+  static const error = Icons.error;
+  static const search = Icons.search;
+
 
 
 }

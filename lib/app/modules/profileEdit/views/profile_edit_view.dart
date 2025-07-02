@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:managment_app/Themes/themes.dart';
+import 'package:managment_app/utilities/constants/icons_const.dart';
 import 'package:managment_app/utilities/constants/images_const.dart';
 import 'package:managment_app/utilities/constants/text_strings.dart';
 
@@ -50,7 +51,7 @@ class ProfileEditView extends GetView<ProfileEditController> {
                           top: 5,
                           left: 10,
                           child: IconButton(
-                            icon: Icon(Icons.arrow_back_ios,
+                            icon: Icon(KIcons.iosBackArrow,
                                 color: theme.dayNight),
                             onPressed: () {
                               Get.back(); // Navigate back to the previous page
@@ -77,7 +78,7 @@ class ProfileEditView extends GetView<ProfileEditController> {
                             child: Padding(
                               padding: const EdgeInsets.all(10.0),
                               child: Icon(
-                                Icons.edit,
+                                KIcons.edit,
                                 color: theme.dayNight,
                                 size: 30,
                               ),
