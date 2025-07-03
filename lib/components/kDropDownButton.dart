@@ -8,19 +8,19 @@ Widget buildDropdownButtonFormField({required String labelText, required List<St
       boxShadow: [
         BoxShadow(
           blurRadius: 8,
-          color: Get.theme.colorLevel0,
+          color: Get.theme.deepBlack,
           spreadRadius: 2,
         )
       ],
     ),
     child: DropdownButtonFormField<String>(
-      iconEnabledColor: Get.theme.colorLevel0,
-      iconDisabledColor: Get.theme.colorLevel0,
-      dropdownColor: Get.theme.colorLevel4,
+      iconEnabledColor: Get.theme.deepBlack,
+      iconDisabledColor: Get.theme.deepBlack,
+      dropdownColor: Get.theme.fadedWhite,
       decoration: InputDecoration(
-        fillColor: Get.theme.colorLevel4,
+        fillColor: Get.theme.fadedWhite,
         labelText: labelText,
-        labelStyle: TextStyle(color: Get.theme.colorLevel0),
+        labelStyle: TextStyle(color: Get.theme.deepBlack),
         filled: true,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
@@ -29,7 +29,7 @@ Widget buildDropdownButtonFormField({required String labelText, required List<St
       items: items
           .map((item) => DropdownMenuItem(
         value: item,
-        child: Text(item,style: TextStyle(color: Get.theme.colorLevel0),),
+        child: Text(item,style: TextStyle(color: Get.theme.deepBlack),),
       ))
           .toList(),
       onChanged: (value) {},

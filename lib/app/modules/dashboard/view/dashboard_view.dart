@@ -25,7 +25,7 @@ class DashboardView extends GetView<DashboardController> {
           Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [theme.colorLevel1, theme.colorLevel0],
+                colors: [theme.darkBlue, theme.deepBlack],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),
@@ -76,7 +76,7 @@ class DashboardView extends GetView<DashboardController> {
                   Text(
                     Text_string.teamEnvision,
                     style: GoogleFonts.raleway(
-                      color: Colors.white,
+                      color: Get.theme.pureWhite,
                       fontWeight: FontWeight.w600,
                       fontSize: 24,
                     ),

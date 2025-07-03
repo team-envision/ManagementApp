@@ -20,31 +20,31 @@ class BottomNavBar extends StatelessWidget {
         BottomNavigationBarItem(
           icon: Icon(KIcons.home,
               color:
-              selectedIndex == 0 ? theme.colorPrimary : theme.colorLevel3),
+              selectedIndex == 0 ? theme.brightCyan : theme.lightGrey),
           label: '',
         ),
         BottomNavigationBarItem(
           icon: Icon(KIcons.addBox,
               color:
-              selectedIndex == 1 ? theme.colorPrimary : theme.colorLevel3),
+              selectedIndex == 1 ? theme.brightCyan : theme.lightGrey),
           label: '',
         ),
         BottomNavigationBarItem(
           icon: Icon(KIcons.person,
               color:
-              selectedIndex == 2 ? theme.colorPrimary : theme.colorLevel3),
+              selectedIndex == 2 ? theme.brightCyan : theme.lightGrey),
           label: '',
         ),
         BottomNavigationBarItem(
           icon: Icon(KIcons.settings,
               color:
-              selectedIndex == 3 ? theme.colorPrimary : theme.colorLevel3),
+              selectedIndex == 3 ? theme.brightCyan : theme.lightGrey),
           label: '',
         ),
       ],
-      backgroundColor: theme.colorLevel0,
-      selectedItemColor: theme.colorPrimary,
-      unselectedItemColor: theme.colorLevel3,
+      backgroundColor: theme.deepBlack,
+      selectedItemColor: theme.brightCyan,
+      unselectedItemColor: theme.lightGrey,
       showSelectedLabels: false,
       showUnselectedLabels: false,
     );

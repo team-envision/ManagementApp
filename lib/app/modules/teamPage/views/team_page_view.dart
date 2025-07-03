@@ -21,7 +21,7 @@ class TeamPageView extends GetView<TeamPageController> {
           Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [theme.colorLevel1, theme.colorLevel0],
+                colors: [theme.darkBlue, theme.deepBlack],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),
@@ -34,7 +34,7 @@ class TeamPageView extends GetView<TeamPageController> {
               KImages.ellipse3,
               width: 300,
               height: 500,
-              color: Get.theme.colorLevel2,
+              color: Get.theme.darkTeal,
             ),
           ),
           SingleChildScrollView(
@@ -47,7 +47,7 @@ class TeamPageView extends GetView<TeamPageController> {
                   child: Text(
                     Text_string.myTeamButton,
                     style: theme.textTheme.headlineMedium?.copyWith(
-                      color: Get.theme.colorLevel4,
+                      color: Get.theme.fadedWhite,
                       fontSize: 25,
                       letterSpacing: 2.0,
                       fontWeight: FontWeight.w900,

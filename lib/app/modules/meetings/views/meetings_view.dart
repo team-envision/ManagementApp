@@ -24,22 +24,22 @@ class MeetingsView extends GetView<MeetingsController> {
     final theme = Theme.of(context);
 
     return Scaffold(
-      backgroundColor: theme.colorLevel2,
+      backgroundColor: theme.darkTeal,
       appBar: AppBar(
         title: Text(
           Text_string.meetsTitle,
           style: GoogleFonts.raleway(
-            color: theme.colorLevel4,
+            color: theme.fadedWhite,
             fontWeight: FontWeight.w600,
             fontSize: 26,
             letterSpacing: 2,
           ),
         ),
         centerTitle: true,
-        backgroundColor: theme.colorLevel1,
+        backgroundColor: theme.darkBlue,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(KIcons.iosBackArrow, color: theme.colorLevel4),
+          icon: Icon(KIcons.iosBackArrow, color: theme.fadedWhite),
           onPressed: () {
             Get.offAllNamed(Routes.HOME);
           },
@@ -48,7 +48,7 @@ class MeetingsView extends GetView<MeetingsController> {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [theme.colorLevel1, theme.colorLevel2],
+            colors: [theme.darkBlue, theme.darkTeal],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
@@ -71,7 +71,7 @@ class MeetingsView extends GetView<MeetingsController> {
                     KImages.calendar,
                     width: 100,
                     height: 100,
-                    color: theme.colorPrimary,
+                    color: theme.brightCyan,
                   ),
                 ),
                 const SizedBox(height: 20),
@@ -80,11 +80,11 @@ class MeetingsView extends GetView<MeetingsController> {
                   width: Get.width * 0.8,
                   padding: const EdgeInsets.all(20.0),
                   decoration: BoxDecoration(
-                    color: const Color(0xFF094454),
+                    color: Get.theme.darkTeal,
                     borderRadius: BorderRadius.circular(25),
                     boxShadow: [
                       BoxShadow(
-                        color: theme.colorLevel0,
+                        color: theme.deepBlack,
                         spreadRadius: 2,
                         blurRadius: 4,
                       ),
@@ -130,7 +130,7 @@ class MeetingsView extends GetView<MeetingsController> {
                     controller.showDescriptionDialog(context);
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: theme.colorPrimary,
+                    backgroundColor: theme.brightCyan,
                     elevation: 0,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15),
@@ -161,15 +161,15 @@ class MeetingsView extends GetView<MeetingsController> {
                       'Reminder Sent',
                       'Meeting reminder has been sent successfully!',
                       snackPosition: SnackPosition.TOP,
-                      backgroundColor: Colors.grey[300],
-                      colorText: Colors.black,
-                      icon: const Icon(KIcons.checkCircle, color: Colors.green),
+                      backgroundColor: Get.theme.lighterGrey,
+                      colorText: Get.theme.pureBlack,
+                      icon: Icon(KIcons.checkCircle, color: Get.theme.primaryGreen),
                       margin: const EdgeInsets.all(10),
                       duration: const Duration(seconds: 2),
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue[100],
+                    backgroundColor: Get.theme.lightBlue,
                     elevation: 0,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15),
@@ -181,13 +181,13 @@ class MeetingsView extends GetView<MeetingsController> {
                       Text(
                         Text_string.sendReminderButton,
                         style: GoogleFonts.raleway(
-                          color: Colors.grey[700],
+                          color: Get.theme.darkGrey,
                           fontSize: 12,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
                       const SizedBox(width: 8),
-                      Icon(KIcons.activeNotification, color: Colors.grey[700]),
+                      Icon(KIcons.activeNotification, color: Get.theme.darkGrey),
                     ],
                   ),
                 ),

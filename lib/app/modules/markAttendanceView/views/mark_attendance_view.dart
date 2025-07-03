@@ -30,32 +30,32 @@ class MarkAttendanceView extends GetView<MarkAttendanceViewController> {
               Get.back();
             },
           ),
-          backgroundColor: Get.theme.colorLevel1,
+          backgroundColor: Get.theme.darkBlue,
           title: Text(
               Text_string.attendance, //CHANGE TO UPDATE AND USE SAME PAGE DIFFERENT LOGIC
               style: Get.theme.kTitleTextStyle),
-          foregroundColor: Get.theme.colorLevel0,
+          foregroundColor: Get.theme.deepBlack,
           elevation: 0,
           centerTitle: true,
         ),
         body: Column(
           children: [
             Container(
-              color: const Color.fromRGBO(158, 161, 174, 1),
+              color: Get.theme.blueGrey,
               height: 30,
               child: TabBar(
                 labelPadding: const EdgeInsets.all(0.8),
-                unselectedLabelColor: Get.theme.colorLevel0,
-                labelColor: Get.theme.colorLevel0,
+                unselectedLabelColor: Get.theme.deepBlack,
+                labelColor: Get.theme.deepBlack,
                 indicator: BoxDecoration(
-                  color: Get.theme.colorLevel4,
+                  color: Get.theme.fadedWhite,
                   shape: BoxShape.rectangle,
                   borderRadius: BorderRadius.circular(90),
                 ),
                 indicatorPadding:
                     const EdgeInsets.symmetric(horizontal: 0, vertical: 3.0),
-                indicatorColor: Get.theme.colorLevel4,
-                dividerColor: Colors.transparent,
+                indicatorColor: Get.theme.fadedWhite,
+                dividerColor: Get.theme.transparent,
                 isScrollable: false,
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 tabs: const [

@@ -1,17 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:managment_app/Themes/themes.dart';
-import 'package:managment_app/app/modules/login/views/login_view.dart';
-import 'package:managment_app/app/modules/markAttendanceView/views/mark_attendance_view.dart';
-import 'package:managment_app/app/modules/teamAttendance/views/team_attendance_view.dart';
 import 'package:managment_app/app/routes/app_pages.dart';
 import 'package:managment_app/components/SettingButton.dart';
 import 'package:managment_app/utilities/constants/text_strings.dart';
 
 import '../../../../components/Logoutbutton.dart';
-import '../../login/controllers/login_controller.dart';
-import '../../profileEdit/views/profile_edit_view.dart';
-import '../../registration/views/registration_view.dart';
 import '../controllers/settings_controller.dart';
 
 class SettingsView extends GetView<SettingsController> {
@@ -31,7 +25,7 @@ class SettingsView extends GetView<SettingsController> {
             width: screenWidth,
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [theme.colorLevel1, theme.colorLevel2],
+                colors: [theme.darkBlue, theme.darkTeal],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),
@@ -46,7 +40,7 @@ class SettingsView extends GetView<SettingsController> {
                   Container(
                     height: screenHeight * 0.2,
                     decoration: BoxDecoration(
-                      color: theme.colorLevel2,
+                      color: theme.darkTeal,
                     ),
                   ),
                   Positioned(
@@ -57,11 +51,11 @@ class SettingsView extends GetView<SettingsController> {
                         horizontal: screenWidth * 0.2,
                       ),
                       decoration: BoxDecoration(
-                        color: theme.colorLevel1,
+                        color: theme.darkBlue,
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withOpacity(0.1),
+                            color: Get.theme.transparentBlack,
                             spreadRadius: 5,
                             blurRadius: 10,
                             offset: const Offset(0, 5),
@@ -111,7 +105,8 @@ class SettingsView extends GetView<SettingsController> {
                       SizedBox(height: screenHeight * 0.03),
                       Flexible(
                         child: Settingbutton(
-                          title: Text_string.updateTeamButton, //only for heads org
+                          title: Text_string.updateTeamButton,
+                          //only for heads org
                           onPressed: () {
                             Get.toNamed(Routes.MARKATTENDANCEVIEW);
                           },

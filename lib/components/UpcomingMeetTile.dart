@@ -50,7 +50,7 @@ class _UpcomingMeetTileState extends State<UpcomingMeetTile> {
                 ),
                 Icon(
                   isExpanded ? KIcons.expandLess : KIcons.expandCircleDown,
-                  color: theme.colorLevel1,
+                  color: theme.darkBlue,
                   size: 40,
                 ),
               ],

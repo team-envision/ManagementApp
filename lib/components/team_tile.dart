@@ -28,12 +28,12 @@ class TeamTile extends StatelessWidget {
           Container(
             clipBehavior: Clip.none,
             decoration: BoxDecoration(
-              color: Get.theme.colorLevel2,
+              color: Get.theme.darkTeal,
               borderRadius: BorderRadius.circular(25),
-              border: Border.all(color: Get.theme.colorLevel4, width: 1.5),
+              border: Border.all(color: Get.theme.fadedWhite, width: 1.5),
               boxShadow: [
                 BoxShadow(
-                  color: Get.theme.colorLevel4.withOpacity(0.6),
+                  color: Get.theme.fadedWhite.withOpacity(0.6),
                   spreadRadius: 0.2,
                   blurRadius: 2,
                   offset: const Offset(1, 4),
@@ -54,7 +54,7 @@ class TeamTile extends StatelessWidget {
                         child: Text(
                           title,
                           style: Get.theme.kSubTitleTextStyle.copyWith(
-                            color: Get.theme.colorLevel4,
+                            color: Get.theme.fadedWhite,
                             fontWeight: FontWeight.w900,
                             fontSize: 20.0,
                             letterSpacing: 2.0,
@@ -64,7 +64,7 @@ class TeamTile extends StatelessWidget {
                       Text(
                         subtitle,
                         style: Get.theme.kBodyTextStyle.copyWith(
-                          color: Get.theme.colorLevel4,
+                          color: Get.theme.fadedWhite,
                           fontSize: 12,
                           letterSpacing: 1.5,
                         ),

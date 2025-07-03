@@ -19,8 +19,8 @@ import 'package:managment_app/utilities/constants/text_strings.dart';
           decoration: BoxDecoration(
               gradient: LinearGradient(
                   colors: [
-                    Get.theme.colorLevel1,
-                    Get.theme.colorLevel2,
+                    Get.theme.darkBlue,
+                    Get.theme.darkTeal,
                   ],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
@@ -38,13 +38,13 @@ import 'package:managment_app/utilities/constants/text_strings.dart';
                         padding: const EdgeInsets.all(8.0),
                         child: Card(
                           child:  Container(
-                            decoration: ShapeDecoration(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),color: Get.theme.colorLevel4),
+                            decoration: ShapeDecoration(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),color: Get.theme.fadedWhite),
                             child: Padding(
                               padding: const EdgeInsets.all(1.0),
                               child: Container(
                                 padding: const EdgeInsets.all(4.0),
                                 decoration: BoxDecoration(
-                                  color: Get.theme.colorLevel0,
+                                  color: Get.theme.deepBlack,
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 child: _CheckBox(name: controller.names[index],profile: Text_string.sampleProfile),
@@ -65,7 +65,7 @@ import 'package:managment_app/utilities/constants/text_strings.dart';
                     decoration: BoxDecoration(
                       shape: BoxShape.rectangle,
                       borderRadius: BorderRadius.circular(14),
-                      color: Get.theme.colorLevel1,
+                      color: Get.theme.darkBlue,
                     ),
                     height: Get.height*0.05,
                     width: Get.width*0.35,
@@ -75,9 +75,9 @@ import 'package:managment_app/utilities/constants/text_strings.dart';
                         'Attendance Updated',
                         'Attendance has been Updated successfully',
                         snackPosition: SnackPosition.TOP,
-                        backgroundColor: Colors.grey[300],
-                        colorText: Colors.black,
-                        icon: const Icon(KIcons.checkCircle, color: Colors.green),
+                        backgroundColor: Get.theme.lighterGrey,
+                        colorText: Get.theme.pureBlack,
+                        icon: Icon(KIcons.checkCircle, color: Get.theme.primaryGreen),
                         margin: const EdgeInsets.all(10),
                         duration: const Duration(seconds: 1),
                       );
@@ -139,7 +139,7 @@ class _CheckBoxState extends State<_CheckBox> {
               borderRadius: BorderRadius.circular(8)),
           title: Row(
             children: [
-              CircleAvatar(backgroundColor: Get.theme.colorLevel4,),
+              CircleAvatar(backgroundColor: Get.theme.fadedWhite,),
               const SizedBox(width: 10),
               Text('${widget.name} : ', style: Get.theme.kBodyTextStyle),
             ],

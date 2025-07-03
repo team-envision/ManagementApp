@@ -25,8 +25,8 @@ class LoginView extends GetView<LoginViewController> {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              theme.colorLevel1, // Dark blue color
-              theme.colorLevel0, // Black color
+              theme.darkBlue, // Dark blue color
+              theme.deepBlack, // Black color
             ],
           ),
         ),
@@ -48,11 +48,11 @@ class LoginView extends GetView<LoginViewController> {
                   Container(
                     width: Get.width,
                     decoration: BoxDecoration(
-                      color: theme.colorLevel1,
+                      color: theme.darkBlue,
                       borderRadius: BorderRadius.circular(50),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.grey.withOpacity(0.3),
+                          color: Get.theme.fadedGrey,
                           spreadRadius: 2,
                           blurRadius: 5,
                           offset: const Offset(0, 3),
@@ -74,8 +74,8 @@ class LoginView extends GetView<LoginViewController> {
                             ),
                           ),
                           hintText: Text_string.emailHint,
-                          hintStyle: const TextStyle(
-                            color: Colors.grey,
+                          hintStyle: TextStyle(
+                            color: Get.theme.mediumGrey,
                             fontSize: 19,
                           ),
                           border: OutlineInputBorder(
@@ -83,10 +83,10 @@ class LoginView extends GetView<LoginViewController> {
                             borderSide: BorderSide.none,
                           ),
                           filled: true,
-                          fillColor: Colors.transparent,
+                          fillColor: Get.theme.transparent,
                           contentPadding: const EdgeInsets.only(top: 50),
                         ),
-                        style: const TextStyle(color: Colors.white),
+                        style: TextStyle(color: Get.theme.pureWhite),
                         textAlign: TextAlign.start,
                         validator: (value) {
                           if (value == null ||
@@ -106,11 +106,11 @@ class LoginView extends GetView<LoginViewController> {
                           width: 450,
                           height: 70,
                           decoration: BoxDecoration(
-                            color: theme.colorLevel1,
+                            color: theme.darkBlue,
                             borderRadius: BorderRadius.circular(50),
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.grey.withOpacity(0.3),
+                                color: Get.theme.fadedGrey,
                                 spreadRadius: 2,
                                 blurRadius: 5,
                                 offset: const Offset(0, 3),
@@ -132,13 +132,13 @@ class LoginView extends GetView<LoginViewController> {
                               ),
                               contentPadding: const EdgeInsets.only(top: 50),
                               hintText: Text_string.passwordHint,
-                              hintStyle: const TextStyle(color: Colors.grey),
+                              hintStyle: TextStyle(color: Get.theme.mediumGrey),
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(50),
                                 borderSide: BorderSide.none,
                               ),
                               filled: true,
-                              fillColor: Colors.transparent,
+                              fillColor: Get.theme.transparent,
                               suffixIcon: IconButton(
                                 icon: SizedBox(
                                   width: 30,
@@ -157,7 +157,7 @@ class LoginView extends GetView<LoginViewController> {
                                 },
                               ),
                             ),
-                            style: const TextStyle(color: Colors.white),
+                            style: TextStyle(color: Get.theme.pureWhite),
                             validator: (value) {
                               if (value == null || value.isEmpty) {
                                 return Text_string.passwordRequired;
@@ -173,9 +173,9 @@ class LoginView extends GetView<LoginViewController> {
                     alignment: Alignment.centerRight,
                     child: TextButton(
                       onPressed: () {},
-                      child: const Text(
+                      child: Text(
                         Text_string.forgotPassword,
-                        style: TextStyle(color: Colors.grey),
+                        style: TextStyle(color: Get.theme.mediumGrey),
                       ),
                     ),
                   ),
@@ -185,11 +185,11 @@ class LoginView extends GetView<LoginViewController> {
                         width: Get.width,
                         height: 70,
                         decoration: BoxDecoration(
-                          color: theme.colorLevel1,
+                          color: theme.darkBlue,
                           borderRadius: BorderRadius.circular(50),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.grey.withOpacity(0.3),
+                              color: Get.theme.fadedGrey,
                               spreadRadius: 2,
                               blurRadius: 5,
                               offset: const Offset(0, 3),
@@ -201,17 +201,17 @@ class LoginView extends GetView<LoginViewController> {
                           value: controller.selectedOption.value.isEmpty
                               ? null
                               : controller.selectedOption.value,
-                          dropdownColor: theme.colorLevel1,
-                          hint: const Text(
+                          dropdownColor: theme.darkBlue,
+                          hint: Text(
                             Text_string.selectCDT,
                             style: TextStyle(
-                              color: Colors.grey,
+                              color: Get.theme.mediumGrey,
                               fontSize: 14,
                             ),
                           ),
                           decoration: InputDecoration(
                             filled: true,
-                            fillColor: Colors.transparent,
+                            fillColor: Get.theme.transparent,
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(40.0),
                               borderSide: BorderSide.none,
@@ -222,7 +222,7 @@ class LoginView extends GetView<LoginViewController> {
                               value: option,
                               child: Text(
                                 option,
-                                style: const TextStyle(color: Colors.white),
+                                style: TextStyle(color: Get.theme.pureWhite),
                                 overflow: TextOverflow.ellipsis,
                               ),
                             );
@@ -247,18 +247,18 @@ class LoginView extends GetView<LoginViewController> {
                       }
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.transparent,
+                      backgroundColor: Get.theme.transparent,
                       padding: const EdgeInsets.symmetric(
                           horizontal: 70, vertical: 12),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
-                        side: BorderSide(color: theme.colorPrimary, width: 2),
+                        side: BorderSide(color: Get.theme.brightCyan, width: 2),
                       ),
                     ),
                     child: Text(
                       Text_string.loginButton,
                       style: theme.kTitleTextStyle.copyWith(
-                        color: theme.colorPrimary,
+                        color: Get.theme.brightCyan,
                         fontSize: 40,
                       ),
                     ),

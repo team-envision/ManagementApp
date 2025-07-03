@@ -27,7 +27,7 @@ class TeamAttendanceView extends GetView<TeamAttendanceController> {
             Get.back();
           },
         ),
-        backgroundColor: Get.theme.colorLevel1,
+        backgroundColor: Get.theme.darkBlue,
         title: Text(Text_string.myTeamButton, style: Get.theme.kTitleTextStyle),
         elevation: 0,
         centerTitle: true,
@@ -36,8 +36,8 @@ class TeamAttendanceView extends GetView<TeamAttendanceController> {
         decoration: BoxDecoration(
             gradient: LinearGradient(
                 colors: [
-                  Get.theme.colorLevel1,
-                  Get.theme.colorLevel2,
+                  Get.theme.darkBlue,
+                  Get.theme.darkTeal,
                 ],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
@@ -53,16 +53,16 @@ class TeamAttendanceView extends GetView<TeamAttendanceController> {
                   width: screenWidth,
                   child: TextField(
                     style: GoogleFonts.raleway(
-                        textStyle: TextStyle(color: Get.theme.colorLevel0)),
+                        textStyle: TextStyle(color: Get.theme.deepBlack)),
                     decoration: InputDecoration(
                       contentPadding: const EdgeInsets.all(2),
                       prefixIcon:
-                          Icon(KIcons.search, color: Get.theme.colorLevel0),
+                          Icon(KIcons.search, color: Get.theme.deepBlack),
                       hintText: Text_string.searchHint,
                       hintStyle: GoogleFonts.raleway(
-                          textStyle: TextStyle(color: Get.theme.colorLevel0)),
+                          textStyle: TextStyle(color: Get.theme.deepBlack)),
                       filled: true,
-                      fillColor: Get.theme.colorLevel4,
+                      fillColor: Get.theme.fadedWhite,
                       border: OutlineInputBorder(
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(10),
@@ -83,7 +83,7 @@ class TeamAttendanceView extends GetView<TeamAttendanceController> {
                       decoration: ShapeDecoration(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8)),
-                          color: Get.theme.colorLevel4),
+                          color: Get.theme.fadedWhite),
                       child: Padding(
                         padding: const EdgeInsets.all(1.0),
                         child: ExpansionTile(
@@ -94,10 +94,10 @@ class TeamAttendanceView extends GetView<TeamAttendanceController> {
                               borderRadius: BorderRadius.circular(8)),
                           title: Text(Text_string.nameDisplay,
                               style: Get.theme.kSubTitleTextStyle),
-                          backgroundColor: Get.theme.colorLevel0,
-                          collapsedBackgroundColor: Get.theme.colorLevel0,
+                          backgroundColor: Get.theme.deepBlack,
+                          collapsedBackgroundColor: Get.theme.deepBlack,
                           leading: CircleAvatar(
-                            backgroundColor: Get.theme.colorLevel4,
+                            backgroundColor: Get.theme.fadedWhite,
                           ),
                           children: [
                             ListTile(

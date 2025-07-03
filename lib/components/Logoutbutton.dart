@@ -20,7 +20,7 @@ class Logoutbutton extends StatelessWidget {
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-          backgroundColor: theme.colorLevel1,
+          backgroundColor: theme.darkBlue,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8.0),
             side: const BorderSide(

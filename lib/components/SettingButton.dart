@@ -12,7 +12,7 @@ class Settingbutton extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         padding: EdgeInsets.symmetric(vertical: 20,horizontal: 50),
-        backgroundColor: theme.colorLevel1,
+        backgroundColor: theme.darkBlue,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8.0),
           side: BorderSide(
