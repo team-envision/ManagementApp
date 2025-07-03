@@ -74,10 +74,7 @@ class LoginView extends GetView<LoginViewController> {
                             ),
                           ),
                           hintText: Text_string.emailHint,
-                          hintStyle: TextStyle(
-                            color: Get.theme.mediumGrey,
-                            fontSize: 19,
-                          ),
+                          hintStyle: theme.kLargeHintTextStyle,
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(50),
                             borderSide: BorderSide.none,
@@ -86,7 +83,7 @@ class LoginView extends GetView<LoginViewController> {
                           fillColor: Get.theme.transparent,
                           contentPadding: const EdgeInsets.only(top: 50),
                         ),
-                        style: TextStyle(color: Get.theme.pureWhite),
+                        style: theme.kInputFieldTextStyle,
                         textAlign: TextAlign.start,
                         validator: (value) {
                           if (value == null ||
@@ -132,7 +129,7 @@ class LoginView extends GetView<LoginViewController> {
                               ),
                               contentPadding: const EdgeInsets.only(top: 50),
                               hintText: Text_string.passwordHint,
-                              hintStyle: TextStyle(color: Get.theme.mediumGrey),
+                              hintStyle: theme.kLargeHintTextStyle,
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(50),
                                 borderSide: BorderSide.none,
@@ -157,7 +154,7 @@ class LoginView extends GetView<LoginViewController> {
                                 },
                               ),
                             ),
-                            style: TextStyle(color: Get.theme.pureWhite),
+                            style: theme.kInputFieldTextStyle,
                             validator: (value) {
                               if (value == null || value.isEmpty) {
                                 return Text_string.passwordRequired;
@@ -175,7 +172,7 @@ class LoginView extends GetView<LoginViewController> {
                       onPressed: () {},
                       child: Text(
                         Text_string.forgotPassword,
-                        style: TextStyle(color: Get.theme.mediumGrey),
+                        style: theme.kLinkTextStyle,
                       ),
                     ),
                   ),
@@ -204,10 +201,7 @@ class LoginView extends GetView<LoginViewController> {
                           dropdownColor: theme.darkBlue,
                           hint: Text(
                             Text_string.selectCDT,
-                            style: TextStyle(
-                              color: Get.theme.mediumGrey,
-                              fontSize: 14,
-                            ),
+                            style: theme.kDropdownHintTextStyle,
                           ),
                           decoration: InputDecoration(
                             filled: true,
@@ -222,7 +216,7 @@ class LoginView extends GetView<LoginViewController> {
                               value: option,
                               child: Text(
                                 option,
-                                style: TextStyle(color: Get.theme.pureWhite),
+                                style: theme.kInputFieldTextStyle,
                                 overflow: TextOverflow.ellipsis,
                               ),
                             );
@@ -257,10 +251,7 @@ class LoginView extends GetView<LoginViewController> {
                     ),
                     child: Text(
                       Text_string.loginButton,
-                      style: theme.kTitleTextStyle.copyWith(
-                        color: Get.theme.brightCyan,
-                        fontSize: 40,
-                      ),
+                      style: theme.kButtonTextStyle,
                     ),
                   ),
                 ],

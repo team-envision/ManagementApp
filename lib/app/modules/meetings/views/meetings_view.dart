@@ -28,12 +28,7 @@ class MeetingsView extends GetView<MeetingsController> {
       appBar: AppBar(
         title: Text(
           Text_string.meetsTitle,
-          style: GoogleFonts.raleway(
-            color: theme.fadedWhite,
-            fontWeight: FontWeight.w600,
-            fontSize: 26,
-            letterSpacing: 2,
-          ),
+          style: theme.kLargeHeaderTextStyle,
         ),
         centerTitle: true,
         backgroundColor: theme.darkBlue,
@@ -180,11 +175,7 @@ class MeetingsView extends GetView<MeetingsController> {
                     children: [
                       Text(
                         Text_string.sendReminderButton,
-                        style: GoogleFonts.raleway(
-                          color: Get.theme.darkGrey,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w600,
-                        ),
+                        style: theme.kButtonTextStyle2,
                       ),
                       const SizedBox(width: 8),
                       Icon(KIcons.activeNotification, color: Get.theme.darkGrey),

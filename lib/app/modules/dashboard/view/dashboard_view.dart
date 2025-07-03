@@ -75,11 +75,7 @@ class DashboardView extends GetView<DashboardController> {
                 children: [
                   Text(
                     Text_string.teamEnvision,
-                    style: GoogleFonts.raleway(
-                      color: Get.theme.pureWhite,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 24,
-                    ),
+                    style: theme.kHeaderTextStyle,
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(height: 40),

@@ -52,15 +52,13 @@ class TeamAttendanceView extends GetView<TeamAttendanceController> {
                   height: screenHeight * 0.05,
                   width: screenWidth,
                   child: TextField(
-                    style: GoogleFonts.raleway(
-                        textStyle: TextStyle(color: Get.theme.deepBlack)),
+                    style: Get.theme.kSearchTextFieldStyle,
                     decoration: InputDecoration(
                       contentPadding: const EdgeInsets.all(2),
                       prefixIcon:
                           Icon(KIcons.search, color: Get.theme.deepBlack),
                       hintText: Text_string.searchHint,
-                      hintStyle: GoogleFonts.raleway(
-                          textStyle: TextStyle(color: Get.theme.deepBlack)),
+                      hintStyle: Get.theme.kSearchHintTextStyle,
                       filled: true,
                       fillColor: Get.theme.fadedWhite,
                       border: OutlineInputBorder(
