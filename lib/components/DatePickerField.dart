@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:managment_app/Themes/themes.dart';
 import 'package:managment_app/utilities/constants/icons_const.dart';
 
 
@@ -20,14 +21,14 @@ class DatePickerField extends StatelessWidget {
           () => TextFormField(
         decoration: InputDecoration(
           hintText: hintText,
-          hintStyle: const TextStyle(color: Colors.black12),
+          hintStyle: TextStyle(color: Get.theme.lightTransparentBlack),
           filled: true,
-          fillColor: Colors.white,
+          fillColor: Get.theme.pureWhite,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
           ),
           contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-          suffixIcon: const Icon(KIcons.dropDowArrow, color: Colors.black),
+          suffixIcon: Icon(KIcons.dropDowArrow, color: Get.theme.pureBlack),
         ),
         readOnly: true,
         onTap: () async {
@@ -43,7 +44,7 @@ class DatePickerField extends StatelessWidget {
         },
         controller: TextEditingController(text: '${selectedDate.value.year}-${selectedDate.value.month}-${selectedDate.value.day}'),
 
-          style: TextStyle(color: Colors.grey[700]),),
+          style: TextStyle(color: Get.theme.darkGrey),),
     );
   }
 }

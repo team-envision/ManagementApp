@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:managment_app/Themes/themes.dart';
 import 'package:managment_app/utilities/constants/text_strings.dart';
 
 class MeetsConductedTile extends StatelessWidget {
@@ -19,7 +21,7 @@ class MeetsConductedTile extends StatelessWidget {
       padding: EdgeInsets.all(8),
       margin: EdgeInsets.only(top: 8),
       decoration: BoxDecoration(
-        color: Colors.blue[100],
+        color: Get.theme.lightBlue,
         borderRadius:  BorderRadius.circular(8.0),
       ),
       child: Row(
@@ -27,7 +29,7 @@ class MeetsConductedTile extends StatelessWidget {
         children: [
           Text(
             title,
-            style: TextStyle(color: Colors.black,
+            style: TextStyle(color: Get.theme.pureBlack,
               fontSize: 15,
             ),
           ),
@@ -40,11 +42,11 @@ class MeetsConductedTile extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8.0)
                 ),
-                side: BorderSide(width: 1, color: Colors.black),
-                backgroundColor: Colors.blue[100],
+                side: BorderSide(width: 1, color: Get.theme.pureBlack),
+                backgroundColor: Get.theme.lightBlue,
               ),
               child: Center(
-              child: Text(Text_string.updateAttendanceButton, textAlign: TextAlign.center, style: TextStyle(color: Colors.black, fontSize: 9))),))
+              child: Text(Text_string.updateAttendanceButton, textAlign: TextAlign.center, style: TextStyle(color: Get.theme.pureBlack, fontSize: 9))),))
         ],
       )
 

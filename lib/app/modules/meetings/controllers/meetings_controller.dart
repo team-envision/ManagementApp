@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:managment_app/Themes/themes.dart';
 
 import '../../../../utilities/constants/text_strings.dart';
 
@@ -45,15 +46,15 @@ class MeetingsController extends GetxController {
       builder: (BuildContext context) {
         return Theme(
             data: Theme.of(context).copyWith(
-          dialogBackgroundColor: const Color (0xFF002431),
+          dialogBackgroundColor: Get.theme.darkBlue,
         ),
         child: AlertDialog(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
           ),
-          title: const Text(
+          title: Text(
             Text_string.addMeetingDescriptionTitle,
-            style: TextStyle( color: Colors.white, fontWeight: FontWeight.bold),
+            style: TextStyle( color: Get.theme.pureWhite, fontWeight: FontWeight.bold),
           ),
           content: TextField(
             controller: descriptionController,
@@ -70,9 +71,9 @@ class MeetingsController extends GetxController {
               onPressed: () {
                 Get.back();
               },
-              child: const Text(
+              child: Text(
                 Text_string.cancel,
-                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                style: TextStyle(color: Get.theme.pureWhite, fontWeight: FontWeight.bold),
               ),
             ),
             ElevatedButton(

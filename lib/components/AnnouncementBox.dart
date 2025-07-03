@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:managment_app/Themes/themes.dart';
 
 class AnnouncementBox extends StatelessWidget {
   final String announcement;
@@ -17,12 +19,12 @@ class AnnouncementBox extends StatelessWidget {
       padding: EdgeInsets.all(8.0),
       margin: EdgeInsets.only(top: 8.0, bottom: 16.0),
       decoration: BoxDecoration(
-        color: Colors.blue[100],
+        color: Get.theme.lightBlue,
         borderRadius: BorderRadius.circular(8.0),
       ),
       child: Text(
         announcement,
-        style: TextStyle(color: Colors.black, fontSize: 15),
+        style: TextStyle(color: Get.theme.pureBlack, fontSize: 15),
       ),
     );
   }

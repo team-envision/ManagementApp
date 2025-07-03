@@ -11,40 +11,25 @@ extension ThemeExtension on ThemeData {
       : const Color(0xff000000);
 
   Color get brightCyan => const Color(0xFF3EC9CF);
-
   Color get deepBlack => const Color(0xFF010206);
-
   Color get darkBlue => const Color(0xFF002431);
-
   Color get darkTeal => const Color(0xFF094454);
-
   Color get lightGrey => const Color(0xFFD9D9D9);
-
   Color get fadedWhite => const Color.fromARGB(236, 255, 255, 255);
-
   Color get pureWhite => Colors.white;
-
   Color get fadedGrey => Colors.grey.withOpacity(0.3);
-
   Color get mediumGrey => Colors.grey;
-
   Color get transparent => Colors.transparent;
-
   Color get lighterGrey => Colors.grey[300] ?? mediumGrey;
-
   Color get pureBlack => Colors.black;
-
   Color get primaryGreen => Colors.green;
-
   Color get blueGrey => const Color.fromRGBO(158, 161, 174, 1);
-
   Color get lightBlue => Colors.blue[100] ?? Colors.blue;
-
   Color get darkGrey => Colors.grey[700] ?? Colors.grey;
-
   Color get lightRed => Colors.red[300] ?? Colors.red;
-
   Color get transparentBlack => Colors.black.withOpacity(0.1);
+  Color get lightTransparentBlack => Colors.black12;
+  Color get primaryRed => Colors.red;
 
   // DIMENSIONS:
 

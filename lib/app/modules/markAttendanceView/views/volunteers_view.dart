@@ -122,7 +122,7 @@ class _CheckBoxState extends State<_CheckBox> {
       final controller = Get.find<MarkAttendanceViewController>();
       return Obx((){
         return  CheckboxListTile(
-          activeColor: const Color.fromRGBO(62, 201, 207, 1),
+          activeColor: Get.theme.brightCyan,
           value: isChecked.value,
           onChanged: (val) {
             if(val == true){

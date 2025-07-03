@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:managment_app/Themes/themes.dart';
 import 'package:managment_app/utilities/constants/icons_const.dart';
 
@@ -32,7 +33,7 @@ class _UpcomingMeetTileState extends State<UpcomingMeetTile> {
         padding: EdgeInsets.all(8.0),
         margin: EdgeInsets.only(top: 8.0),
         decoration: BoxDecoration(
-          color: Colors.blue[100],
+          color: Get.theme.lightBlue,
           borderRadius: BorderRadius.circular(8.0),
         ),
         child: Column(
@@ -44,7 +45,7 @@ class _UpcomingMeetTileState extends State<UpcomingMeetTile> {
                 Text(
                   widget.title,
                   style: TextStyle(
-                    color: Colors.black,
+                    color: Get.theme.pureBlack,
                     fontSize: 15,
                   ),
                 ),
@@ -61,7 +62,7 @@ class _UpcomingMeetTileState extends State<UpcomingMeetTile> {
                 child: Text(
                   widget.details,
                   style: TextStyle(
-                    color: Colors.black,
+                    color: Get.theme.pureBlack,
                     fontSize: 15
                   ),
                 ),

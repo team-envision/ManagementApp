@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:managment_app/Themes/themes.dart';
 
 class Settingbutton extends StatelessWidget {
@@ -16,7 +17,7 @@ class Settingbutton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8.0),
           side: BorderSide(
-            color: Colors.black,
+            color: Get.theme.pureBlack,
             width: 1.0
           )
         ),
