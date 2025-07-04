@@ -28,7 +28,7 @@ class TeamAttendanceView extends GetView<TeamAttendanceController> {
           },
         ),
         backgroundColor: Get.theme.darkBlue,
-        title: Text(Text_string.myTeamButton, style: Get.theme.kTitleTextStyle),
+        title: Text(KText.myTeamButton, style: Get.theme.kTitleTextStyle),
         elevation: 0,
         centerTitle: true,
       ),
@@ -57,7 +57,7 @@ class TeamAttendanceView extends GetView<TeamAttendanceController> {
                       contentPadding: const EdgeInsets.all(2),
                       prefixIcon:
                           Icon(KIcons.search, color: Get.theme.deepBlack),
-                      hintText: Text_string.searchHint,
+                      hintText: KText.searchHint,
                       hintStyle: Get.theme.kSearchTextFieldStyle,
                       filled: true,
                       fillColor: Get.theme.fadedWhite,
@@ -90,7 +90,7 @@ class TeamAttendanceView extends GetView<TeamAttendanceController> {
                               borderRadius: BorderRadius.circular(8)),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8)),
-                          title: Text(Text_string.nameDisplay,
+                          title: Text(KText.nameDisplay,
                               style: Get.theme.kSubTitleTextStyle),
                           backgroundColor: Get.theme.deepBlack,
                           collapsedBackgroundColor: Get.theme.deepBlack,
@@ -99,19 +99,19 @@ class TeamAttendanceView extends GetView<TeamAttendanceController> {
                           ),
                           children: [
                             ListTile(
-                                title: Text(Text_string.idNoTile,
+                                title: Text(KText.idNoTile,
                                     style: Get.theme.kSmallTextStyle)),
                             ListTile(
-                                title: Text(Text_string.domainTile,
+                                title: Text(KText.domainTile,
                                     style: Get.theme.kSmallTextStyle)),
                             ListTile(
-                                title: Text(Text_string.totalMeetsConductedTile,
+                                title: Text(KText.totalMeetsConductedTile,
                                     style: Get.theme.kSmallTextStyle)),
                             ListTile(
-                                title: Text(Text_string.noOfMeetsConductedTile,
+                                title: Text(KText.noOfMeetsConductedTile,
                                     style: Get.theme.kSmallTextStyle)),
                             ListTile(
-                                title: Text(Text_string.noOfAbsencesTile,
+                                title: Text(KText.noOfAbsencesTile,
                                     style: Get.theme.kSmallTextStyle)),
                           ],
                         ),

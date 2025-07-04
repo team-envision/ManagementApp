@@ -26,7 +26,7 @@ class _RegistrationViewState extends State<RegistrationView> {
       appBar: AppBar(
         backgroundColor: Get.theme.darkBlue,
         centerTitle: true,
-        title: Text(Text_string.registrationTitle, style: Get.theme.kTitleTextStyle),
+        title: Text(KText.registrationTitle, style: Get.theme.kTitleTextStyle),
         elevation: 0,
       ),
       body: SingleChildScrollView(
@@ -52,7 +52,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                       const SizedBox(height: 10),
                       Center(
                         child: Text(
-                          Text_string.studentDetailsTitle,
+                          KText.studentDetailsTitle,
                           style: Get.theme.kSubTitleTextStyle,
                         ),
                       ),
@@ -73,72 +73,72 @@ class _RegistrationViewState extends State<RegistrationView> {
                         child: Column(
                           children: [
                             buildTextField(
-                              labelText: Text_string.nameLabelCaps,
+                              labelText: KText.nameLabelCaps,
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  return Text_string.enterName;
+                                  return KText.enterName;
                                 }
                                 return null;
                               },
                             ),
                             const SizedBox(height: 30),
                             buildTextField(
-                              labelText: Text_string.registrationNoLabelCaps,
+                              labelText: KText.registrationNoLabelCaps,
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  return Text_string.enterRegistrationNo;
+                                  return KText.enterRegistrationNo;
                                 }
                                 return null;
                               },
                             ),
                             const SizedBox(height: 30),
                             buildDropdownButtonFormField(
-                              labelText: Text_string.designationLabelCaps,
-                              items: Text_string.designationList,
+                              labelText: KText.designationLabelCaps,
+                              items: KText.designationList,
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  return Text_string.selectDesignation;
+                                  return KText.selectDesignation;
                                 }
                                 return null;
                               },
                             ),
                             const SizedBox(height: 30),
                             buildTextField(
-                              labelText: Text_string.departmentLabelCaps,
+                              labelText: KText.departmentLabelCaps,
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  return Text_string.enterDepartment;
+                                  return KText.enterDepartment;
                                 }
                                 return null;
                               },
                             ),
                             const SizedBox(height: 30),
                             buildDropdownButtonFormField(
-                              labelText: Text_string.divisionLabelCaps,
-                              items: Text_string.divisionList,
+                              labelText: KText.divisionLabelCaps,
+                              items: KText.divisionList,
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  return Text_string.selectDivision;
+                                  return KText.selectDivision;
                                 }
                                 return null;
                               },
                             ),
                             const SizedBox(height: 30),
                             buildTextField(
-                              labelText: Text_string.netIdLabelCaps,
+                              labelText: KText.netIdLabelCaps,
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  return Text_string.enterNetId;
+                                  return KText.enterNetId;
                                 }
                                 return null;
                               },
                             ),
                             const SizedBox(height: 30),
                             buildTextField(
-                              labelText: Text_string.phNoLabel,
+                              labelText: KText.phNoLabel,
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  return Text_string.enterPhNo;
+                                  return KText.enterPhNo;
                                 }
                                 return null;
                               },
@@ -191,7 +191,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        Text_string.enrollButton,
+                        KText.enrollButton,
                         style: Get.theme.kVerySmallTextStyle,
                       ),
                       const SizedBox(

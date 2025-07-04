@@ -25,7 +25,7 @@ class LoginViewController extends GetxController {
   }
   }
 
-  List<String> get options => Text_string.optionsCDT;
+  List<String> get options => KText.optionsCDT;
   }
 
 

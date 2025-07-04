@@ -27,7 +27,7 @@ class MeetingsView extends GetView<MeetingsController> {
       backgroundColor: theme.darkTeal,
       appBar: AppBar(
         title: Text(
-          Text_string.meetsTitle,
+          KText.meetsTitle,
           style: theme.kVeryBigTextStyle,
         ),
         centerTitle: true,
@@ -89,29 +89,29 @@ class MeetingsView extends GetView<MeetingsController> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       CustomDropdownButton(
-                        hintText: Text_string.domainHint,
+                        hintText: KText.domainHint,
                         options: domainOptions,
                         selectedValue: controller.domainSelectedValue,
                       ),
                       CustomDropdownButton(
-                        hintText: Text_string.forHint,
+                        hintText: KText.forHint,
                         options: forOptions,
                         selectedValue: controller.forSelectedValue,
                       ),
                       DatePickerField(
-                        hintText: Text_string.dateHint,
+                        hintText: KText.dateHint,
                         selectedDate: controller.selectedDate,
                         onDateChanged: (date) =>
                             controller.selectedDate.value = date,
                       ),
                       TimePickerField(
-                        hintText: Text_string.timeHint,
+                        hintText: KText.timeHint,
                         selectedTime: controller.selectedTime,
                         onTimeChanged: (time) =>
                             controller.selectedTime.value = time,
                       ),
                       CustomDropdownButton(
-                        hintText: Text_string.modeHint,
+                        hintText: KText.modeHint,
                         options: modeOptions,
                         selectedValue: controller.modeSelectedValue,
                       ),
@@ -132,7 +132,7 @@ class MeetingsView extends GetView<MeetingsController> {
                     ),
                   ),
                   child: Text(
-                    Text_string.addMeetingDescriptionButton,
+                    KText.addMeetingDescriptionButton,
                     style: theme.kVerySmallTextStyle,
                   ),
                 ),
@@ -174,7 +174,7 @@ class MeetingsView extends GetView<MeetingsController> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        Text_string.sendReminderButton,
+                        KText.sendReminderButton,
                         style: theme.kSmallButtonTextStyle,
                       ),
                       const SizedBox(width: 8),

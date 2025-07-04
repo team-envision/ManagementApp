@@ -44,7 +44,7 @@ class MeetsConductedTile extends StatelessWidget {
                 backgroundColor: Get.theme.lightBlue,
               ),
               child: Center(
-              child: Text(Text_string.updateAttendanceButton, textAlign: TextAlign.center, style: Get.theme.kButtonTextStyle3)),))
+              child: Text(KText.updateAttendanceButton, textAlign: TextAlign.center, style: Get.theme.kButtonTextStyle3)),))
         ],
       )
 

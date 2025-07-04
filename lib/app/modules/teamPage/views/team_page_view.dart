@@ -45,7 +45,7 @@ class TeamPageView extends GetView<TeamPageController> {
                 const SizedBox(height: 30.0),
                 Center(
                   child: Text(
-                    Text_string.myTeamButton,
+                    KText.myTeamButton,
                     style: theme.textTheme.headlineMedium?.copyWith(
                       color: Get.theme.fadedWhite,
                       fontSize: 25,
@@ -56,32 +56,32 @@ class TeamPageView extends GetView<TeamPageController> {
                 ),
                 const SizedBox(height: 20),
                 TeamTile(
-                  title: Text_string.organizerTeamTile,
-                  subtitle: Text_string.sampleOrganizers,
+                  title: KText.organizerTeamTile,
+                  subtitle: KText.sampleOrganizers,
                   onTap: () {
                     Get.toNamed(Routes.TEAM_ATTENDANCE, arguments: 'Organizers');
                   },
                 ),
                 const SizedBox(height: 20),
                 TeamTile(
-                  title: Text_string.headsTeamTile,
-                  subtitle: Text_string.sampleHeads,
+                  title: KText.headsTeamTile,
+                  subtitle: KText.sampleHeads,
                   onTap: () {
                     Get.toNamed(Routes.TEAM_ATTENDANCE, arguments: 'Heads');
                   },
                 ),
                 const SizedBox(height: 20),
                 TeamTile(
-                  title: Text_string.membersTeamTile,
-                  subtitle: Text_string.sampleMembers,
+                  title: KText.membersTeamTile,
+                  subtitle: KText.sampleMembers,
                   onTap: () {
                     Get.toNamed(Routes.TEAM_ATTENDANCE, arguments: 'Members');
                   },
                 ),
                 const SizedBox(height: 20),
                 TeamTile(
-                  title: Text_string.volunteersTeamTile,
-                  subtitle: Text_string.sampleVolunteers,
+                  title: KText.volunteersTeamTile,
+                  subtitle: KText.sampleVolunteers,
                   onTap: () {
                     Get.toNamed(Routes.TEAM_ATTENDANCE, arguments: 'Volunteers');
                   },

@@ -47,7 +47,7 @@ class OrganizersView extends GetView<MarkAttendanceViewController> {
                           ),
                           child: _CheckBox(
                               name: controller.names[index],
-                              profile: Text_string.sampleProfile),
+                              profile: KText.sampleProfile),
                         ),
                       ),
                     ),
@@ -86,7 +86,7 @@ class OrganizersView extends GetView<MarkAttendanceViewController> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(Text_string.updateButton,
+                          Text(KText.updateButton,
                               style: Get.theme.kSubTitleTextStyle),
                           const SizedBox(width: 10),
                           Container(child: Image.asset(KImages.update)),

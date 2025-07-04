@@ -14,10 +14,10 @@ class ProfileEditController extends GetxController {
   final phoneController = TextEditingController();
 
   var selectedGender = Rxn<String>();
-  List<String> get genders => Text_string.genders;
+  List<String> get genders => KText.genders;
 
   var selectedYear = Rxn<String>();
-  List<String> get years => Text_string.years;
+  List<String> get years => KText.years;
 
   void toggleEditMode() {
     isEditing.value = !isEditing.value;

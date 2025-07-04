@@ -109,41 +109,41 @@ class ProfileEditView extends GetView<ProfileEditController> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          '${Text_string.nameDisplay}${controller.nameController.text}', // Displaying updated name
+          '${KText.nameDisplay}${controller.nameController.text}', // Displaying updated name
           style: theme.kTitleTextStyle
               .copyWith(fontSize: 20, color: theme.brightCyan),
         ),
         const SizedBox(height: 20),
         Text(
-          '${Text_string.genderDisplay}${controller.selectedGender.value ?? " "}',
+          '${KText.genderDisplay}${controller.selectedGender.value ?? " "}',
           // Displaying updated gender
           style: theme.kTitleTextStyle
               .copyWith(fontSize: 20, color: theme.brightCyan),
         ),
         const SizedBox(height: 20),
         Text(
-          '${Text_string.emailDisplay}${controller.emailController.text}',
+          '${KText.emailDisplay}${controller.emailController.text}',
           // Displaying updated email
           style: theme.kTitleTextStyle
               .copyWith(fontSize: 20, color: theme.brightCyan),
         ),
         const SizedBox(height: 20),
         Text(
-          '${Text_string.yearDisplay}${controller.selectedYear.value ?? " "}',
+          '${KText.yearDisplay}${controller.selectedYear.value ?? " "}',
           // Displaying updated year
           style: theme.kTitleTextStyle
               .copyWith(fontSize: 20, color: theme.brightCyan),
         ),
         const SizedBox(height: 20),
         Text(
-          '${Text_string.registrationNoDisplay}${controller.regNoController.text}',
+          '${KText.registrationNoDisplay}${controller.regNoController.text}',
           // Displaying updated registration number
           style: theme.kTitleTextStyle
               .copyWith(fontSize: 20, color: theme.brightCyan),
         ),
         const SizedBox(height: 20),
         Text(
-          '${Text_string.phoneNoDisplay}${controller.phoneController.text}',
+          '${KText.phoneNoDisplay}${controller.phoneController.text}',
           // Displaying updated phone number
           style: theme.kTitleTextStyle
               .copyWith(fontSize: 20, color: theme.brightCyan),
@@ -160,7 +160,7 @@ class ProfileEditView extends GetView<ProfileEditController> {
               ),
             ),
             child: Text(
-              Text_string.editProfileButton,
+              KText.editProfileButton,
               style: theme.kTitleTextStyle.copyWith(
                 color: theme.lightGrey,
                 fontSize: 20,
@@ -180,7 +180,7 @@ class ProfileEditView extends GetView<ProfileEditController> {
           TextFormField(
             controller: controller.nameController,
             decoration: InputDecoration(
-              labelText: Text_string.nameLabel,
+              labelText: KText.nameLabel,
               border: const UnderlineInputBorder(),
               enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
@@ -200,7 +200,7 @@ class ProfileEditView extends GetView<ProfileEditController> {
           TextFormField(
             controller: controller.emailController,
             decoration: InputDecoration(
-              labelText: Text_string.emailLabel,
+              labelText: KText.emailLabel,
               border: const UnderlineInputBorder(),
               enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
@@ -220,7 +220,7 @@ class ProfileEditView extends GetView<ProfileEditController> {
           TextFormField(
             controller: controller.regNoController,
             decoration: InputDecoration(
-              labelText: Text_string.registrationNoLabel,
+              labelText: KText.registrationNoLabel,
               border: const UnderlineInputBorder(),
               enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
@@ -240,7 +240,7 @@ class ProfileEditView extends GetView<ProfileEditController> {
           TextFormField(
             controller: controller.phoneController,
             decoration: InputDecoration(
-              labelText: Text_string.phoneNoLabel,
+              labelText: KText.phoneNoLabel,
               border: const UnderlineInputBorder(),
               enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
@@ -265,7 +265,7 @@ class ProfileEditView extends GetView<ProfileEditController> {
                 .toList(),
             onChanged: controller.selectedGender,
             decoration: InputDecoration(
-              labelText: Text_string.genderLabel,
+              labelText: KText.genderLabel,
               border: const UnderlineInputBorder(),
               enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
@@ -289,7 +289,7 @@ class ProfileEditView extends GetView<ProfileEditController> {
                 .toList(),
             onChanged: controller.selectedYear,
             decoration: InputDecoration(
-              labelText: Text_string.yearLabel,
+              labelText: KText.yearLabel,
               border: const UnderlineInputBorder(),
               enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
@@ -322,7 +322,7 @@ class ProfileEditView extends GetView<ProfileEditController> {
                 ),
               ),
               child: Text(
-                Text_string.updateButtonSmall,
+                KText.updateButtonSmall,
                 style: theme.kTitleTextStyle.copyWith(
                   color: theme.lightGrey,
                   fontSize: 20,

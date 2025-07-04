@@ -74,43 +74,43 @@ class DashboardView extends GetView<DashboardController> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Text(
-                    Text_string.teamEnvision,
+                    KText.teamEnvision,
                     style: theme.kBigTextStyle,
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(height: 40),
                   Text(
-                    Text_string.sampleUser,
+                    KText.sampleUser,
                     style: theme.kTitleTextStyle,
                     textAlign: TextAlign.left,
                   ),
                   SizedBox(height: 40),
                   Text(
-                    Text_string.announcementTitle,
+                    KText.announcementTitle,
                     style: theme.kTitleTextStyle,
                     textAlign: TextAlign.left,
                   ),
                   SizedBox(height: 8),
-                  AnnouncementBox(announcement: Text_string.sampleAnnouncement),
+                  AnnouncementBox(announcement: KText.sampleAnnouncement),
                   SizedBox(height: 40),
                   Text(
-                    Text_string.upcomingMeetsTitle,
+                    KText.upcomingMeetsTitle,
                     style: theme.kTitleTextStyle,
                     textAlign: TextAlign.left,
                   ),
                   SizedBox(height: 8),
                   UpcomingMeetTile(
-                    title: Text_string.sampleMeetTitle,
-                    details: Text_string.sampleMeetDetails,
+                    title: KText.sampleMeetTitle,
+                    details: KText.sampleMeetDetails,
                   ),
                   SizedBox(height: 40),
                   Text(
-                    Text_string.meetsConductedTitle,
+                    KText.meetsConductedTitle,
                     style: theme.kTitleTextStyle,
                   ),
                   SizedBox(height: 8),
                   MeetsConductedTile(
-                    title: Text_string.sampleMeetTitle,
+                    title: KText.sampleMeetTitle,
                     OnUpdateAttendance: () {
                       Get.toNamed(Routes.MARKATTENDANCEVIEW);
                     },

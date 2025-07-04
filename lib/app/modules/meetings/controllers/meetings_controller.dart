@@ -4,12 +4,12 @@ import 'package:managment_app/Themes/themes.dart';
 
 import '../../../../utilities/constants/text_strings.dart';
 
-final List<String> domainOptions = Text_string.domainOptions;
+final List<String> domainOptions = KText.domainOptions;
 
 RxInt currentIndex = 0.obs;
 
-final List<String> forOptions = Text_string.forOptions;
-final List<String> modeOptions = Text_string.modeOptions;
+final List<String> forOptions = KText.forOptions;
+final List<String> modeOptions = KText.modeOptions;
 
 class MeetingsController extends GetxController {
   var domainSelectedValue = ''.obs;
@@ -53,13 +53,13 @@ class MeetingsController extends GetxController {
             borderRadius: BorderRadius.circular(20),
           ),
           title: Text(
-            Text_string.addMeetingDescriptionTitle,
+            KText.addMeetingDescriptionTitle,
             style: Get.theme.kTitleTextStyle2,
           ),
           content: TextField(
             controller: descriptionController,
             decoration: InputDecoration(
-              hintText: Text_string.enterMeetingDescriptionHint,
+              hintText: KText.enterMeetingDescriptionHint,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
@@ -72,7 +72,7 @@ class MeetingsController extends GetxController {
                 Get.back();
               },
               child: Text(
-                Text_string.cancel,
+                KText.cancel,
                 style: Get.theme.kTitleTextStyle2,
               ),
             ),
@@ -84,7 +84,7 @@ class MeetingsController extends GetxController {
                 Get.back();
               },
               child: Text(
-                Text_string.done,
+                KText.done,
                 style: Get.theme.kButtonTextStyle2,
               ),
             ),

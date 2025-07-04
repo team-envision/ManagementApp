@@ -73,7 +73,7 @@ class LoginView extends GetView<LoginViewController> {
                               height: 28,
                             ),
                           ),
-                          hintText: Text_string.emailHint,
+                          hintText: KText.emailHint,
                           hintStyle: theme.kLargeHintTextStyle,
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(50),
@@ -89,7 +89,7 @@ class LoginView extends GetView<LoginViewController> {
                           if (value == null ||
                               value.isEmpty ||
                               !value.isEmail) {
-                            return Text_string.emailRequired;
+                            return KText.emailRequired;
                           }
                           return null;
                         },
@@ -128,7 +128,7 @@ class LoginView extends GetView<LoginViewController> {
                                 ),
                               ),
                               contentPadding: const EdgeInsets.only(top: 50),
-                              hintText: Text_string.passwordHint,
+                              hintText: KText.passwordHint,
                               hintStyle: theme.kLargeHintTextStyle,
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(50),
@@ -157,7 +157,7 @@ class LoginView extends GetView<LoginViewController> {
                             style: theme.kInputFieldTextStyle,
                             validator: (value) {
                               if (value == null || value.isEmpty) {
-                                return Text_string.passwordRequired;
+                                return KText.passwordRequired;
                               }
                               return null;
                             },
@@ -171,7 +171,7 @@ class LoginView extends GetView<LoginViewController> {
                     child: TextButton(
                       onPressed: () {},
                       child: Text(
-                        Text_string.forgotPassword,
+                        KText.forgotPassword,
                         style: theme.kLinkTextStyle,
                       ),
                     ),
@@ -200,7 +200,7 @@ class LoginView extends GetView<LoginViewController> {
                               : controller.selectedOption.value,
                           dropdownColor: theme.darkBlue,
                           hint: Text(
-                            Text_string.selectCDT,
+                            KText.selectCDT,
                             style: theme.kDropdownHintTextStyle,
                           ),
                           decoration: InputDecoration(
@@ -227,7 +227,7 @@ class LoginView extends GetView<LoginViewController> {
                           },
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return Text_string.pleaseSelectOption;
+                              return KText.pleaseSelectOption;
                             }
                           },
                         ),
@@ -250,7 +250,7 @@ class LoginView extends GetView<LoginViewController> {
                       ),
                     ),
                     child: Text(
-                      Text_string.loginButton,
+                      KText.loginButton,
                       style: theme.kButtonTextStyle,
                     ),
                   ),

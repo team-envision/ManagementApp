@@ -63,7 +63,7 @@ class SettingsView extends GetView<SettingsController> {
                         ],
                       ),
                       child: Text(
-                        Text_string.settingsTitle,
+                        KText.settingsTitle,
                         style: theme.kTitleTextStyle.copyWith(
                           letterSpacing: 5,
                           fontSize: screenWidth * 0.05,
@@ -87,7 +87,7 @@ class SettingsView extends GetView<SettingsController> {
                     children: [
                       Flexible(
                         child: Settingbutton(
-                          title: Text_string.myProfileButton,
+                          title: KText.myProfileButton,
                           onPressed: () {
                             Get.toNamed(Routes.PROFILE_EDIT);
                           },
@@ -96,7 +96,7 @@ class SettingsView extends GetView<SettingsController> {
                       SizedBox(height: screenHeight * 0.03),
                       Flexible(
                         child: Settingbutton(
-                          title: Text_string.registrationButton,
+                          title: KText.registrationButton,
                           onPressed: () {
                             Get.toNamed(Routes.REGISTRATION);
                           },
@@ -105,7 +105,7 @@ class SettingsView extends GetView<SettingsController> {
                       SizedBox(height: screenHeight * 0.03),
                       Flexible(
                         child: Settingbutton(
-                          title: Text_string.updateTeamButton,
+                          title: KText.updateTeamButton,
                           //only for heads org
                           onPressed: () {
                             Get.toNamed(Routes.MARKATTENDANCEVIEW);
@@ -115,7 +115,7 @@ class SettingsView extends GetView<SettingsController> {
                       SizedBox(height: screenHeight * 0.03),
                       Flexible(
                         child: Settingbutton(
-                          title: Text_string.myTeamButton,
+                          title: KText.myTeamButton,
                           onPressed: () {
                             Get.toNamed(Routes.TEAM_ATTENDANCE);
                           },

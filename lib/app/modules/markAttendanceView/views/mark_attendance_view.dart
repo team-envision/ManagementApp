@@ -32,7 +32,7 @@ class MarkAttendanceView extends GetView<MarkAttendanceViewController> {
           ),
           backgroundColor: Get.theme.darkBlue,
           title: Text(
-              Text_string.attendance, //CHANGE TO UPDATE AND USE SAME PAGE DIFFERENT LOGIC
+              KText.attendance, //CHANGE TO UPDATE AND USE SAME PAGE DIFFERENT LOGIC
               style: Get.theme.kTitleTextStyle),
           foregroundColor: Get.theme.deepBlack,
           elevation: 0,
@@ -59,10 +59,10 @@ class MarkAttendanceView extends GetView<MarkAttendanceViewController> {
                 isScrollable: false,
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 tabs: const [
-                  Tab(text: Text_string.organizersTab),
-                  Tab(text: Text_string.headsTab),
-                  Tab(text: Text_string.membersTab),
-                  Tab(text: Text_string.volunteersTab),
+                  Tab(text: KText.organizersTab),
+                  Tab(text: KText.headsTab),
+                  Tab(text: KText.membersTab),
+                  Tab(text: KText.volunteersTab),
                 ],
               ),
             ),

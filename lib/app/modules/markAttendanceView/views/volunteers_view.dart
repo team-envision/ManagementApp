@@ -47,7 +47,7 @@ import 'package:managment_app/utilities/constants/text_strings.dart';
                                   color: Get.theme.deepBlack,
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
-                                child: _CheckBox(name: controller.names[index],profile: Text_string.sampleProfile),
+                                child: _CheckBox(name: controller.names[index],profile: KText.sampleProfile),
                               ),
                             ),
                           ),
@@ -88,7 +88,7 @@ import 'package:managment_app/utilities/constants/text_strings.dart';
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text(Text_string.updateButton,style: Get.theme.kSubTitleTextStyle),
+                            Text(KText.updateButton,style: Get.theme.kSubTitleTextStyle),
                             const SizedBox(width: 10),
                             Image.asset(KImages.update),
                           ],

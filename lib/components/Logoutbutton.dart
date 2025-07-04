@@ -37,7 +37,7 @@ class Logoutbutton extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              Text_string.logoutButton,
+              KText.logoutButton,
               style: theme.kSmallTextStyle.copyWith(
                 color: Get.theme.primaryRed
               )
