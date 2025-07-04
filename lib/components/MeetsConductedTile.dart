@@ -29,9 +29,7 @@ class MeetsConductedTile extends StatelessWidget {
         children: [
           Text(
             title,
-            style: TextStyle(color: Get.theme.pureBlack,
-              fontSize: 15,
-            ),
+            style: Get.theme.kAnnouncementTextStyle,
           ),
           ConstrainedBox(constraints: BoxConstraints.tightFor(
            width: 101,
@@ -46,7 +44,7 @@ class MeetsConductedTile extends StatelessWidget {
                 backgroundColor: Get.theme.lightBlue,
               ),
               child: Center(
-              child: Text(Text_string.updateAttendanceButton, textAlign: TextAlign.center, style: TextStyle(color: Get.theme.pureBlack, fontSize: 9))),))
+              child: Text(Text_string.updateAttendanceButton, textAlign: TextAlign.center, style: Get.theme.kButtonTextStyle3)),))
         ],
       )
 

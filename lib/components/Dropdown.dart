@@ -26,7 +26,7 @@ class CustomDropdownButton extends StatelessWidget {
           child: DropdownButtonFormField<String>(
             decoration: InputDecoration(
               hintText: hintText,
-              hintStyle: TextStyle(color: Get.theme.darkGrey),
+              hintStyle: Get.theme.kInputFieldTextStyle2,
               filled: true,
               fillColor: Get.theme.pureWhite,
               border: OutlineInputBorder(
@@ -38,7 +38,7 @@ class CustomDropdownButton extends StatelessWidget {
             items: options.map((String value) {
               return DropdownMenuItem<String>(
                 value: value,
-                child: Text(value, style: TextStyle(color: Get.theme.darkGrey)),
+                child: Text(value, style: Get.theme.kInputFieldTextStyle2),
               );
             }).toList(),
             onChanged: (value) => selectedValue.value = value!,

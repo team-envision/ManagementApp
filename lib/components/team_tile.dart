@@ -63,7 +63,7 @@ class TeamTile extends StatelessWidget {
                       ),
                       Text(
                         subtitle,
-                        style: Get.theme.kBodyTextStyle.copyWith(
+                        style: Get.theme.kSmallTextStyle.copyWith(
                           color: Get.theme.fadedWhite,
                           fontSize: 12,
                           letterSpacing: 1.5,

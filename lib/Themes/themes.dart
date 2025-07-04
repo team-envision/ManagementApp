@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 extension ThemeExtension on ThemeData {
-  // COLORS
 
+  // COLORS
   Color get dayNight => brightness == Brightness.dark
       ? const Color(0xffffffff)
       : const Color(0xff000000);
@@ -30,76 +30,74 @@ extension ThemeExtension on ThemeData {
   Color get transparentBlack => Colors.black.withOpacity(0.1);
   Color get lightTransparentBlack => Colors.black12;
   Color get primaryRed => Colors.red;
+  Color get primaryCyan => Colors.cyan;
 
   // DIMENSIONS:
-
   double get kCardBorderRadius => 10.0;
-
   double get kTextFieldBorderRadius => 8.0;
-
   double get kButtonBorderRadius => 8.0;
 
   // FONTS AND TEXT STYLES:
-
-  TextStyle get kLargeHeaderTextStyle => GoogleFonts.raleway(
-    color: fadedWhite,
-    fontWeight: FontWeight.w600,
-    fontSize: 26,
-    letterSpacing: 2,
-  );
-  TextStyle get kHeaderTextStyle => GoogleFonts.raleway(
+  TextStyle get kVeryBigTextStyle => GoogleFonts.raleway(
+        color: fadedWhite,
+        fontWeight: FontWeight.w600,
+        fontSize: 26,
+        letterSpacing: 2,
+      );
+  TextStyle get kBigTextStyle => GoogleFonts.raleway(
       fontWeight: FontWeight.w600, color: fadedWhite, fontSize: 24, height: 1);
-
   TextStyle get kTitleTextStyle => GoogleFonts.raleway(
       fontWeight: FontWeight.w600, color: fadedWhite, fontSize: 20, height: 1);
-
   TextStyle get kSubTitleTextStyle => GoogleFonts.raleway(
       fontWeight: FontWeight.w600, color: fadedWhite, fontSize: 16, height: 1);
-
-  TextStyle get kBodyTextStyle => GoogleFonts.raleway(
+  TextStyle get kSmallTextStyle => GoogleFonts.raleway(
       fontWeight: FontWeight.w500,
       color: fadedWhite,
       fontSize: 14,
       height: 1.5);
-
-  TextStyle get kSmallTextStyle => GoogleFonts.raleway(
+  TextStyle get kVerySmallTextStyle => GoogleFonts.raleway(
       fontWeight: FontWeight.w500,
       color: fadedWhite,
       fontSize: 12,
       height: 1.5);
-
-  TextStyle get kVerySmallTextStyle => GoogleFonts.raleway(
+  TextStyle get kTinyTextStyle => GoogleFonts.raleway(
       fontWeight: FontWeight.w500, color: fadedWhite, fontSize: 10, height: 1);
-
-  TextStyle get kLargeHintTextStyle => TextStyle(
-      fontWeight: FontWeight.w400, color: mediumGrey, fontSize: 19);
-
-  TextStyle get kDropdownHintTextStyle => TextStyle(color: Get.theme.mediumGrey, fontSize: 14,);
-
+  TextStyle get kLargeHintTextStyle =>
+      TextStyle(fontWeight: FontWeight.w400, color: mediumGrey, fontSize: 19);
+  TextStyle get kDropdownHintTextStyle => TextStyle(
+        color: mediumGrey,
+        fontSize: 14,
+      );
+  TextStyle get kHintTextStyle =>
+      TextStyle(color: lightTransparentBlack);
+  TextStyle get kInputFieldTextStyle2 => TextStyle(color: darkGrey);
   TextStyle get kButtonTextStyle => kTitleTextStyle.copyWith(
-    color: Get.theme.brightCyan,
-    fontSize: 40,
-  );
-
-  TextStyle get kButtonTextStyle2 => GoogleFonts.raleway(
-    color: Get.theme.darkGrey,
-    fontSize: 12,
-    fontWeight: FontWeight.w600,
-  );
-
+        color: brightCyan,
+        fontSize: 40,
+      );
+  TextStyle get kSmallButtonTextStyle => GoogleFonts.raleway(
+        color: darkGrey,
+        fontSize: 12,
+        fontWeight: FontWeight.w600,
+      );
+  TextStyle get kButtonTextStyle2 => TextStyle( color: primaryCyan, fontWeight: FontWeight.bold);
   TextStyle get kInputFieldTextStyle => TextStyle(color: pureWhite);
-
   TextStyle get kLinkTextStyle => TextStyle(color: mediumGrey);
+  TextStyle get kSearchTextFieldStyle =>
+      GoogleFonts.raleway(textStyle: TextStyle(color: deepBlack));
+  TextStyle get kHintTextStyle2 =>
+      TextStyle(color: darkGrey, fontWeight: FontWeight.w300);
+  TextStyle get kInputFieldTextStyle3 =>
+      TextStyle(color: darkGrey, fontWeight: FontWeight.w400);
+  TextStyle get kTitleTextStyle2 =>
+      TextStyle(color: pureWhite, fontWeight: FontWeight.bold);
+  TextStyle get kButtonTextStyle3 => TextStyle(color: pureBlack, fontSize: 9);
+  TextStyle get kAnnouncementTextStyle => TextStyle(color: pureBlack, fontSize: 15);
+  TextStyle get kLabelTextStyle => TextStyle(color: deepBlack);
 
-  TextStyle get kSearchTextFieldStyle => GoogleFonts.raleway(
-      textStyle: TextStyle(color: Get.theme.deepBlack));
-
-  TextStyle get kSearchHintTextStyle => GoogleFonts.raleway(
-      textStyle: TextStyle(color: Get.theme.deepBlack));
 }
 
 // THEMES
-
 class Themes {
   static final light = ThemeData.light().copyWith(
     appBarTheme: const AppBarTheme(

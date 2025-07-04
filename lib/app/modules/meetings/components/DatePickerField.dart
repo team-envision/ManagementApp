@@ -21,7 +21,7 @@ class DatePickerField extends StatelessWidget {
           () => TextFormField(
         decoration: InputDecoration(
           hintText: hintText,
-          hintStyle: TextStyle(color: Get.theme.lightTransparentBlack),
+          hintStyle: Get.theme.kHintTextStyle,
           filled: true,
           fillColor: Get.theme.pureWhite,
           border: OutlineInputBorder(
@@ -44,7 +44,7 @@ class DatePickerField extends StatelessWidget {
         },
         controller: TextEditingController(text: '${selectedDate.value.year}-${selectedDate.value.month}-${selectedDate.value.day}'),
 
-          style: TextStyle(color: Get.theme.darkGrey),),
+          style: Get.theme.kInputFieldTextStyle2,),
     );
   }
 }

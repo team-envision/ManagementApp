@@ -54,7 +54,7 @@ class MeetingsController extends GetxController {
           ),
           title: Text(
             Text_string.addMeetingDescriptionTitle,
-            style: TextStyle( color: Get.theme.pureWhite, fontWeight: FontWeight.bold),
+            style: Get.theme.kTitleTextStyle2,
           ),
           content: TextField(
             controller: descriptionController,
@@ -73,7 +73,7 @@ class MeetingsController extends GetxController {
               },
               child: Text(
                 Text_string.cancel,
-                style: TextStyle(color: Get.theme.pureWhite, fontWeight: FontWeight.bold),
+                style: Get.theme.kTitleTextStyle2,
               ),
             ),
             ElevatedButton(
@@ -83,9 +83,9 @@ class MeetingsController extends GetxController {
                 }
                 Get.back();
               },
-              child: const Text(
+              child: Text(
                 Text_string.done,
-                style: TextStyle( color:Colors.cyan, fontWeight: FontWeight.bold),
+                style: Get.theme.kButtonTextStyle2,
               ),
             ),
           ],

@@ -141,7 +141,7 @@ class _CheckBoxState extends State<_CheckBox> {
             children: [
               CircleAvatar(backgroundColor: Get.theme.fadedWhite,),
               const SizedBox(width: 10),
-              Text('${widget.name} : ', style: Get.theme.kBodyTextStyle),
+              Text('${widget.name} : ', style: Get.theme.kSmallTextStyle),
             ],
           ),
         );

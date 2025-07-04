@@ -14,12 +14,11 @@ Widget buildTextField({required String labelText, required String? Function(dyna
       ],
     ),
     child: TextFormField(
-      style: TextStyle(
-        color: Get.theme.deepBlack),
+      style: Get.theme.kLabelTextStyle,
       decoration: InputDecoration(
         fillColor: Get.theme.fadedWhite,
         labelText: labelText,
-        labelStyle: TextStyle(color: Get.theme.deepBlack),
+        labelStyle: Get.theme.kLabelTextStyle,
         filled: true,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),

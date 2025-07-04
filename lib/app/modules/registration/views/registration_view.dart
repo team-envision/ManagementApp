@@ -192,7 +192,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                     children: [
                       Text(
                         Text_string.enrollButton,
-                        style: Get.theme.kSmallTextStyle,
+                        style: Get.theme.kVerySmallTextStyle,
                       ),
                       const SizedBox(
                         width: 10,

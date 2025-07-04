@@ -117,7 +117,7 @@ class _CheckBox extends StatelessWidget {
     final controller = Get.find<MarkAttendanceViewController>();
     return Obx(() {
       return CheckboxListTile(
-        activeColor: Color.fromRGBO(62, 201, 207, 1),
+        activeColor: Get.theme.brightCyan,
         value: isChecked.value,
         onChanged: (val) {
           if (val == true) {
@@ -134,7 +134,7 @@ class _CheckBox extends StatelessWidget {
               backgroundColor: Get.theme.fadedWhite,
             ),
             SizedBox(width: 10),
-            Text(name + ' : ', style: Get.theme.kBodyTextStyle),
+            Text(name + ' : ', style: Get.theme.kSmallTextStyle),
           ],
         ),
       );

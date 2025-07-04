@@ -28,7 +28,7 @@ class MeetingsView extends GetView<MeetingsController> {
       appBar: AppBar(
         title: Text(
           Text_string.meetsTitle,
-          style: theme.kLargeHeaderTextStyle,
+          style: theme.kVeryBigTextStyle,
         ),
         centerTitle: true,
         backgroundColor: theme.darkBlue,
@@ -133,7 +133,7 @@ class MeetingsView extends GetView<MeetingsController> {
                   ),
                   child: Text(
                     Text_string.addMeetingDescriptionButton,
-                    style: theme.kSmallTextStyle,
+                    style: theme.kVerySmallTextStyle,
                   ),
                 ),
                 const SizedBox(height: 20),
@@ -144,7 +144,7 @@ class MeetingsView extends GetView<MeetingsController> {
                       : Text(
                           controller.description.value,
                           textAlign: TextAlign.center,
-                          style: theme.kSmallTextStyle.copyWith(fontSize: 16),
+                          style: theme.kVerySmallTextStyle.copyWith(fontSize: 16),
                         );
                 }),
 
@@ -175,7 +175,7 @@ class MeetingsView extends GetView<MeetingsController> {
                     children: [
                       Text(
                         Text_string.sendReminderButton,
-                        style: theme.kButtonTextStyle2,
+                        style: theme.kSmallButtonTextStyle,
                       ),
                       const SizedBox(width: 8),
                       Icon(KIcons.activeNotification, color: Get.theme.darkGrey),

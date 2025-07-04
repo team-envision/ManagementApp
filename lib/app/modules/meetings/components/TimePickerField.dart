@@ -29,7 +29,7 @@ class TimePickerField extends StatelessWidget {
             child: TextFormField(
               decoration: InputDecoration(
                 hintText: hintText,
-                hintStyle: TextStyle(color: Get.theme.darkGrey, fontWeight: FontWeight.w300),
+                hintStyle: Get.theme.kHintTextStyle2,
                 filled: true,
                 fillColor: Get.theme.pureWhite,
                 border: OutlineInputBorder(
@@ -52,7 +52,7 @@ class TimePickerField extends StatelessWidget {
               ),
               controller: controller,
               readOnly: true,
-              style: TextStyle(color: Get.theme.darkGrey, fontWeight: FontWeight.w400),
+              style: Get.theme.kInputFieldTextStyle3,
             ),
           );
         },

@@ -44,10 +44,7 @@ class _UpcomingMeetTileState extends State<UpcomingMeetTile> {
               children: [
                 Text(
                   widget.title,
-                  style: TextStyle(
-                    color: Get.theme.pureBlack,
-                    fontSize: 15,
-                  ),
+                  style: Get.theme.kAnnouncementTextStyle,
                 ),
                 Icon(
                   isExpanded ? KIcons.expandLess : KIcons.expandCircleDown,
@@ -61,10 +58,7 @@ class _UpcomingMeetTileState extends State<UpcomingMeetTile> {
                 padding: const EdgeInsets.only(top: 8.0),
                 child: Text(
                   widget.details,
-                  style: TextStyle(
-                    color: Get.theme.pureBlack,
-                    fontSize: 15
-                  ),
+                  style: Get.theme.kAnnouncementTextStyle,
                 ),
               ),
           ],

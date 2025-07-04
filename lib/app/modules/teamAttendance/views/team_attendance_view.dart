@@ -58,7 +58,7 @@ class TeamAttendanceView extends GetView<TeamAttendanceController> {
                       prefixIcon:
                           Icon(KIcons.search, color: Get.theme.deepBlack),
                       hintText: Text_string.searchHint,
-                      hintStyle: Get.theme.kSearchHintTextStyle,
+                      hintStyle: Get.theme.kSearchTextFieldStyle,
                       filled: true,
                       fillColor: Get.theme.fadedWhite,
                       border: OutlineInputBorder(
@@ -100,19 +100,19 @@ class TeamAttendanceView extends GetView<TeamAttendanceController> {
                           children: [
                             ListTile(
                                 title: Text(Text_string.idNoTile,
-                                    style: Get.theme.kBodyTextStyle)),
+                                    style: Get.theme.kSmallTextStyle)),
                             ListTile(
                                 title: Text(Text_string.domainTile,
-                                    style: Get.theme.kBodyTextStyle)),
+                                    style: Get.theme.kSmallTextStyle)),
                             ListTile(
                                 title: Text(Text_string.totalMeetsConductedTile,
-                                    style: Get.theme.kBodyTextStyle)),
+                                    style: Get.theme.kSmallTextStyle)),
                             ListTile(
                                 title: Text(Text_string.noOfMeetsConductedTile,
-                                    style: Get.theme.kBodyTextStyle)),
+                                    style: Get.theme.kSmallTextStyle)),
                             ListTile(
                                 title: Text(Text_string.noOfAbsencesTile,
-                                    style: Get.theme.kBodyTextStyle)),
+                                    style: Get.theme.kSmallTextStyle)),
                           ],
                         ),
                       ),

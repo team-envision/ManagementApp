@@ -24,7 +24,7 @@ class AnnouncementBox extends StatelessWidget {
       ),
       child: Text(
         announcement,
-        style: TextStyle(color: Get.theme.pureBlack, fontSize: 15),
+        style: Get.theme.kAnnouncementTextStyle,
       ),
     );
   }
