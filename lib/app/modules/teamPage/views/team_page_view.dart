@@ -13,7 +13,6 @@ class TeamPageView extends GetView<TeamPageController> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
 
     return Scaffold(
       body: Stack(
@@ -46,7 +45,7 @@ class TeamPageView extends GetView<TeamPageController> {
                 Center(
                   child: Text(
                     KText.myTeamButton,
-                    style: theme.textTheme.headlineMedium?.copyWith(
+                    style: Get.theme.textTheme.headlineMedium?.copyWith(
                       color: Get.theme.fadedWhite,
                       fontSize: 25,
                       letterSpacing: 2.0,

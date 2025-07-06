@@ -15,13 +15,12 @@ class Logoutbutton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
 
     return Center(
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-          backgroundColor: theme.darkBlue,
+          backgroundColor: Get.theme.darkBlue,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8.0),
             side: BorderSide(
@@ -38,7 +37,7 @@ class Logoutbutton extends StatelessWidget {
           children: [
             Text(
               KText.logoutButton,
-              style: theme.kSmallTextStyle.copyWith(
+              style: Get.theme.kSmallTextStyle.copyWith(
                 color: Get.theme.primaryRed
               )
             ),

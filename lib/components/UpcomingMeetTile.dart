@@ -21,7 +21,6 @@ class _UpcomingMeetTileState extends State<UpcomingMeetTile> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     return GestureDetector(
       onTap: () {
         setState(() {
@@ -48,7 +47,7 @@ class _UpcomingMeetTileState extends State<UpcomingMeetTile> {
                 ),
                 Icon(
                   isExpanded ? KIcons.expandLess : KIcons.expandCircleDown,
-                  color: theme.darkBlue,
+                  color: Get.theme.darkBlue,
                   size: 40,
                 ),
               ],

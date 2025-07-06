@@ -45,7 +45,7 @@ class MeetingsController extends GetxController {
       context: context,
       builder: (BuildContext context) {
         return Theme(
-            data: Theme.of(context).copyWith(
+            data: Get.theme.copyWith(
           dialogBackgroundColor: Get.theme.darkBlue,
         ),
         child: AlertDialog(

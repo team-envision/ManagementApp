@@ -14,7 +14,6 @@ class ProfileEditView extends GetView<ProfileEditController> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Get.theme;
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -91,8 +90,8 @@ class ProfileEditView extends GetView<ProfileEditController> {
                   const SizedBox(height: 20),
                   Obx(
                     () => controller.isEditing.value
-                        ? _buildProfileDetails(context, theme)
-                        : _buildEditableForm(context, theme),
+                        ? _buildProfileDetails(context, Get.theme)
+                        : _buildEditableForm(context, Get.theme),
                   ),
                   const SizedBox(height: 20),
                 ],

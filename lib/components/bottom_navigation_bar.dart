@@ -11,7 +11,6 @@ class BottomNavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
 
     return BottomNavigationBar(
       currentIndex: selectedIndex,
@@ -20,25 +19,25 @@ class BottomNavBar extends StatelessWidget {
         BottomNavigationBarItem(
           icon: Icon(KIcons.home,
               color:
-              selectedIndex == 0 ? theme.brightCyan : theme.lightGrey),
+              selectedIndex == 0 ? Get.theme.brightCyan : Get.theme.lightGrey),
           label: '',
         ),
         BottomNavigationBarItem(
           icon: Icon(KIcons.addBox,
               color:
-              selectedIndex == 1 ? theme.brightCyan : theme.lightGrey),
+              selectedIndex == 1 ? Get.theme.brightCyan : Get.theme.lightGrey),
           label: '',
         ),
         BottomNavigationBarItem(
           icon: Icon(KIcons.person,
               color:
-              selectedIndex == 2 ? theme.brightCyan : theme.lightGrey),
+              selectedIndex == 2 ? Get.theme.brightCyan : Get.theme.lightGrey),
           label: '',
         ),
         BottomNavigationBarItem(
           icon: Icon(KIcons.settings,
               color:
-              selectedIndex == 3 ? theme.brightCyan : theme.lightGrey),
+              selectedIndex == 3 ? Get.theme.brightCyan : Get.theme.lightGrey),
           label: '',
         ),
       ],

@@ -9,11 +9,10 @@ class Settingbutton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         padding: EdgeInsets.symmetric(vertical: 20,horizontal: 50),
-        backgroundColor: theme.darkBlue,
+        backgroundColor: Get.theme.darkBlue,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8.0),
           side: BorderSide(
@@ -26,7 +25,7 @@ class Settingbutton extends StatelessWidget {
       onPressed: onPressed,
       child: Text(
        title,
-       style: theme.kSubTitleTextStyle,
+       style: Get.theme.kSubTitleTextStyle,
       ),
 
     );

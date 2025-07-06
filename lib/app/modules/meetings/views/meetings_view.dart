@@ -21,14 +21,13 @@ class MeetingsView extends GetView<MeetingsController> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
 
     return Scaffold(
       backgroundColor: Get.theme.darkTeal,
       appBar: AppBar(
         title: Text(
           KText.meetsTitle,
-          style: theme.kVeryBigTextStyle,
+          style: Get.theme.kVeryBigTextStyle,
         ),
         centerTitle: true,
         backgroundColor: Get.theme.darkBlue,
@@ -133,7 +132,7 @@ class MeetingsView extends GetView<MeetingsController> {
                   ),
                   child: Text(
                     KText.addMeetingDescriptionButton,
-                    style: theme.kVerySmallTextStyle,
+                    style: Get.theme.kVerySmallTextStyle,
                   ),
                 ),
                 const SizedBox(height: 20),
@@ -144,7 +143,7 @@ class MeetingsView extends GetView<MeetingsController> {
                       : Text(
                           controller.description.value,
                           textAlign: TextAlign.center,
-                          style: theme.kVerySmallTextStyle.copyWith(fontSize: 16),
+                          style: Get.theme.kVerySmallTextStyle.copyWith(fontSize: 16),
                         );
                 }),
 
@@ -175,7 +174,7 @@ class MeetingsView extends GetView<MeetingsController> {
                     children: [
                       Text(
                         KText.sendReminderButton,
-                        style: theme.kSmallButtonTextStyle,
+                        style: Get.theme.kSmallButtonTextStyle,
                       ),
                       const SizedBox(width: 8),
                       Icon(KIcons.activeNotification, color: Get.theme.darkGrey),

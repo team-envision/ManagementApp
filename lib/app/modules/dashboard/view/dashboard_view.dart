@@ -17,7 +17,6 @@ class DashboardView extends GetView<DashboardController> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
 
     return Scaffold(
       body: Stack(
@@ -75,19 +74,19 @@ class DashboardView extends GetView<DashboardController> {
                 children: [
                   Text(
                     KText.teamEnvision,
-                    style: theme.kBigTextStyle,
+                    style: Get.theme.kBigTextStyle,
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(height: 40),
                   Text(
                     KText.sampleUser,
-                    style: theme.kTitleTextStyle,
+                    style: Get.theme.kTitleTextStyle,
                     textAlign: TextAlign.left,
                   ),
                   SizedBox(height: 40),
                   Text(
                     KText.announcementTitle,
-                    style: theme.kTitleTextStyle,
+                    style: Get.theme.kTitleTextStyle,
                     textAlign: TextAlign.left,
                   ),
                   SizedBox(height: 8),
@@ -95,7 +94,7 @@ class DashboardView extends GetView<DashboardController> {
                   SizedBox(height: 40),
                   Text(
                     KText.upcomingMeetsTitle,
-                    style: theme.kTitleTextStyle,
+                    style: Get.theme.kTitleTextStyle,
                     textAlign: TextAlign.left,
                   ),
                   SizedBox(height: 8),
@@ -106,7 +105,7 @@ class DashboardView extends GetView<DashboardController> {
                   SizedBox(height: 40),
                   Text(
                     KText.meetsConductedTitle,
-                    style: theme.kTitleTextStyle,
+                    style: Get.theme.kTitleTextStyle,
                   ),
                   SizedBox(height: 8),
                   MeetsConductedTile(

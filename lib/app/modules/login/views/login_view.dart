@@ -14,7 +14,6 @@ class LoginView extends GetView<LoginViewController> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Get.theme;
     final formKey = GlobalKey<FormState>();
 
     return Scaffold(
@@ -74,7 +73,7 @@ class LoginView extends GetView<LoginViewController> {
                             ),
                           ),
                           hintText: KText.emailHint,
-                          hintStyle: theme.kLargeHintTextStyle,
+                          hintStyle: Get.theme.kLargeHintTextStyle,
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(50),
                             borderSide: BorderSide.none,
@@ -83,7 +82,7 @@ class LoginView extends GetView<LoginViewController> {
                           fillColor: Get.theme.transparent,
                           contentPadding: const EdgeInsets.only(top: 50),
                         ),
-                        style: theme.kInputFieldTextStyle,
+                        style: Get.theme.kInputFieldTextStyle,
                         textAlign: TextAlign.start,
                         validator: (value) {
                           if (value == null ||
@@ -129,7 +128,7 @@ class LoginView extends GetView<LoginViewController> {
                               ),
                               contentPadding: const EdgeInsets.only(top: 50),
                               hintText: KText.passwordHint,
-                              hintStyle: theme.kLargeHintTextStyle,
+                              hintStyle: Get.theme.kLargeHintTextStyle,
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(50),
                                 borderSide: BorderSide.none,
@@ -154,7 +153,7 @@ class LoginView extends GetView<LoginViewController> {
                                 },
                               ),
                             ),
-                            style: theme.kInputFieldTextStyle,
+                            style: Get.theme.kInputFieldTextStyle,
                             validator: (value) {
                               if (value == null || value.isEmpty) {
                                 return KText.passwordRequired;
@@ -172,7 +171,7 @@ class LoginView extends GetView<LoginViewController> {
                       onPressed: () {},
                       child: Text(
                         KText.forgotPassword,
-                        style: theme.kLinkTextStyle,
+                        style: Get.theme.kLinkTextStyle,
                       ),
                     ),
                   ),
@@ -201,7 +200,7 @@ class LoginView extends GetView<LoginViewController> {
                           dropdownColor: Get.theme.darkBlue,
                           hint: Text(
                             KText.selectCDT,
-                            style: theme.kDropdownHintTextStyle,
+                            style: Get.theme.kDropdownHintTextStyle,
                           ),
                           decoration: InputDecoration(
                             filled: true,
@@ -216,7 +215,7 @@ class LoginView extends GetView<LoginViewController> {
                               value: option,
                               child: Text(
                                 option,
-                                style: theme.kInputFieldTextStyle,
+                                style: Get.theme.kInputFieldTextStyle,
                                 overflow: TextOverflow.ellipsis,
                               ),
                             );
@@ -251,7 +250,7 @@ class LoginView extends GetView<LoginViewController> {
                     ),
                     child: Text(
                       KText.loginButton,
-                      style: theme.kButtonTextStyle,
+                      style: Get.theme.kButtonTextStyle,
                     ),
                   ),
                 ],

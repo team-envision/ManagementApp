@@ -13,7 +13,6 @@ class SettingsView extends GetView<SettingsController> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
 
@@ -64,7 +63,7 @@ class SettingsView extends GetView<SettingsController> {
                       ),
                       child: Text(
                         KText.settingsTitle,
-                        style: theme.kTitleTextStyle.copyWith(
+                        style: Get.theme.kTitleTextStyle.copyWith(
                           letterSpacing: 5,
                           fontSize: screenWidth * 0.05,
                           fontWeight: FontWeight.bold,
