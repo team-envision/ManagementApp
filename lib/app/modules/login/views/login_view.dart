@@ -25,8 +25,8 @@ class LoginView extends GetView<LoginViewController> {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              theme.darkBlue, // Dark blue color
-              theme.deepBlack, // Black color
+              Get.theme.darkBlue, // Dark blue color
+              Get.theme.deepBlack, // Black color
             ],
           ),
         ),
@@ -48,7 +48,7 @@ class LoginView extends GetView<LoginViewController> {
                   Container(
                     width: Get.width,
                     decoration: BoxDecoration(
-                      color: theme.darkBlue,
+                      color: Get.theme.darkBlue,
                       borderRadius: BorderRadius.circular(50),
                       boxShadow: [
                         BoxShadow(
@@ -103,7 +103,7 @@ class LoginView extends GetView<LoginViewController> {
                           width: 450,
                           height: 70,
                           decoration: BoxDecoration(
-                            color: theme.darkBlue,
+                            color: Get.theme.darkBlue,
                             borderRadius: BorderRadius.circular(50),
                             boxShadow: [
                               BoxShadow(
@@ -182,7 +182,7 @@ class LoginView extends GetView<LoginViewController> {
                         width: Get.width,
                         height: 70,
                         decoration: BoxDecoration(
-                          color: theme.darkBlue,
+                          color: Get.theme.darkBlue,
                           borderRadius: BorderRadius.circular(50),
                           boxShadow: [
                             BoxShadow(
@@ -198,7 +198,7 @@ class LoginView extends GetView<LoginViewController> {
                           value: controller.selectedOption.value.isEmpty
                               ? null
                               : controller.selectedOption.value,
-                          dropdownColor: theme.darkBlue,
+                          dropdownColor: Get.theme.darkBlue,
                           hint: Text(
                             KText.selectCDT,
                             style: theme.kDropdownHintTextStyle,

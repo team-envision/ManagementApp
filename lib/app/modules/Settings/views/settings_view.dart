@@ -25,7 +25,7 @@ class SettingsView extends GetView<SettingsController> {
             width: screenWidth,
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [theme.darkBlue, theme.darkTeal],
+                colors: [Get.theme.darkBlue, Get.theme.darkTeal],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),
@@ -40,7 +40,7 @@ class SettingsView extends GetView<SettingsController> {
                   Container(
                     height: screenHeight * 0.2,
                     decoration: BoxDecoration(
-                      color: theme.darkTeal,
+                      color: Get.theme.darkTeal,
                     ),
                   ),
                   Positioned(
@@ -51,7 +51,7 @@ class SettingsView extends GetView<SettingsController> {
                         horizontal: screenWidth * 0.2,
                       ),
                       decoration: BoxDecoration(
-                        color: theme.darkBlue,
+                        color: Get.theme.darkBlue,
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(

@@ -25,7 +25,7 @@ class DashboardView extends GetView<DashboardController> {
           Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [theme.darkBlue, theme.deepBlack],
+                colors: [Get.theme.darkBlue, Get.theme.deepBlack],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),

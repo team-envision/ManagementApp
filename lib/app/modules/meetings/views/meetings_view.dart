@@ -24,17 +24,17 @@ class MeetingsView extends GetView<MeetingsController> {
     final theme = Theme.of(context);
 
     return Scaffold(
-      backgroundColor: theme.darkTeal,
+      backgroundColor: Get.theme.darkTeal,
       appBar: AppBar(
         title: Text(
           KText.meetsTitle,
           style: theme.kVeryBigTextStyle,
         ),
         centerTitle: true,
-        backgroundColor: theme.darkBlue,
+        backgroundColor: Get.theme.darkBlue,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(KIcons.iosBackArrow, color: theme.fadedWhite),
+          icon: Icon(KIcons.iosBackArrow, color: Get.theme.fadedWhite),
           onPressed: () {
             Get.offAllNamed(Routes.HOME);
           },
@@ -43,7 +43,7 @@ class MeetingsView extends GetView<MeetingsController> {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [theme.darkBlue, theme.darkTeal],
+            colors: [Get.theme.darkBlue, Get.theme.darkTeal],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
@@ -66,7 +66,7 @@ class MeetingsView extends GetView<MeetingsController> {
                     KImages.calendar,
                     width: 100,
                     height: 100,
-                    color: theme.brightCyan,
+                    color: Get.theme.brightCyan,
                   ),
                 ),
                 const SizedBox(height: 20),
@@ -79,7 +79,7 @@ class MeetingsView extends GetView<MeetingsController> {
                     borderRadius: BorderRadius.circular(25),
                     boxShadow: [
                       BoxShadow(
-                        color: theme.deepBlack,
+                        color: Get.theme.deepBlack,
                         spreadRadius: 2,
                         blurRadius: 4,
                       ),
@@ -125,7 +125,7 @@ class MeetingsView extends GetView<MeetingsController> {
                     controller.showDescriptionDialog(context);
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: theme.brightCyan,
+                    backgroundColor: Get.theme.brightCyan,
                     elevation: 0,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15),

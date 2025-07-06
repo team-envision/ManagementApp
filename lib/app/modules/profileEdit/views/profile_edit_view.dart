@@ -28,8 +28,8 @@ class ProfileEditView extends GetView<ProfileEditController> {
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
-                  theme.darkBlue,
-                  theme.deepBlack,
+                  Get.theme.darkBlue,
+                  Get.theme.deepBlack,
                 ],
               ),
             ),
@@ -52,7 +52,7 @@ class ProfileEditView extends GetView<ProfileEditController> {
                           left: 10,
                           child: IconButton(
                             icon: Icon(KIcons.iosBackArrow,
-                                color: theme.dayNight),
+                                color: Get.theme.dayNight),
                             onPressed: () {
                               Get.back(); // Navigate back to the previous page
                             },
@@ -63,7 +63,7 @@ class ProfileEditView extends GetView<ProfileEditController> {
                           child: CircleAvatar(
                             radius: 70,
                             backgroundImage: const AssetImage(KImages.profileIcon),
-                            backgroundColor: theme.lightGrey,
+                            backgroundColor: Get.theme.lightGrey,
                           ),
                         ),
                         Positioned(
@@ -73,13 +73,13 @@ class ProfileEditView extends GetView<ProfileEditController> {
                           child: Container(
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              color: theme.brightCyan,
+                              color: Get.theme.brightCyan,
                             ),
                             child: Padding(
                               padding: const EdgeInsets.all(10.0),
                               child: Icon(
                                 KIcons.edit,
-                                color: theme.dayNight,
+                                color: Get.theme.dayNight,
                                 size: 30,
                               ),
                             ),
@@ -111,49 +111,49 @@ class ProfileEditView extends GetView<ProfileEditController> {
         Text(
           '${KText.nameDisplay}${controller.nameController.text}', // Displaying updated name
           style: theme.kTitleTextStyle
-              .copyWith(fontSize: 20, color: theme.brightCyan),
+              .copyWith(fontSize: 20, color: Get.theme.brightCyan),
         ),
         const SizedBox(height: 20),
         Text(
           '${KText.genderDisplay}${controller.selectedGender.value ?? " "}',
           // Displaying updated gender
           style: theme.kTitleTextStyle
-              .copyWith(fontSize: 20, color: theme.brightCyan),
+              .copyWith(fontSize: 20, color: Get.theme.brightCyan),
         ),
         const SizedBox(height: 20),
         Text(
           '${KText.emailDisplay}${controller.emailController.text}',
           // Displaying updated email
           style: theme.kTitleTextStyle
-              .copyWith(fontSize: 20, color: theme.brightCyan),
+              .copyWith(fontSize: 20, color: Get.theme.brightCyan),
         ),
         const SizedBox(height: 20),
         Text(
           '${KText.yearDisplay}${controller.selectedYear.value ?? " "}',
           // Displaying updated year
           style: theme.kTitleTextStyle
-              .copyWith(fontSize: 20, color: theme.brightCyan),
+              .copyWith(fontSize: 20, color: Get.theme.brightCyan),
         ),
         const SizedBox(height: 20),
         Text(
           '${KText.registrationNoDisplay}${controller.regNoController.text}',
           // Displaying updated registration number
           style: theme.kTitleTextStyle
-              .copyWith(fontSize: 20, color: theme.brightCyan),
+              .copyWith(fontSize: 20, color: Get.theme.brightCyan),
         ),
         const SizedBox(height: 20),
         Text(
           '${KText.phoneNoDisplay}${controller.phoneController.text}',
           // Displaying updated phone number
           style: theme.kTitleTextStyle
-              .copyWith(fontSize: 20, color: theme.brightCyan),
+              .copyWith(fontSize: 20, color: Get.theme.brightCyan),
         ),
         const SizedBox(height: 30),
         Center(
           child: ElevatedButton(
             onPressed: controller.toggleEditMode,
             style: ElevatedButton.styleFrom(
-              backgroundColor: theme.darkTeal,
+              backgroundColor: Get.theme.darkTeal,
               padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 12),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
@@ -162,7 +162,7 @@ class ProfileEditView extends GetView<ProfileEditController> {
             child: Text(
               KText.editProfileButton,
               style: theme.kTitleTextStyle.copyWith(
-                color: theme.lightGrey,
+                color: Get.theme.lightGrey,
                 fontSize: 20,
               ),
             ),

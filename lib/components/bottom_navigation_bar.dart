@@ -42,9 +42,9 @@ class BottomNavBar extends StatelessWidget {
           label: '',
         ),
       ],
-      backgroundColor: theme.deepBlack,
-      selectedItemColor: theme.brightCyan,
-      unselectedItemColor: theme.lightGrey,
+      backgroundColor: Get.theme.deepBlack,
+      selectedItemColor: Get.theme.brightCyan,
+      unselectedItemColor: Get.theme.lightGrey,
       showSelectedLabels: false,
       showUnselectedLabels: false,
     );
