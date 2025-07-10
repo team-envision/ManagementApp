@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:managment_app/Themes/themes.dart';
+import 'package:managment_app/app/routes/app_pages.dart';
+import 'package:managment_app/utilities/constants/images_const.dart';
+import 'package:managment_app/utilities/constants/text_strings.dart';
 import '../../../../components/team_tile.dart';
 import '../controllers/team_page_controller.dart';
 
@@ -10,7 +13,6 @@ class TeamPageView extends GetView<TeamPageController> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
 
     return Scaffold(
       body: Stack(
@@ -18,7 +20,7 @@ class TeamPageView extends GetView<TeamPageController> {
           Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [theme.colorLevel1, theme.colorLevel0],
+                colors: [Get.theme.darkBlue, Get.theme.deepBlack],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),
@@ -28,10 +30,10 @@ class TeamPageView extends GetView<TeamPageController> {
             bottom: 0,
             right: 0,
             child: SvgPicture.asset(
-              'assets/images/Ellipse 3.svg',
+              KImages.ellipse3,
               width: 300,
               height: 500,
-              color: Get.theme.colorLevel2,
+              color: Get.theme.darkTeal,
             ),
           ),
           SingleChildScrollView(
@@ -42,9 +44,9 @@ class TeamPageView extends GetView<TeamPageController> {
                 const SizedBox(height: 30.0),
                 Center(
                   child: Text(
-                    'MY TEAM',
-                    style: theme.textTheme.headlineMedium?.copyWith(
-                      color: Get.theme.colorLevel4,
+                    KText.myTeamButton,
+                    style: Get.theme.textTheme.headlineMedium?.copyWith(
+                      color: Get.theme.fadedWhite,
                       fontSize: 25,
                       letterSpacing: 2.0,
                       fontWeight: FontWeight.w900,
@@ -53,34 +55,34 @@ class TeamPageView extends GetView<TeamPageController> {
                 ),
                 const SizedBox(height: 20),
                 TeamTile(
-                  title: 'ORGANIZERS',
-                  subtitle: '5 members',
+                  title: KText.organizerTeamTile,
+                  subtitle: KText.sampleOrganizers,
                   onTap: () {
-                    Get.toNamed('/team-attendance', arguments: 'Organizers');
+                    Get.toNamed(Routes.TEAM_ATTENDANCE, arguments: 'Organizers');
                   },
                 ),
                 const SizedBox(height: 20),
                 TeamTile(
-                  title: 'HEADS',
-                  subtitle: '8 members',
+                  title: KText.headsTeamTile,
+                  subtitle: KText.sampleHeads,
                   onTap: () {
-                    Get.toNamed('/team-attendance', arguments: 'Heads');
+                    Get.toNamed(Routes.TEAM_ATTENDANCE, arguments: 'Heads');
                   },
                 ),
                 const SizedBox(height: 20),
                 TeamTile(
-                  title: 'MEMBERS',
-                  subtitle: '11 members',
+                  title: KText.membersTeamTile,
+                  subtitle: KText.sampleMembers,
                   onTap: () {
-                    Get.toNamed('/team-attendance', arguments: 'Members');
+                    Get.toNamed(Routes.TEAM_ATTENDANCE, arguments: 'Members');
                   },
                 ),
                 const SizedBox(height: 20),
                 TeamTile(
-                  title: 'VOLUNTEERS',
-                  subtitle: '20 members',
+                  title: KText.volunteersTeamTile,
+                  subtitle: KText.sampleVolunteers,
                   onTap: () {
-                    Get.toNamed('/team-attendance', arguments: 'Volunteers');
+                    Get.toNamed(Routes.TEAM_ATTENDANCE, arguments: 'Volunteers');
                   },
                 ),
                 const SizedBox(height: 20),

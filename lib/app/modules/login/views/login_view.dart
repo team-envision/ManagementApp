@@ -2,264 +2,263 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:managment_app/app/modules/home/views/home_view.dart';
 import 'package:managment_app/app/modules/login/controllers/login_controller.dart';
+import 'package:managment_app/utilities/constants/icons_const.dart';
+import 'package:managment_app/utilities/constants/images_const.dart';
+import 'package:managment_app/utilities/constants/text_strings.dart';
 
 import '../../../../Themes/themes.dart';
+import '../../../routes/app_pages.dart';
 
 class LoginView extends GetView<LoginViewController> {
   const LoginView({super.key});
 
-
   @override
   Widget build(BuildContext context) {
-    final theme = Get.theme;
     final formKey = GlobalKey<FormState>();
 
     return Scaffold(
         body: SingleChildScrollView(
-          child: Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [
-                  theme.colorLevel1, // Dark blue color
-                  theme.colorLevel0, // Black color
-                ],
-              ),
-            ),
-            child: Center(
-              child: Padding(
-                padding: const EdgeInsets.all(25),
-                child: Form(
-                  key: formKey,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      // Custom Logo
-                      Image.asset(
-                        'assets/images/aaruush.png',
-                        width: 300,
-                        height: 300,
+      child: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Get.theme.darkBlue, // Dark blue color
+              Get.theme.deepBlack, // Black color
+            ],
+          ),
+        ),
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(25),
+            child: Form(
+              key: formKey,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  // Custom Logo
+                  Image.asset(
+                    KImages.aaruushLogo,
+                    width: 300,
+                    height: 300,
+                  ),
+
+                  Container(
+                    width: Get.width,
+                    decoration: BoxDecoration(
+                      color: Get.theme.darkBlue,
+                      borderRadius: BorderRadius.circular(50),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Get.theme.fadedGrey,
+                          spreadRadius: 2,
+                          blurRadius: 5,
+                          offset: const Offset(0, 3),
+                        ),
+                      ],
+                    ),
+                    child: SizedBox(
+                      height: 75,
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          prefixIcon: Padding(
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 10,
+                            ),
+                            child: Image.asset(
+                              KImages.mailIcon,
+                              width: 28,
+                              height: 28,
+                            ),
+                          ),
+                          hintText: KText.emailHint,
+                          hintStyle: Get.theme.kLargeHintTextStyle,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(50),
+                            borderSide: BorderSide.none,
+                          ),
+                          filled: true,
+                          fillColor: Get.theme.transparent,
+                          contentPadding: const EdgeInsets.only(top: 50),
+                        ),
+                        style: Get.theme.kInputFieldTextStyle,
+                        textAlign: TextAlign.start,
+                        validator: (value) {
+                          if (value == null ||
+                              value.isEmpty ||
+                              !value.isEmail) {
+                            return KText.emailRequired;
+                          }
+                          return null;
+                        },
                       ),
-
-
-                      Container(
+                    ),
+                  ),
+                  const SizedBox(height: 40),
+                  // Password TextField with Shadow
+                  Obx(() => SizedBox(
+                        child: Container(
+                          width: 450,
+                          height: 70,
+                          decoration: BoxDecoration(
+                            color: Get.theme.darkBlue,
+                            borderRadius: BorderRadius.circular(50),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Get.theme.fadedGrey,
+                                spreadRadius: 2,
+                                blurRadius: 5,
+                                offset: const Offset(0, 3),
+                              ),
+                            ],
+                          ),
+                          child: TextFormField(
+                            obscureText: !controller.passwordVisible.value,
+                            decoration: InputDecoration(
+                              prefixIcon: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 9),
+                                child: Image.asset(
+                                  KImages.lockIcon,
+                                  // Assuming you have a lock icon here
+                                  width: 24,
+                                  height: 24,
+                                ),
+                              ),
+                              contentPadding: const EdgeInsets.only(top: 50),
+                              hintText: KText.passwordHint,
+                              hintStyle: Get.theme.kLargeHintTextStyle,
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(50),
+                                borderSide: BorderSide.none,
+                              ),
+                              filled: true,
+                              fillColor: Get.theme.transparent,
+                              suffixIcon: IconButton(
+                                icon: SizedBox(
+                                  width: 30,
+                                  // Increase the size of the icon
+                                  height: 30,
+                                  // Increase the size of the icon
+                                  child: Icon(
+                                    controller.passwordVisible.value
+                                        ? KIcons.visibility
+                                        : KIcons.visibilityOff,
+                                    size: 28, // Set the size of the icon
+                                  ),
+                                ),
+                                onPressed: () {
+                                  controller.togglePasswordVisibility();
+                                },
+                              ),
+                            ),
+                            style: Get.theme.kInputFieldTextStyle,
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return KText.passwordRequired;
+                              }
+                              return null;
+                            },
+                          ),
+                        ),
+                      )),
+                  const SizedBox(height: 2),
+                  // Forgot Password
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        KText.forgotPassword,
+                        style: Get.theme.kLinkTextStyle,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 2),
+                  // Dropdown for Committee, Domain, Team with Shadow and Custom Dropdown Color
+                  Obx(() => Container(
                         width: Get.width,
+                        height: 70,
                         decoration: BoxDecoration(
-                          color: theme.colorLevel1,
+                          color: Get.theme.darkBlue,
                           borderRadius: BorderRadius.circular(50),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.grey.withOpacity(0.3),
+                              color: Get.theme.fadedGrey,
                               spreadRadius: 2,
                               blurRadius: 5,
                               offset: const Offset(0, 3),
                             ),
                           ],
                         ),
-                        child: SizedBox(height: 75,
-                          child: TextFormField(
-                            decoration: InputDecoration(
-                              prefixIcon: Padding(
-                                padding: const EdgeInsets.symmetric(vertical: 10,),
-                                child: Image.asset(
-                                  'assets/icons/mail.png',
-                                  width: 28,
-                                  height: 28,),
-                              ),
-                              hintText: 'Email',
-
-                              hintStyle: const TextStyle(color: Colors.grey,fontSize: 19,),
-
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(50),
-                                borderSide: BorderSide.none,
-                              ),
-                              filled: true,
-                              fillColor: Colors.transparent,
-                              contentPadding: const EdgeInsets.only(top: 50),
-                            ),
-                            style: const TextStyle(color: Colors.white),
-                            textAlign: TextAlign.start,
-                            validator: (value) {
-                              if (value == null || value.isEmpty ||
-                                  !value.isEmail) {
-                                return '       Email is required';
-                              }
-                              return null;
-                            },
+                        child: DropdownButtonFormField<String>(
+                          padding: const EdgeInsets.symmetric(vertical: 9),
+                          value: controller.selectedOption.value.isEmpty
+                              ? null
+                              : controller.selectedOption.value,
+                          dropdownColor: Get.theme.darkBlue,
+                          hint: Text(
+                            KText.selectCDT,
+                            style: Get.theme.kDropdownHintTextStyle,
                           ),
+                          decoration: InputDecoration(
+                            filled: true,
+                            fillColor: Get.theme.transparent,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(40.0),
+                              borderSide: BorderSide.none,
+                            ),
+                          ),
+                          items: controller.options.map((String option) {
+                            return DropdownMenuItem<String>(
+                              value: option,
+                              child: Text(
+                                option,
+                                style: Get.theme.kInputFieldTextStyle,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            );
+                          }).toList(),
+                          onChanged: (String? newValue) {
+                            controller.setSelectedOption(newValue);
+                            formKey.currentState!.validate();
+                          },
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return KText.pleaseSelectOption;
+                            }
+                          },
                         ),
+                      )),
+                  const SizedBox(height: 80),
+                  // Login Button
+                  ElevatedButton(
+                    onPressed: () {
+                      if (true) {
+                        Get.toNamed(Routes.HOME);
+                      }
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Get.theme.transparent,
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 70, vertical: 12),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                        side: BorderSide(color: Get.theme.brightCyan, width: 2),
                       ),
-                      const SizedBox(height: 40),
-                      // Password TextField with Shadow
-                      Obx(() =>
-                          SizedBox(
-                            child: Container(
-                              width: 450,
-                              height: 70,
-                              decoration: BoxDecoration(
-                                color: theme.colorLevel1,
-                                borderRadius: BorderRadius.circular(50),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.3),
-                                    spreadRadius: 2,
-                                    blurRadius: 5,
-                                    offset: const Offset(0, 3),
-                                  ),
-                                ],
-                              ),
-                              child: TextFormField(
-                                obscureText: !controller.passwordVisible.value,
-                                decoration: InputDecoration(
-                                  prefixIcon: Padding(
-                                    padding: const EdgeInsets.symmetric(vertical: 9),
-                                    child: Image.asset(
-                                      'assets/icons/lock.png', // Assuming you have a lock icon here
-                                      width: 24,
-                                      height: 24,
-                                    ),
-                                  ),  contentPadding: const EdgeInsets.only(top: 50),
-                                  hintText: 'Password',
-
-                                  hintStyle: const TextStyle(color: Colors.grey),
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(50),
-                                    borderSide: BorderSide.none,
-                                  ),
-                                  filled: true,
-                                  fillColor: Colors.transparent,
-                                  suffixIcon: IconButton(
-                                    icon: SizedBox(
-                                      width: 30,  // Increase the size of the icon
-                                      height: 30, // Increase the size of the icon
-                                      child: Icon(
-                                        controller.passwordVisible.value
-                                            ? Icons.visibility
-                                            : Icons.visibility_off,
-                                        size: 28,  // Set the size of the icon
-                                      ),
-                                    ),
-                                    onPressed: () {
-                                      controller.togglePasswordVisibility();
-                                    },
-                                  ),
-                                ),
-                                style: const TextStyle(color: Colors.white),
-
-                                validator: (value) {
-                                  if (value == null || value.isEmpty) {
-                                    return '      Password is required';
-                                  }
-                                  return null;
-                                },
-                              ),
-                            ),
-                          )),
-                      const SizedBox(height: 2),
-                      // Forgot Password
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: TextButton(
-                          onPressed: () {},
-                          child: const Text(
-                            'Forgot Password?',
-                            style: TextStyle(color: Colors.grey),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 2),
-                      // Dropdown for Committee, Domain, Team with Shadow and Custom Dropdown Color
-                      Obx(() =>
-                          Container(
-                            width: Get.width,
-                            height: 70,
-                            decoration: BoxDecoration(
-                              color: theme.colorLevel1,
-                              borderRadius: BorderRadius.circular(50),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey.withOpacity(0.3),
-                                  spreadRadius: 2,
-                                  blurRadius: 5,
-                                  offset: const Offset(0, 3),
-                                ),
-                              ],
-                            ),
-                            child: DropdownButtonFormField<String>(
-                              padding: const EdgeInsets.symmetric(vertical: 9),
-                              value: controller.selectedOption.value.isEmpty
-                                  ? null
-                                  : controller.selectedOption.value,
-                              dropdownColor: theme.colorLevel1,
-                              hint: const Text(
-                                'Select Committee, Domain, or Team',
-                                style: TextStyle(color: Colors.grey,fontSize: 14,),
-                              ),
-                              decoration: InputDecoration(
-                                filled: true,
-                                fillColor: Colors.transparent,
-                                border: OutlineInputBorder(
-
-                                  borderRadius: BorderRadius.circular(40.0),
-                                  borderSide: BorderSide.none,
-                                ),
-                              ),
-                              items: controller.options.map((String option) {
-                                return DropdownMenuItem<String>(
-                                  value: option,
-                                  child: Text(option, style: const TextStyle(
-                                      color: Colors.white),
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                );
-                              }).toList(),
-                              onChanged: (String? newValue) {
-                                controller.setSelectedOption(newValue);
-                                formKey.currentState!.validate();
-                              },
-                              validator: (value) {
-                                if (value == null || value.isEmpty) {
-                                  return 'Please select an option';
-                                }
-
-                              },
-                            ),
-                          )),
-                      const SizedBox(height: 80),
-                      // Login Button
-                      ElevatedButton(
-                        onPressed: () {
-                          if (formKey.currentState!.validate()) {
-                            Get.to(() => HomeView());
-                          }
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.transparent,
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 70, vertical: 12),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
-                            side: BorderSide(
-                                color: theme.colorPrimary, width: 2),
-                          ),
-                        ),
-                        child: Text(
-                          'LOGIN',
-                          style: theme.kTitleTextStyle.copyWith(
-                            color: theme.colorPrimary,
-                            fontSize: 40,
-                          ),
-                        ),
-                      ),
-                    ],
+                    ),
+                    child: Text(
+                      KText.loginButton,
+                      style: Get.theme.kButtonTextStyle,
+                    ),
                   ),
-                ),
+                ],
               ),
             ),
           ),
-        )
-    );
+        ),
+      ),
+    ));
   }
 }

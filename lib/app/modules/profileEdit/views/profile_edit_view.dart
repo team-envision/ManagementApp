@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:managment_app/Themes/themes.dart';
+import 'package:managment_app/utilities/constants/icons_const.dart';
+import 'package:managment_app/utilities/constants/images_const.dart';
+import 'package:managment_app/utilities/constants/text_strings.dart';
 
 import '../controllers/profile_edit_controller.dart';
 
@@ -11,7 +14,6 @@ class ProfileEditView extends GetView<ProfileEditController> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Get.theme;
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -25,8 +27,8 @@ class ProfileEditView extends GetView<ProfileEditController> {
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
-                  theme.colorLevel1,
-                  theme.colorLevel0,
+                  Get.theme.darkBlue,
+                  Get.theme.deepBlack,
                 ],
               ),
             ),
@@ -48,8 +50,8 @@ class ProfileEditView extends GetView<ProfileEditController> {
                           top: 5,
                           left: 10,
                           child: IconButton(
-                            icon: Icon(Icons.arrow_back_ios,
-                                color: theme.dayNight),
+                            icon: Icon(KIcons.iosBackArrow,
+                                color: Get.theme.dayNight),
                             onPressed: () {
                               Get.back(); // Navigate back to the previous page
                             },
@@ -59,9 +61,8 @@ class ProfileEditView extends GetView<ProfileEditController> {
                           top: 100,
                           child: CircleAvatar(
                             radius: 70,
-                            backgroundImage:
-                                AssetImage('assets/images/profile_icon.png'),
-                            backgroundColor: theme.colorLevel3,
+                            backgroundImage: const AssetImage(KImages.profileIcon),
+                            backgroundColor: Get.theme.lightGrey,
                           ),
                         ),
                         Positioned(
@@ -71,13 +72,13 @@ class ProfileEditView extends GetView<ProfileEditController> {
                           child: Container(
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              color: theme.colorPrimary,
+                              color: Get.theme.brightCyan,
                             ),
                             child: Padding(
                               padding: const EdgeInsets.all(10.0),
                               child: Icon(
-                                Icons.edit,
-                                color: theme.dayNight,
+                                KIcons.edit,
+                                color: Get.theme.dayNight,
                                 size: 30,
                               ),
                             ),
@@ -89,8 +90,8 @@ class ProfileEditView extends GetView<ProfileEditController> {
                   const SizedBox(height: 20),
                   Obx(
                     () => controller.isEditing.value
-                        ? _buildProfileDetails(context, theme)
-                        : _buildEditableForm(context, theme),
+                        ? _buildProfileDetails(context, Get.theme)
+                        : _buildEditableForm(context, Get.theme),
                   ),
                   const SizedBox(height: 20),
                 ],
@@ -107,55 +108,60 @@ class ProfileEditView extends GetView<ProfileEditController> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Name: ${controller.nameController.text}', // Displaying updated name
+          '${KText.nameDisplay}${controller.nameController.text}', // Displaying updated name
           style: theme.kTitleTextStyle
-              .copyWith(fontSize: 20, color: theme.colorPrimary),
+              .copyWith(fontSize: 20, color: Get.theme.brightCyan),
         ),
         const SizedBox(height: 20),
         Text(
-          'Gender: ${controller.selectedGender.value ?? " "}', // Displaying updated gender
+          '${KText.genderDisplay}${controller.selectedGender.value ?? " "}',
+          // Displaying updated gender
           style: theme.kTitleTextStyle
-              .copyWith(fontSize: 20, color: theme.colorPrimary),
+              .copyWith(fontSize: 20, color: Get.theme.brightCyan),
         ),
         const SizedBox(height: 20),
         Text(
-          'Email: ${controller.emailController.text}', // Displaying updated email
+          '${KText.emailDisplay}${controller.emailController.text}',
+          // Displaying updated email
           style: theme.kTitleTextStyle
-              .copyWith(fontSize: 20, color: theme.colorPrimary),
+              .copyWith(fontSize: 20, color: Get.theme.brightCyan),
         ),
         const SizedBox(height: 20),
         Text(
-          'Year: ${controller.selectedYear.value ?? " "}', // Displaying updated year
+          '${KText.yearDisplay}${controller.selectedYear.value ?? " "}',
+          // Displaying updated year
           style: theme.kTitleTextStyle
-              .copyWith(fontSize: 20, color: theme.colorPrimary),
+              .copyWith(fontSize: 20, color: Get.theme.brightCyan),
         ),
         const SizedBox(height: 20),
         Text(
-          'Registeration No. : ${controller.regNoController.text}', // Displaying updated registration number
+          '${KText.registrationNoDisplay}${controller.regNoController.text}',
+          // Displaying updated registration number
           style: theme.kTitleTextStyle
-              .copyWith(fontSize: 20, color: theme.colorPrimary),
+              .copyWith(fontSize: 20, color: Get.theme.brightCyan),
         ),
         const SizedBox(height: 20),
         Text(
-          'Phone No. : ${controller.phoneController.text}', // Displaying updated phone number
+          '${KText.phoneNoDisplay}${controller.phoneController.text}',
+          // Displaying updated phone number
           style: theme.kTitleTextStyle
-              .copyWith(fontSize: 20, color: theme.colorPrimary),
+              .copyWith(fontSize: 20, color: Get.theme.brightCyan),
         ),
         const SizedBox(height: 30),
         Center(
           child: ElevatedButton(
             onPressed: controller.toggleEditMode,
             style: ElevatedButton.styleFrom(
-              backgroundColor: theme.colorLevel2,
+              backgroundColor: Get.theme.darkTeal,
               padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 12),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
             ),
             child: Text(
-              'Edit Profile',
+              KText.editProfileButton,
               style: theme.kTitleTextStyle.copyWith(
-                color: theme.colorLevel3,
+                color: Get.theme.lightGrey,
                 fontSize: 20,
               ),
             ),
@@ -173,17 +179,17 @@ class ProfileEditView extends GetView<ProfileEditController> {
           TextFormField(
             controller: controller.nameController,
             decoration: InputDecoration(
-              labelText: 'Name',
+              labelText: KText.nameLabel,
               border: const UnderlineInputBorder(),
               enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
-                  color: theme.colorPrimary,
+                  color: theme.brightCyan,
                   width: 1.0,
                 ),
               ),
               focusedBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
-                  color: theme.colorPrimary,
+                  color: theme.brightCyan,
                   width: 2.0,
                 ),
               ),
@@ -193,17 +199,17 @@ class ProfileEditView extends GetView<ProfileEditController> {
           TextFormField(
             controller: controller.emailController,
             decoration: InputDecoration(
-              labelText: 'Email',
+              labelText: KText.emailLabel,
               border: const UnderlineInputBorder(),
               enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
-                  color: theme.colorPrimary,
+                  color: theme.brightCyan,
                   width: 1.0,
                 ),
               ),
               focusedBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
-                  color: theme.colorPrimary,
+                  color: theme.brightCyan,
                   width: 2.0,
                 ),
               ),
@@ -213,17 +219,17 @@ class ProfileEditView extends GetView<ProfileEditController> {
           TextFormField(
             controller: controller.regNoController,
             decoration: InputDecoration(
-              labelText: 'Registeration No.',
+              labelText: KText.registrationNoLabel,
               border: const UnderlineInputBorder(),
               enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
-                  color: theme.colorPrimary,
+                  color: theme.brightCyan,
                   width: 1.0,
                 ),
               ),
               focusedBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
-                  color: theme.colorPrimary,
+                  color: theme.brightCyan,
                   width: 2.0,
                 ),
               ),
@@ -233,17 +239,17 @@ class ProfileEditView extends GetView<ProfileEditController> {
           TextFormField(
             controller: controller.phoneController,
             decoration: InputDecoration(
-              labelText: 'Phone No.',
+              labelText: KText.phoneNoLabel,
               border: const UnderlineInputBorder(),
               enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
-                  color: theme.colorPrimary,
+                  color: theme.brightCyan,
                   width: 1.0,
                 ),
               ),
               focusedBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
-                  color: theme.colorPrimary,
+                  color: theme.brightCyan,
                   width: 2.0,
                 ),
               ),
@@ -258,17 +264,17 @@ class ProfileEditView extends GetView<ProfileEditController> {
                 .toList(),
             onChanged: controller.selectedGender,
             decoration: InputDecoration(
-              labelText: 'Gender',
+              labelText: KText.genderLabel,
               border: const UnderlineInputBorder(),
               enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
-                  color: theme.colorPrimary,
+                  color: theme.brightCyan,
                   width: 1.0,
                 ),
               ),
               focusedBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
-                  color: theme.colorPrimary,
+                  color: theme.brightCyan,
                   width: 2.0,
                 ),
               ),
@@ -282,17 +288,17 @@ class ProfileEditView extends GetView<ProfileEditController> {
                 .toList(),
             onChanged: controller.selectedYear,
             decoration: InputDecoration(
-              labelText: 'Year',
+              labelText: KText.yearLabel,
               border: const UnderlineInputBorder(),
               enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
-                  color: theme.colorPrimary,
+                  color: theme.brightCyan,
                   width: 1.0,
                 ),
               ),
               focusedBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
-                  color: theme.colorPrimary,
+                  color: theme.brightCyan,
                   width: 2.0,
                 ),
               ),
@@ -307,7 +313,7 @@ class ProfileEditView extends GetView<ProfileEditController> {
                 }
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: theme.colorLevel2,
+                backgroundColor: theme.darkTeal,
                 padding:
                     const EdgeInsets.symmetric(horizontal: 80, vertical: 12),
                 shape: RoundedRectangleBorder(
@@ -315,9 +321,9 @@ class ProfileEditView extends GetView<ProfileEditController> {
                 ),
               ),
               child: Text(
-                'Update',
+                KText.updateButtonSmall,
                 style: theme.kTitleTextStyle.copyWith(
-                  color: theme.colorLevel3,
+                  color: theme.lightGrey,
                   fontSize: 20,
                 ),
               ),

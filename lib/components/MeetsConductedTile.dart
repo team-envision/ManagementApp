@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:managment_app/Themes/themes.dart';
+import 'package:managment_app/utilities/constants/text_strings.dart';
 
 class MeetsConductedTile extends StatelessWidget {
   final String title;
@@ -18,7 +21,7 @@ class MeetsConductedTile extends StatelessWidget {
       padding: EdgeInsets.all(8),
       margin: EdgeInsets.only(top: 8),
       decoration: BoxDecoration(
-        color: Colors.blue[100],
+        color: Get.theme.lightBlue,
         borderRadius:  BorderRadius.circular(8.0),
       ),
       child: Row(
@@ -26,9 +29,7 @@ class MeetsConductedTile extends StatelessWidget {
         children: [
           Text(
             title,
-            style: TextStyle(color: Colors.black,
-              fontSize: 15,
-            ),
+            style: Get.theme.kAnnouncementTextStyle,
           ),
           ConstrainedBox(constraints: BoxConstraints.tightFor(
            width: 101,
@@ -39,11 +40,11 @@ class MeetsConductedTile extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8.0)
                 ),
-                side: BorderSide(width: 1, color: Colors.black),
-                backgroundColor: Colors.blue[100],
+                side: BorderSide(width: 1, color: Get.theme.pureBlack),
+                backgroundColor: Get.theme.lightBlue,
               ),
               child: Center(
-              child: Text('Update\nAttendance', textAlign: TextAlign.center, style: TextStyle(color: Colors.black, fontSize: 9))),))
+              child: Text(KText.updateAttendanceButton, textAlign: TextAlign.center, style: Get.theme.kButtonTextStyle3)),))
         ],
       )
 

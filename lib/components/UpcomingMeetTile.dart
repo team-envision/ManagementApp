@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:managment_app/Themes/themes.dart';
+import 'package:managment_app/utilities/constants/icons_const.dart';
 
 class UpcomingMeetTile extends StatefulWidget {
   final String title;
@@ -19,7 +21,6 @@ class _UpcomingMeetTileState extends State<UpcomingMeetTile> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     return GestureDetector(
       onTap: () {
         setState(() {
@@ -31,7 +32,7 @@ class _UpcomingMeetTileState extends State<UpcomingMeetTile> {
         padding: EdgeInsets.all(8.0),
         margin: EdgeInsets.only(top: 8.0),
         decoration: BoxDecoration(
-          color: Colors.blue[100],
+          color: Get.theme.lightBlue,
           borderRadius: BorderRadius.circular(8.0),
         ),
         child: Column(
@@ -42,14 +43,11 @@ class _UpcomingMeetTileState extends State<UpcomingMeetTile> {
               children: [
                 Text(
                   widget.title,
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 15,
-                  ),
+                  style: Get.theme.kAnnouncementTextStyle,
                 ),
                 Icon(
-                  isExpanded ? Icons.expand_less : Icons.expand_circle_down,
-                  color: theme.colorLevel1,
+                  isExpanded ? KIcons.expandLess : KIcons.expandCircleDown,
+                  color: Get.theme.darkBlue,
                   size: 40,
                 ),
               ],
@@ -59,10 +57,7 @@ class _UpcomingMeetTileState extends State<UpcomingMeetTile> {
                 padding: const EdgeInsets.only(top: 8.0),
                 child: Text(
                   widget.details,
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 15
-                  ),
+                  style: Get.theme.kAnnouncementTextStyle,
                 ),
               ),
           ],

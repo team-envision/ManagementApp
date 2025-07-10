@@ -6,11 +6,14 @@ import 'package:managment_app/app/modules/markAttendanceView/views/heads_view.da
 import 'package:managment_app/app/modules/markAttendanceView/views/members_view.dart';
 import 'package:managment_app/app/modules/markAttendanceView/views/organizers_view.dart';
 import 'package:managment_app/app/modules/markAttendanceView/views/volunteers_view.dart';
+import 'package:managment_app/utilities/constants/images_const.dart';
+import 'package:managment_app/utilities/constants/text_strings.dart';
 
 import '../controllers/mark_attendance_view_controller.dart';
 
 class MarkAttendanceView extends GetView<MarkAttendanceViewController> {
   const MarkAttendanceView({super.key});
+
   @override
   Widget build(BuildContext context) {
     Get.put(MarkAttendanceViewController());
@@ -19,45 +22,58 @@ class MarkAttendanceView extends GetView<MarkAttendanceViewController> {
       child: Scaffold(
         appBar: AppBar(
           leading: IconButton(
-            icon: Container(padding: const EdgeInsets.all(5),child: Image.asset('assets/images/icon.png'),),
+            icon: Container(
+              padding: const EdgeInsets.all(5),
+              child: Image.asset(KImages.backIcon),
+            ),
             onPressed: () {
               Get.back();
             },
           ),
-          backgroundColor: Get.theme.colorLevel1,
-          title: Text('ATTENDANCE',                  //CHANGE TO UPDATE AND USE SAME PAGE DIFFERENT LOGIC
-              style: Get.theme.kTitleTextStyle),foregroundColor: Get.theme.colorLevel0,
+          backgroundColor: Get.theme.darkBlue,
+          title: Text(
+              KText.attendance, //CHANGE TO UPDATE AND USE SAME PAGE DIFFERENT LOGIC
+              style: Get.theme.kTitleTextStyle),
+          foregroundColor: Get.theme.deepBlack,
           elevation: 0,
           centerTitle: true,
         ),
         body: Column(
           children: [
-            Container(color: const Color.fromRGBO(158, 161, 174, 1),height: 30,
+            Container(
+              color: Get.theme.blueGrey,
+              height: 30,
               child: TabBar(
                 labelPadding: const EdgeInsets.all(0.8),
-                unselectedLabelColor: Get.theme.colorLevel0,
-                labelColor: Get.theme.colorLevel0,
+                unselectedLabelColor: Get.theme.deepBlack,
+                labelColor: Get.theme.deepBlack,
                 indicator: BoxDecoration(
-                  color: Get.theme.colorLevel4,
+                  color: Get.theme.fadedWhite,
                   shape: BoxShape.rectangle,
                   borderRadius: BorderRadius.circular(90),
                 ),
-                indicatorPadding: const EdgeInsets.symmetric(horizontal: 0,vertical: 3.0),
-                indicatorColor: Get.theme.colorLevel4,
-                dividerColor: Colors.transparent,
-                isScrollable: false,padding: const EdgeInsets.symmetric(horizontal: 10),
+                indicatorPadding:
+                    const EdgeInsets.symmetric(horizontal: 0, vertical: 3.0),
+                indicatorColor: Get.theme.fadedWhite,
+                dividerColor: Get.theme.transparent,
+                isScrollable: false,
+                padding: const EdgeInsets.symmetric(horizontal: 10),
                 tabs: const [
-
-                  Tab(text: ' organizers '),
-                  Tab(text: ' heads '),
-                  Tab(text: ' members '),
-                  Tab(text: ' volunteers '),
+                  Tab(text: KText.organizersTab),
+                  Tab(text: KText.headsTab),
+                  Tab(text: KText.membersTab),
+                  Tab(text: KText.volunteersTab),
                 ],
               ),
             ),
             Expanded(
               child: TabBarView(
-                children: [OrganizersView(), HeadsView(),MembersView(), VolunteersView()],
+                children: [
+                  OrganizersView(),
+                  HeadsView(),
+                  MembersView(),
+                  VolunteersView()
+                ],
               ),
             ),
           ],

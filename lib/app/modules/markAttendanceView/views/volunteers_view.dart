@@ -2,6 +2,10 @@
   import 'package:get/get.dart';
   import 'package:managment_app/Themes/themes.dart';
   import 'package:managment_app/app/modules/home/views/home_view.dart';
+import 'package:managment_app/app/routes/app_pages.dart';
+import 'package:managment_app/utilities/constants/icons_const.dart';
+import 'package:managment_app/utilities/constants/images_const.dart';
+import 'package:managment_app/utilities/constants/text_strings.dart';
   import '../controllers/mark_attendance_view_controller.dart';
 
   class VolunteersView extends GetView<MarkAttendanceViewController> {
@@ -15,8 +19,8 @@
           decoration: BoxDecoration(
               gradient: LinearGradient(
                   colors: [
-                    Get.theme.colorLevel1,
-                    Get.theme.colorLevel2,
+                    Get.theme.darkBlue,
+                    Get.theme.darkTeal,
                   ],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
@@ -34,16 +38,16 @@
                         padding: const EdgeInsets.all(8.0),
                         child: Card(
                           child:  Container(
-                            decoration: ShapeDecoration(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),color: Get.theme.colorLevel4),
+                            decoration: ShapeDecoration(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),color: Get.theme.fadedWhite),
                             child: Padding(
                               padding: const EdgeInsets.all(1.0),
                               child: Container(
                                 padding: const EdgeInsets.all(4.0),
                                 decoration: BoxDecoration(
-                                  color: Get.theme.colorLevel0,
+                                  color: Get.theme.deepBlack,
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
-                                child: _CheckBox(name: controller.names[index],profile: 'xyz.com'),
+                                child: _CheckBox(name: controller.names[index],profile: KText.sampleProfile),
                               ),
                             ),
                           ),
@@ -61,7 +65,7 @@
                     decoration: BoxDecoration(
                       shape: BoxShape.rectangle,
                       borderRadius: BorderRadius.circular(14),
-                      color: Get.theme.colorLevel1,
+                      color: Get.theme.darkBlue,
                     ),
                     height: Get.height*0.05,
                     width: Get.width*0.35,
@@ -71,22 +75,22 @@
                         'Attendance Updated',
                         'Attendance has been Updated successfully',
                         snackPosition: SnackPosition.TOP,
-                        backgroundColor: Colors.grey[300],
-                        colorText: Colors.black,
-                        icon: const Icon(Icons.check_circle, color: Colors.green),
+                        backgroundColor: Get.theme.lighterGrey,
+                        colorText: Get.theme.pureBlack,
+                        icon: Icon(KIcons.checkCircle, color: Get.theme.primaryGreen),
                         margin: const EdgeInsets.all(10),
                         duration: const Duration(seconds: 1),
                       );
                       Future.delayed(const Duration(seconds: 1), () {
-                        Get.to(() => const HomeView());
+                        Get.toNamed(Routes.HOME);
                       });
                     },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text("UPDATE",style: Get.theme.kSubTitleTextStyle),
+                            Text(KText.updateButton,style: Get.theme.kSubTitleTextStyle),
                             const SizedBox(width: 10),
-                            Image.asset('assets/images/Update.png'),
+                            Image.asset(KImages.update),
                           ],
                         )
                     ),
@@ -118,7 +122,7 @@ class _CheckBoxState extends State<_CheckBox> {
       final controller = Get.find<MarkAttendanceViewController>();
       return Obx((){
         return  CheckboxListTile(
-          activeColor: const Color.fromRGBO(62, 201, 207, 1),
+          activeColor: Get.theme.brightCyan,
           value: isChecked.value,
           onChanged: (val) {
             if(val == true){
@@ -135,9 +139,9 @@ class _CheckBoxState extends State<_CheckBox> {
               borderRadius: BorderRadius.circular(8)),
           title: Row(
             children: [
-              CircleAvatar(backgroundColor: Get.theme.colorLevel4,),
+              CircleAvatar(backgroundColor: Get.theme.fadedWhite,),
               const SizedBox(width: 10),
-              Text('${widget.name} : ', style: Get.theme.kBodyTextStyle),
+              Text('${widget.name} : ', style: Get.theme.kSmallTextStyle),
             ],
           ),
         );

@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:managment_app/Themes/themes.dart';
 
-final List<String> domainOptions = [
-  'Robogyan', 'Yuddhame', 'Online', 'Magefficie and Start-Ups', 'Fundaz',
-  'Vimanaz', 'Konstruktion', 'Architecture', 'Bluebook', 'Praesentio',
-  'Machination', 'Electrizite', 'Digital Design', 'X-Zone'
-];
+import '../../../../utilities/constants/text_strings.dart';
+
+final List<String> domainOptions = KText.domainOptions;
 
 RxInt currentIndex = 0.obs;
 
-final List<String> forOptions = ['Volunteer', 'Member', 'Head'];
-final List<String> modeOptions = ['Online', 'Offline'];
+final List<String> forOptions = KText.forOptions;
+final List<String> modeOptions = KText.modeOptions;
 
 class MeetingsController extends GetxController {
   var domainSelectedValue = ''.obs;
@@ -46,21 +45,21 @@ class MeetingsController extends GetxController {
       context: context,
       builder: (BuildContext context) {
         return Theme(
-            data: Theme.of(context).copyWith(
-          dialogBackgroundColor: const Color (0xFF002431),
+            data: Get.theme.copyWith(
+          dialogBackgroundColor: Get.theme.darkBlue,
         ),
         child: AlertDialog(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
           ),
-          title: const Text(
-            'Add Meeting Description',
-            style: TextStyle( color: Colors.white, fontWeight: FontWeight.bold),
+          title: Text(
+            KText.addMeetingDescriptionTitle,
+            style: Get.theme.kTitleTextStyle2,
           ),
           content: TextField(
             controller: descriptionController,
             decoration: InputDecoration(
-              hintText: 'Enter meeting description',
+              hintText: KText.enterMeetingDescriptionHint,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
@@ -70,11 +69,11 @@ class MeetingsController extends GetxController {
           actions: [
             TextButton(
               onPressed: () {
-                Navigator.pop(context);
+                Get.back();
               },
-              child: const Text(
-                'Cancel',
-                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              child: Text(
+                KText.cancel,
+                style: Get.theme.kTitleTextStyle2,
               ),
             ),
             ElevatedButton(
@@ -82,11 +81,11 @@ class MeetingsController extends GetxController {
                 if (descriptionController.text.trim().isNotEmpty) {
                   description.value = descriptionController.text.trim();
                 }
-                Navigator.pop(context);
+                Get.back();
               },
-              child: const Text(
-                'Done',
-                style: TextStyle( color:Colors.cyan, fontWeight: FontWeight.bold),
+              child: Text(
+                KText.done,
+                style: Get.theme.kButtonTextStyle2,
               ),
             ),
           ],

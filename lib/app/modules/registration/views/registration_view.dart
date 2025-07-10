@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:managment_app/Themes/themes.dart';
 import 'package:managment_app/app/modules/home/views/home_view.dart';
+import 'package:managment_app/utilities/constants/icons_const.dart';
+import 'package:managment_app/utilities/constants/images_const.dart';
+import 'package:managment_app/utilities/constants/text_strings.dart';
 import '../../../../components/kDropDownButton.dart';
 import '../../../../components/kTextField.dart';
+import '../../../routes/app_pages.dart';
 
 class RegistrationView extends StatefulWidget {
   const RegistrationView({Key? key}) : super(key: key);
@@ -20,9 +24,9 @@ class _RegistrationViewState extends State<RegistrationView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Get.theme.colorLevel1,
+        backgroundColor: Get.theme.darkBlue,
         centerTitle: true,
-        title: Text('REGISTRATION', style: Get.theme.kTitleTextStyle),
+        title: Text(KText.registrationTitle, style: Get.theme.kTitleTextStyle),
         elevation: 0,
       ),
       body: SingleChildScrollView(
@@ -30,12 +34,12 @@ class _RegistrationViewState extends State<RegistrationView> {
           decoration: BoxDecoration(
               gradient: LinearGradient(
                   colors: [
-                    Get.theme.colorLevel1,
-                    Get.theme.colorLevel2,
+                    Get.theme.darkBlue,
+                    Get.theme.darkTeal,
                   ],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  stops: [0.5, 1.0])),
+                  stops: const [0.5, 1.0])),
           child: Form(
             key: formKey,
             child: Column(
@@ -48,7 +52,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                       const SizedBox(height: 10),
                       Center(
                         child: Text(
-                          'STUDENT DETAILS',
+                          KText.studentDetailsTitle,
                           style: Get.theme.kSubTitleTextStyle,
                         ),
                       ),
@@ -59,87 +63,82 @@ class _RegistrationViewState extends State<RegistrationView> {
                           boxShadow: [
                             BoxShadow(
                               blurRadius: 8,
-                              color: Get.theme.colorLevel0,
+                              color: Get.theme.deepBlack,
                               spreadRadius: 5,
                             )
                           ],
-                          color: Get.theme.colorLevel2,
+                          color: Get.theme.darkTeal,
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: Column(
                           children: [
                             buildTextField(
-                              labelText: 'NAME:',
+                              labelText: KText.nameLabelCaps,
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  return 'Please enter name';
+                                  return KText.enterName;
                                 }
                                 return null;
                               },
                             ),
                             const SizedBox(height: 30),
                             buildTextField(
-                              labelText: 'REGISTRATION NO:',
+                              labelText: KText.registrationNoLabelCaps,
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  return 'Please enter registration number';
+                                  return KText.enterRegistrationNo;
                                 }
                                 return null;
                               },
                             ),
                             const SizedBox(height: 30),
                             buildDropdownButtonFormField(
-                              labelText: 'DESIGNATION:',
-                              items: [
-                                'VOLUNTEER',
-                                'COMMITTEE MEMBER',
-                                'COMMITTEE HEAD',
-                                'ORGANIZER'
-                              ],
+                              labelText: KText.designationLabelCaps,
+                              items: KText.designationList,
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  return 'Please select a designation';
+                                  return KText.selectDesignation;
                                 }
                                 return null;
                               },
                             ),
                             const SizedBox(height: 30),
                             buildTextField(
-                              labelText: 'DEPARTMENT:',
+                              labelText: KText.departmentLabelCaps,
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  return 'Please enter your department';
+                                  return KText.enterDepartment;
                                 }
                                 return null;
                               },
                             ),
                             const SizedBox(height: 30),
                             buildDropdownButtonFormField(
-                              labelText: 'DIVISION:',
-                              items: ['A', 'B', 'C'],
+                              labelText: KText.divisionLabelCaps,
+                              items: KText.divisionList,
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  return 'Please select a division';
+                                  return KText.selectDivision;
                                 }
                                 return null;
                               },
                             ),
                             const SizedBox(height: 30),
                             buildTextField(
-                              labelText: 'NET ID:',
+                              labelText: KText.netIdLabelCaps,
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  return 'Please enter your net ID';
+                                  return KText.enterNetId;
                                 }
                                 return null;
                               },
                             ),
                             const SizedBox(height: 30),
                             buildTextField(
-                              labelText: 'Ph no:',
+                              labelText: KText.phNoLabel,
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  return 'Please enter your phone number';
+                                  return KText.enterPhNo;
                                 }
                                 return null;
                               },
@@ -160,14 +159,14 @@ class _RegistrationViewState extends State<RegistrationView> {
                         'Enrolled Successfully',
                         'User has been enrolled successfully',
                         snackPosition: SnackPosition.TOP,
-                        backgroundColor: Colors.grey[300],
-                        colorText: Colors.black,
-                        icon: Icon(Icons.check_circle, color: Colors.green),
+                        backgroundColor: Get.theme.lighterGrey,
+                        colorText: Get.theme.pureBlack,
+                        icon: Icon(KIcons.checkCircle, color: Get.theme.primaryGreen),
                         margin: const EdgeInsets.all(10),
                         duration: const Duration(seconds: 2),
                       );
                       Future.delayed(const Duration(seconds: 2), () {
-                        Get.to(() => HomeView());
+                        Get.toNamed(Routes.HOME);
                       });
                     } else {
                       // If there are validation errors
@@ -175,16 +174,16 @@ class _RegistrationViewState extends State<RegistrationView> {
                         'Validation Error',
                         'Please fill all fields correctly',
                         snackPosition: SnackPosition.TOP,
-                        backgroundColor: Colors.red[300],
-                        colorText: Colors.white,
-                        icon: Icon(Icons.error, color: Colors.white),
+                        backgroundColor: Get.theme.lightRed,
+                        colorText: Get.theme.pureWhite,
+                        icon: Icon(KIcons.error, color: Get.theme.pureWhite),
                         margin: const EdgeInsets.all(10),
                         duration: const Duration(seconds: 4),
                       );
                     }
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Get.theme.colorLevel1,
+                    backgroundColor: Get.theme.darkBlue,
                     alignment: Alignment.center,
                     fixedSize: const Size(137, 0),
                   ),
@@ -192,13 +191,13 @@ class _RegistrationViewState extends State<RegistrationView> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'ENROLL',
-                        style: Get.theme.kSmallTextStyle,
+                        KText.enrollButton,
+                        style: Get.theme.kVerySmallTextStyle,
                       ),
                       const SizedBox(
                         width: 10,
                       ),
-                      Image.asset('assets/images/Login.png'),
+                      Image.asset(KImages.loginIcon),
                     ],
                   ),
                   icon: const SizedBox.shrink(),

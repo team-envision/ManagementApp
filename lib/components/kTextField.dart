@@ -8,18 +8,17 @@ Widget buildTextField({required String labelText, required String? Function(dyna
       boxShadow: [
         BoxShadow(
           blurRadius: 8,
-          color: Get.theme.colorLevel0,
+          color: Get.theme.deepBlack,
           spreadRadius: 2,
         )
       ],
     ),
     child: TextFormField(
-      style: TextStyle(
-        color: Get.theme.colorLevel0),
+      style: Get.theme.kLabelTextStyle,
       decoration: InputDecoration(
-        fillColor: Get.theme.colorLevel4,
+        fillColor: Get.theme.fadedWhite,
         labelText: labelText,
-        labelStyle: TextStyle(color: Get.theme.colorLevel0),
+        labelStyle: Get.theme.kLabelTextStyle,
         filled: true,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),

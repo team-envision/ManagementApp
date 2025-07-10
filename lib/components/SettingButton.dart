@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:managment_app/Themes/themes.dart';
 
 class Settingbutton extends StatelessWidget {
@@ -8,15 +9,14 @@ class Settingbutton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         padding: EdgeInsets.symmetric(vertical: 20,horizontal: 50),
-        backgroundColor: theme.colorLevel1,
+        backgroundColor: Get.theme.darkBlue,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8.0),
           side: BorderSide(
-            color: Colors.black,
+            color: Get.theme.pureBlack,
             width: 1.0
           )
         ),
@@ -25,7 +25,7 @@ class Settingbutton extends StatelessWidget {
       onPressed: onPressed,
       child: Text(
        title,
-       style: theme.kSubTitleTextStyle,
+       style: Get.theme.kSubTitleTextStyle,
       ),
 
     );

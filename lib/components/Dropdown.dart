@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:managment_app/Themes/themes.dart';
+import 'package:managment_app/utilities/constants/icons_const.dart';
 
 
 
@@ -24,9 +26,9 @@ class CustomDropdownButton extends StatelessWidget {
           child: DropdownButtonFormField<String>(
             decoration: InputDecoration(
               hintText: hintText,
-              hintStyle: TextStyle(color: Colors.grey[700]),
+              hintStyle: Get.theme.kInputFieldTextStyle2,
               filled: true,
-              fillColor: Colors.white,
+              fillColor: Get.theme.pureWhite,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
@@ -36,11 +38,11 @@ class CustomDropdownButton extends StatelessWidget {
             items: options.map((String value) {
               return DropdownMenuItem<String>(
                 value: value,
-                child: Text(value, style: TextStyle(color: Colors.grey[700])),
+                child: Text(value, style: Get.theme.kInputFieldTextStyle2),
               );
             }).toList(),
             onChanged: (value) => selectedValue.value = value!,
-            icon: const Icon(Icons.arrow_drop_down, color: Colors.black, size: 24),
+            icon: Icon(KIcons.dropDowArrow, color: Get.theme.pureBlack, size: 24),
           ),
         ),
       ),

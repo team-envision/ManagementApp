@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:managment_app/Themes/themes.dart';
-import 'package:managment_app/app/modules/login/views/login_view.dart';
-import 'package:managment_app/app/modules/markAttendanceView/views/mark_attendance_view.dart';
-import 'package:managment_app/app/modules/teamAttendance/views/team_attendance_view.dart';
+import 'package:managment_app/app/routes/app_pages.dart';
 import 'package:managment_app/components/SettingButton.dart';
+import 'package:managment_app/utilities/constants/text_strings.dart';
+
 import '../../../../components/Logoutbutton.dart';
-import '../../login/controllers/login_controller.dart';
-import '../../profileEdit/views/profile_edit_view.dart';
-import '../../registration/views/registration_view.dart';
 import '../controllers/settings_controller.dart';
 
 class SettingsView extends GetView<SettingsController> {
@@ -16,7 +13,6 @@ class SettingsView extends GetView<SettingsController> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
 
@@ -28,7 +24,7 @@ class SettingsView extends GetView<SettingsController> {
             width: screenWidth,
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [theme.colorLevel1, theme.colorLevel2],
+                colors: [Get.theme.darkBlue, Get.theme.darkTeal],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),
@@ -43,7 +39,7 @@ class SettingsView extends GetView<SettingsController> {
                   Container(
                     height: screenHeight * 0.2,
                     decoration: BoxDecoration(
-                      color: theme.colorLevel2,
+                      color: Get.theme.darkTeal,
                     ),
                   ),
                   Positioned(
@@ -54,11 +50,11 @@ class SettingsView extends GetView<SettingsController> {
                         horizontal: screenWidth * 0.2,
                       ),
                       decoration: BoxDecoration(
-                        color: theme.colorLevel1,
+                        color: Get.theme.darkBlue,
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withOpacity(0.1),
+                            color: Get.theme.transparentBlack,
                             spreadRadius: 5,
                             blurRadius: 10,
                             offset: const Offset(0, 5),
@@ -66,8 +62,8 @@ class SettingsView extends GetView<SettingsController> {
                         ],
                       ),
                       child: Text(
-                        "Settings",
-                        style: theme.kTitleTextStyle.copyWith(
+                        KText.settingsTitle,
+                        style: Get.theme.kTitleTextStyle.copyWith(
                           letterSpacing: 5,
                           fontSize: screenWidth * 0.05,
                           fontWeight: FontWeight.bold,
@@ -90,36 +86,37 @@ class SettingsView extends GetView<SettingsController> {
                     children: [
                       Flexible(
                         child: Settingbutton(
-                          title: 'MY PROFILE',
+                          title: KText.myProfileButton,
                           onPressed: () {
-                            Get.to(() => ProfileEditView());
+                            Get.toNamed(Routes.PROFILE_EDIT);
                           },
                         ),
                       ),
                       SizedBox(height: screenHeight * 0.03),
                       Flexible(
                         child: Settingbutton(
-                          title: 'REGISTRATION',
+                          title: KText.registrationButton,
                           onPressed: () {
-                            Get.to(() => const RegistrationView());
+                            Get.toNamed(Routes.REGISTRATION);
                           },
                         ),
                       ),
                       SizedBox(height: screenHeight * 0.03),
                       Flexible(
                         child: Settingbutton(
-                          title: 'UPDATE TEAM', //only for heads org
+                          title: KText.updateTeamButton,
+                          //only for heads org
                           onPressed: () {
-                            Get.to(() => const MarkAttendanceView());
+                            Get.toNamed(Routes.MARKATTENDANCEVIEW);
                           },
                         ),
                       ),
                       SizedBox(height: screenHeight * 0.03),
                       Flexible(
                         child: Settingbutton(
-                          title: 'MY TEAM',
+                          title: KText.myTeamButton,
                           onPressed: () {
-                            Get.to(() => const TeamAttendanceView());
+                            Get.toNamed(Routes.TEAM_ATTENDANCE);
                           },
                         ),
                       ),
@@ -127,8 +124,7 @@ class SettingsView extends GetView<SettingsController> {
                       const Spacer(),
                       Logoutbutton(
                         onPressed: () {
-                          Get.lazyPut(() => LoginViewController());
-                          Get.to(() => const LoginView());
+                          Get.toNamed(Routes.LOGIN_VIEW);
                         },
                       ),
                     ],

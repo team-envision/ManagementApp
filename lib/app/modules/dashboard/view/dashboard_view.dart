@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:managment_app/app/modules/markAttendanceView/views/mark_attendance_view.dart';
-import 'package:managment_app/app/modules/teamAttendance/views/team_attendance_view.dart';
+import 'package:managment_app/Themes/themes.dart';
+import 'package:managment_app/utilities/constants/images_const.dart';
+
 import '../../../../components/AnnouncementBox.dart';
 import '../../../../components/MeetsConductedTile.dart';
 import '../../../../components/UpcomingMeetTile.dart';
+import '../../../../utilities/constants/text_strings.dart';
+import '../../../routes/app_pages.dart';
 import '../controller/dashboard_controller.dart';
-import 'package:managment_app/Themes/themes.dart';
 
 class DashboardView extends GetView<DashboardController> {
   const DashboardView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
 
     return Scaffold(
       body: Stack(
@@ -23,7 +24,7 @@ class DashboardView extends GetView<DashboardController> {
           Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [theme.colorLevel1, theme.colorLevel0],
+                colors: [Get.theme.darkBlue, Get.theme.deepBlack],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),
@@ -33,7 +34,7 @@ class DashboardView extends GetView<DashboardController> {
             top: 0,
             right: 0,
             child: SvgPicture.asset(
-              'assets/images/Ellipse 53.svg',
+              KImages.ellipse53,
               width: 200,
               height: 200,
             ),
@@ -42,7 +43,7 @@ class DashboardView extends GetView<DashboardController> {
             top: 0,
             right: 0,
             child: SvgPicture.asset(
-              'assets/images/Ellipse 54.svg',
+              KImages.ellipse54,
               width: 100,
               height: 100,
             ),
@@ -51,7 +52,7 @@ class DashboardView extends GetView<DashboardController> {
             top: 300,
             left: 0,
             child: SvgPicture.asset(
-              'assets/images/Ellipse 50.svg',
+              KImages.ellipse50,
               width: 300,
               height: 300,
             ),
@@ -60,7 +61,7 @@ class DashboardView extends GetView<DashboardController> {
             bottom: 0,
             right: 0,
             child: SvgPicture.asset(
-              'assets/images/Ellipse 48.svg',
+              KImages.ellipse48,
               width: 100,
               height: 100,
             ),
@@ -72,50 +73,46 @@ class DashboardView extends GetView<DashboardController> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Text(
-                    'TEAM ENVISION',
-                    style: GoogleFonts.raleway(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 24,
-                    ),
+                    KText.teamEnvision,
+                    style: Get.theme.kBigTextStyle,
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(height: 40),
                   Text(
-                    "Hi, KARTIK JHANWAR",
-                    style: theme.kTitleTextStyle,
+                    KText.sampleUser,
+                    style: Get.theme.kTitleTextStyle,
                     textAlign: TextAlign.left,
                   ),
                   SizedBox(height: 40),
                   Text(
-                    "ANNOUNCEMENT",
-                    style: theme.kTitleTextStyle,
+                    KText.announcementTitle,
+                    style: Get.theme.kTitleTextStyle,
                     textAlign: TextAlign.left,
                   ),
                   SizedBox(height: 8),
-                  AnnouncementBox(announcement: 'Nil'),
+                  AnnouncementBox(announcement: KText.sampleAnnouncement),
                   SizedBox(height: 40),
                   Text(
-                    "Upcoming Meets",
-                    style: theme.kTitleTextStyle,
+                    KText.upcomingMeetsTitle,
+                    style: Get.theme.kTitleTextStyle,
                     textAlign: TextAlign.left,
                   ),
                   SizedBox(height: 8),
                   UpcomingMeetTile(
-                    title: 'Design - 4/06/24',
-                    details: 'Time : 10:45 pm\nVenue : CRC 501',
+                    title: KText.sampleMeetTitle,
+                    details: KText.sampleMeetDetails,
                   ),
                   SizedBox(height: 40),
                   Text(
-                    "Meets Conducted",
-                    style: theme.kTitleTextStyle,
+                    KText.meetsConductedTitle,
+                    style: Get.theme.kTitleTextStyle,
                   ),
                   SizedBox(height: 8),
                   MeetsConductedTile(
-                    title: 'Design - 4/06/24',
+                    title: KText.sampleMeetTitle,
                     OnUpdateAttendance: () {
-                        Get.to(() => MarkAttendanceView());
-                        },
+                      Get.toNamed(Routes.MARKATTENDANCEVIEW);
+                    },
                   ),
                 ],
               ),

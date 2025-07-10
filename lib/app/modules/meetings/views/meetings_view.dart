@@ -3,47 +3,46 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:managment_app/app/modules/home/views/home_view.dart';
+import 'package:managment_app/app/routes/app_pages.dart';
+import 'package:managment_app/utilities/constants/icons_const.dart';
+import 'package:managment_app/utilities/constants/images_const.dart';
 import '../../../../components/DatePickerField.dart';
 import '../../../../components/Dropdown.dart';
 import '../../../../components/TimePickerField.dart';
 import 'package:managment_app/Themes/themes.dart';
+import '../../../../utilities/constants/text_strings.dart';
 import '../controllers/meetings_controller.dart';
 
 class MeetingsView extends GetView<MeetingsController> {
   MeetingsView({super.key});
+
   @override
   final MeetingsController controller = Get.put(MeetingsController());
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
 
     return Scaffold(
-      backgroundColor: theme.colorLevel2,
+      backgroundColor: Get.theme.darkTeal,
       appBar: AppBar(
         title: Text(
-          'MEETS',
-          style: GoogleFonts.raleway(
-            color: theme.colorLevel4,
-            fontWeight: FontWeight.w600,
-            fontSize: 26,
-            letterSpacing: 2,
-          ),
+          KText.meetsTitle,
+          style: Get.theme.kVeryBigTextStyle,
         ),
         centerTitle: true,
-        backgroundColor: theme.colorLevel1,
+        backgroundColor: Get.theme.darkBlue,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios, color: theme.colorLevel4),
+          icon: Icon(KIcons.iosBackArrow, color: Get.theme.fadedWhite),
           onPressed: () {
-            Get.offAll(() => const HomeView());
+            Get.offAllNamed(Routes.HOME);
           },
         ),
       ),
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [theme.colorLevel1, theme.colorLevel2],
+            colors: [Get.theme.darkBlue, Get.theme.darkTeal],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
@@ -63,10 +62,10 @@ class MeetingsView extends GetView<MeetingsController> {
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: SvgPicture.asset(
-                    'assets/images/calender.svg',
+                    KImages.calendar,
                     width: 100,
                     height: 100,
-                    color: theme.colorPrimary,
+                    color: Get.theme.brightCyan,
                   ),
                 ),
                 const SizedBox(height: 20),
@@ -75,11 +74,11 @@ class MeetingsView extends GetView<MeetingsController> {
                   width: Get.width * 0.8,
                   padding: const EdgeInsets.all(20.0),
                   decoration: BoxDecoration(
-                    color: const Color(0xFF094454),
+                    color: Get.theme.darkTeal,
                     borderRadius: BorderRadius.circular(25),
                     boxShadow: [
                       BoxShadow(
-                        color: theme.colorLevel0,
+                        color: Get.theme.deepBlack,
                         spreadRadius: 2,
                         blurRadius: 4,
                       ),
@@ -89,29 +88,29 @@ class MeetingsView extends GetView<MeetingsController> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       CustomDropdownButton(
-                        hintText: 'DOMAIN',
+                        hintText: KText.domainHint,
                         options: domainOptions,
                         selectedValue: controller.domainSelectedValue,
                       ),
                       CustomDropdownButton(
-                        hintText: 'FOR',
+                        hintText: KText.forHint,
                         options: forOptions,
                         selectedValue: controller.forSelectedValue,
                       ),
                       DatePickerField(
-                        hintText: 'DATE',
+                        hintText: KText.dateHint,
                         selectedDate: controller.selectedDate,
                         onDateChanged: (date) =>
                             controller.selectedDate.value = date,
                       ),
                       TimePickerField(
-                        hintText: 'TIME',
+                        hintText: KText.timeHint,
                         selectedTime: controller.selectedTime,
                         onTimeChanged: (time) =>
                             controller.selectedTime.value = time,
                       ),
                       CustomDropdownButton(
-                        hintText: 'MODE',
+                        hintText: KText.modeHint,
                         options: modeOptions,
                         selectedValue: controller.modeSelectedValue,
                       ),
@@ -125,15 +124,15 @@ class MeetingsView extends GetView<MeetingsController> {
                     controller.showDescriptionDialog(context);
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: theme.colorPrimary,
+                    backgroundColor: Get.theme.brightCyan,
                     elevation: 0,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15),
                     ),
                   ),
                   child: Text(
-                    'ADD MEETING DESCRIPTION',
-                    style: theme.kSmallTextStyle,
+                    KText.addMeetingDescriptionButton,
+                    style: Get.theme.kVerySmallTextStyle,
                   ),
                 ),
                 const SizedBox(height: 20),
@@ -144,7 +143,7 @@ class MeetingsView extends GetView<MeetingsController> {
                       : Text(
                           controller.description.value,
                           textAlign: TextAlign.center,
-                          style: theme.kSmallTextStyle.copyWith(fontSize: 16),
+                          style: Get.theme.kVerySmallTextStyle.copyWith(fontSize: 16),
                         );
                 }),
 
@@ -156,15 +155,15 @@ class MeetingsView extends GetView<MeetingsController> {
                       'Reminder Sent',
                       'Meeting reminder has been sent successfully!',
                       snackPosition: SnackPosition.TOP,
-                      backgroundColor: Colors.grey[300],
-                      colorText: Colors.black,
-                      icon: const Icon(Icons.check_circle, color: Colors.green),
+                      backgroundColor: Get.theme.lighterGrey,
+                      colorText: Get.theme.pureBlack,
+                      icon: Icon(KIcons.checkCircle, color: Get.theme.primaryGreen),
                       margin: const EdgeInsets.all(10),
                       duration: const Duration(seconds: 2),
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue[100],
+                    backgroundColor: Get.theme.lightBlue,
                     elevation: 0,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15),
@@ -174,15 +173,11 @@ class MeetingsView extends GetView<MeetingsController> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        'Send Reminder',
-                        style: GoogleFonts.raleway(
-                          color: Colors.grey[700],
-                          fontSize: 12,
-                          fontWeight: FontWeight.w600,
-                        ),
+                        KText.sendReminderButton,
+                        style: Get.theme.kSmallButtonTextStyle,
                       ),
                       const SizedBox(width: 8),
-                      Icon(Icons.notifications_active, color: Colors.grey[700]),
+                      Icon(KIcons.activeNotification, color: Get.theme.darkGrey),
                     ],
                   ),
                 ),

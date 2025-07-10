@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:managment_app/Themes/themes.dart';
+
+import '../utilities/constants/icons_const.dart';
 
 class TimePickerField extends StatelessWidget {
   final String hintText;
@@ -26,15 +29,15 @@ class TimePickerField extends StatelessWidget {
             child: TextFormField(
               decoration: InputDecoration(
                 hintText: hintText,
-                hintStyle: TextStyle(color: Colors.grey[700], fontWeight: FontWeight.w300),
+                hintStyle: Get.theme.kHintTextStyle2,
                 filled: true,
-                fillColor: Colors.white,
+                fillColor: Get.theme.pureWhite,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8),
                 ),
                 contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
                 suffixIcon: IconButton(
-                  icon: const Icon(Icons.arrow_drop_down, color: Colors.black),
+                  icon: Icon(KIcons.dropDowArrow, color: Get.theme.pureBlack),
                   onPressed: () async {
                     final TimeOfDay? picked = await showTimePicker(
                       context: context,
@@ -49,7 +52,7 @@ class TimePickerField extends StatelessWidget {
               ),
               controller: controller,
               readOnly: true,
-              style: TextStyle(color: Colors.grey[700], fontWeight: FontWeight.w400),
+              style: Get.theme.kInputFieldTextStyle3,
             ),
           );
         },

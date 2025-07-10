@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart' show Border, BorderRadius, BoxDecoration, BoxShadow, BuildContext, Center, Clip, Column, Container, CrossAxisAlignment, EdgeInsets, FontWeight, Image, InkWell, MainAxisAlignment, Offset, Padding, Positioned, Stack, StatelessWidget, Text, VoidCallback, Widget;
 import 'package:get/get.dart';
 import 'package:managment_app/Themes/themes.dart';
+import 'package:managment_app/utilities/constants/images_const.dart';
+
+import '../utilities/constants/icons_const.dart';
 
 
 class TeamTile extends StatelessWidget {
@@ -25,12 +28,12 @@ class TeamTile extends StatelessWidget {
           Container(
             clipBehavior: Clip.none,
             decoration: BoxDecoration(
-              color: Get.theme.colorLevel2,
+              color: Get.theme.darkTeal,
               borderRadius: BorderRadius.circular(25),
-              border: Border.all(color: Get.theme.colorLevel4, width: 1.5),
+              border: Border.all(color: Get.theme.fadedWhite, width: 1.5),
               boxShadow: [
                 BoxShadow(
-                  color: Get.theme.colorLevel4.withOpacity(0.6),
+                  color: Get.theme.fadedWhite.withOpacity(0.6),
                   spreadRadius: 0.2,
                   blurRadius: 2,
                   offset: const Offset(1, 4),
@@ -51,7 +54,7 @@ class TeamTile extends StatelessWidget {
                         child: Text(
                           title,
                           style: Get.theme.kSubTitleTextStyle.copyWith(
-                            color: Get.theme.colorLevel4,
+                            color: Get.theme.fadedWhite,
                             fontWeight: FontWeight.w900,
                             fontSize: 20.0,
                             letterSpacing: 2.0,
@@ -60,8 +63,8 @@ class TeamTile extends StatelessWidget {
                       ),
                       Text(
                         subtitle,
-                        style: Get.theme.kBodyTextStyle.copyWith(
-                          color: Get.theme.colorLevel4,
+                        style: Get.theme.kSmallTextStyle.copyWith(
+                          color: Get.theme.fadedWhite,
                           fontSize: 12,
                           letterSpacing: 1.5,
                         ),
@@ -76,7 +79,7 @@ class TeamTile extends StatelessWidget {
             left: -40,
             top: 20,
             child: Image.asset(
-              'assets/icons/person_Icon.png',
+              KImages.personIcon,
               width: 85,
               height: 85,
             ),
@@ -86,7 +89,7 @@ class TeamTile extends StatelessWidget {
             right: -20,
             top: 35,
             child: Image.asset(
-              'assets/icons/arrowIcon.png',
+              KImages.forwardArrow,
               width: 60,
               height: 60,
             ),
